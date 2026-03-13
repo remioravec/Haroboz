@@ -1,0 +1,20 @@
+# Credentials
+wp-push/.env
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scraping output (regenerable)
+scraping/output/*.json
+!scraping/output/.gitkeep
+
+# Preview output (regenerable)
+preview/index.html
+preview/pages/
+preview/css/style.css
+preview/css/variables.css
+preview/js/main.js
