@@ -24,7 +24,7 @@ const path    = require('path');
 const app         = express();
 const PREVIEW_DIR = path.join(__dirname, '..', 'preview');
 const CORS_FILE   = path.join(__dirname, 'haroboz-cors.php');
-const PORT        = process.env.PORT || 4000;
+const PORT        = process.env.PORT || 3000;
 
 app.use(express.json({ limit: '50mb' }));
 
@@ -859,34 +859,9 @@ async function scanMedia() {
    CONTENT PROCESSING — runs in browser
 ================================================================ */
 
-// CSS injected at top of every WP page to hide the theme
-const HIDE_WP_CSS = \`
-/* ── Haroboz: Hide WP theme ── */
-#wpadminbar { display: none !important }
-html { margin-top: 0 !important }
-.site-header, #masthead, .wp-site-blocks > header:first-child,
-.site-footer, #colophon, .wp-site-blocks > footer:last-child,
-.sidebar, .widget-area, #secondary,
-.entry-header, .page-header, .entry-footer,
-.post-navigation, .nav-links, .entry-meta,
-.cat-links, .tags-links, .edit-link,
-.comments-area, #comments,
-.wp-block-template-part { display: none !important }
-body, html, .site, .site-content, .content-area, .site-main,
-.entry-content, .page-content, .wp-site-blocks,
-.wp-block-post-content, .has-global-padding {
-  max-width: 100% !important; width: 100% !important;
-  padding: 0 !important; margin: 0 !important;
-}
-.entry-content > *, .wp-block-post-content > * {
-  max-width: 100% !important;
-  margin-left: 0 !important; margin-right: 0 !important;
-}
-.haroboz-page {
-  position: relative; z-index: 10;
-  font-family: 'Inter', sans-serif;
-}
-\`;
+// NOTE: HIDE_WP_CSS, Tailwind CDN, Lucide, Google Fonts, and interactive scripts
+// are now injected by the haroboz-cors.php WordPress plugin via wp_head / wp_footer.
+// Nothing CDN-related needs to be in the page content.
 
 /**
  * Rewrite internal preview links to live WP URLs.
@@ -943,12 +918,13 @@ function rewriteImages(html, mMap) {
   return html;
 }
 
-/**
- * Extract the text between <body…> and </body>.
- */
+/* Extract body content and strip all inline scripts (handled by plugin). */
 function extractBody(rawHtml) {
   const m = rawHtml.match(/<body[^>]*>([\\s\\S]*)<\\/body>/i);
-  return m ? m[1].trim() : rawHtml;
+  let body = m ? m[1].trim() : rawHtml;
+  var tag = 'scr' + 'ipt';
+  body = body.replace(new RegExp('<' + tag + '[^>]*>[\\\\s\\\\S]*?</' + tag + '>', 'gi'), '');
+  return body.trim();
 }
 
 /**
@@ -962,27 +938,7 @@ function extractStyles(rawHtml) {
   return blocks.join('\\n');
 }
 
-/**
- * Extract all inline script blocks (no src=, not tailwind.config).
- */
-function extractScripts(rawHtml) {
-  const blocks = [];
-  const tag = 'scr' + 'ipt';
-  const re = new RegExp('<' + tag + '(?![^>]*\\\\bsrc=)[^>]*>([\\\\s\\\\S]*?)</' + tag + '>', 'gi');
-  let m;
-  while ((m = re.exec(rawHtml)) !== null) {
-    const content = m[1].trim();
-    if (content && !content.trimStart().startsWith('tailwind.config')) {
-      blocks.push(content);
-    }
-  }
-  return blocks.join('\\n');
-}
-
-/**
- * Build the full WP page content field from a raw preview HTML file.
- * Result: CDN deps + hide-WP CSS + page styles + body + page scripts.
- */
+/* Build WP page content: page-specific styles + body only (no scripts). */
 function buildWpContent(page, siteUrl, mMap) {
   // 1. Start from full raw HTML
   let html = page.html;
@@ -991,43 +947,14 @@ function buildWpContent(page, siteUrl, mMap) {
   html = rewriteLinks(html, siteUrl);
   html = rewriteImages(html, mMap);
 
-  // 3. Extract parts
+  // 3. Extract parts (body is already script-free)
   const bodyContent = extractBody(html);
   const pageStyles  = extractStyles(html);
-  const pageScripts = extractScripts(html);
 
-  // 4. Assemble WP content wrapper (split tags to avoid closing parent script)
+  // 4. Assemble WP content: page-specific styles + body wrapped in haroboz-page
   const fullContent =
-    '<scr' + 'ipt src="https://cdn.tailwindcss.com"></scr' + 'ipt>\\n' +
-    '<scr' + 'ipt>\\n' +
-    'tailwind.config = {\\n' +
-    '  theme: {\\n' +
-    '    extend: {\\n' +
-    '      colors: {\\n' +
-    '        brand: { DEFAULT: \\'#0a1a3a\\', light: \\'#122a5c\\', 50: \\'#e8edf5\\' }\\n' +
-    '      },\\n' +
-    '      fontFamily: {\\n' +
-    '        sans: [\\'Inter\\', \\'sans-serif\\'],\\n' +
-    '        serif: [\\'Playfair Display\\', \\'serif\\']\\n' +
-    '      }\\n' +
-    '    }\\n' +
-    '  }\\n' +
-    '}\\n' +
-    '</scr' + 'ipt>\\n' +
-    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">\\n' +
-    '<scr' + 'ipt src="https://unpkg.com/lucide@latest"></scr' + 'ipt>\\n' +
-    '<style>\\n' + HIDE_WP_CSS + '\\n' + pageStyles + '\\n</style>\\n' +
-    '<div class="haroboz-page">\\n' + bodyContent + '\\n</div>\\n' +
-    (pageScripts ? (
-      '<scr' + 'ipt>\\n' +
-      '(function(){\\n' +
-      'function initLucide(){if(window.lucide){try{lucide.createIcons();}catch(e){}}}\\n' +
-      'initLucide();\\n' +
-      'window.addEventListener(\\'load\\', initLucide);\\n' +
-      pageScripts + '\\n' +
-      '})();\\n' +
-      '</scr' + 'ipt>'
-    ) : '');
+    '<style>\\n' + pageStyles + '\\n</style>\\n' +
+    '<div class="haroboz-page">\\n' + bodyContent + '\\n</div>';
 
   return fullContent;
 }
