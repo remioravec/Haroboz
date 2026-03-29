@@ -148,16 +148,99 @@ app.get('/api/pages', (req, res) => {
   })));
 });
 
-// CORS plugin download
+// CORS plugin download as installable .zip for WP admin
 app.get('/api/cors-plugin', (req, res) => {
   if (!fs.existsSync(CORS_FILE)) {
     res.status(404).send('haroboz-cors.php introuvable');
     return;
   }
-  res.setHeader('Content-Disposition', 'attachment; filename="haroboz-cors.php"');
-  res.setHeader('Content-Type', 'text/plain');
-  res.send(fs.readFileSync(CORS_FILE, 'utf-8'));
+  const phpContent = fs.readFileSync(CORS_FILE);
+  const zipBuffer  = buildPluginZip('haroboz-cors', 'haroboz-cors.php', phpContent);
+  res.setHeader('Content-Disposition', 'attachment; filename="haroboz-cors.zip"');
+  res.setHeader('Content-Type', 'application/zip');
+  res.send(zipBuffer);
 });
+
+/**
+ * Build a minimal ZIP archive containing one file inside a folder.
+ * WordPress expects: pluginname/pluginname.php inside the zip.
+ * Uses raw ZIP format (no external dependency).
+ */
+function buildPluginZip(folderName, fileName, fileContent) {
+  const fullPath = folderName + '/' + fileName;
+  const buf      = Buffer.from(fileContent);
+  const crc      = crc32(buf);
+  const now      = new Date();
+
+  // DOS date/time encoding
+  const dosTime = ((now.getHours() << 11) | (now.getMinutes() << 5) | (now.getSeconds() >> 1)) & 0xFFFF;
+  const dosDate = (((now.getFullYear() - 1980) << 9) | ((now.getMonth() + 1) << 5) | now.getDate()) & 0xFFFF;
+
+  const nameBuffer = Buffer.from(fullPath, 'utf-8');
+  const nameLen    = nameBuffer.length;
+
+  // Local file header (30 + nameLen)
+  const lfh = Buffer.alloc(30 + nameLen);
+  lfh.writeUInt32LE(0x04034b50, 0);   // signature
+  lfh.writeUInt16LE(20, 4);           // version needed
+  lfh.writeUInt16LE(0, 6);            // flags
+  lfh.writeUInt16LE(0, 8);            // compression: stored
+  lfh.writeUInt16LE(dosTime, 10);
+  lfh.writeUInt16LE(dosDate, 12);
+  lfh.writeUInt32LE(crc, 14);
+  lfh.writeUInt32LE(buf.length, 18);  // compressed size
+  lfh.writeUInt32LE(buf.length, 22);  // uncompressed size
+  lfh.writeUInt16LE(nameLen, 26);
+  lfh.writeUInt16LE(0, 28);           // extra field length
+  nameBuffer.copy(lfh, 30);
+
+  // Central directory header (46 + nameLen)
+  const cdOffset = lfh.length + buf.length;
+  const cdh = Buffer.alloc(46 + nameLen);
+  cdh.writeUInt32LE(0x02014b50, 0);   // signature
+  cdh.writeUInt16LE(20, 4);           // version made by
+  cdh.writeUInt16LE(20, 6);           // version needed
+  cdh.writeUInt16LE(0, 8);            // flags
+  cdh.writeUInt16LE(0, 10);           // compression: stored
+  cdh.writeUInt16LE(dosTime, 12);
+  cdh.writeUInt16LE(dosDate, 14);
+  cdh.writeUInt32LE(crc, 16);
+  cdh.writeUInt32LE(buf.length, 20);
+  cdh.writeUInt32LE(buf.length, 24);
+  cdh.writeUInt16LE(nameLen, 28);
+  cdh.writeUInt16LE(0, 30);           // extra field length
+  cdh.writeUInt16LE(0, 32);           // comment length
+  cdh.writeUInt16LE(0, 34);           // disk number
+  cdh.writeUInt16LE(0, 36);           // internal attrs
+  cdh.writeUInt32LE(0, 38);           // external attrs
+  cdh.writeUInt32LE(0, 42);           // local header offset
+  nameBuffer.copy(cdh, 46);
+
+  // End of central directory (22 bytes)
+  const eocd = Buffer.alloc(22);
+  eocd.writeUInt32LE(0x06054b50, 0);
+  eocd.writeUInt16LE(0, 4);           // disk number
+  eocd.writeUInt16LE(0, 6);           // disk with CD
+  eocd.writeUInt16LE(1, 8);           // entries on disk
+  eocd.writeUInt16LE(1, 10);          // total entries
+  eocd.writeUInt32LE(cdh.length, 12); // CD size
+  eocd.writeUInt32LE(cdOffset, 16);   // CD offset
+  eocd.writeUInt16LE(0, 20);          // comment length
+
+  return Buffer.concat([lfh, buf, cdh, eocd]);
+}
+
+/** CRC-32 (ISO 3309) */
+function crc32(buf) {
+  let crc = 0xFFFFFFFF;
+  for (let i = 0; i < buf.length; i++) {
+    crc ^= buf[i];
+    for (let j = 0; j < 8; j++) {
+      crc = (crc >>> 1) ^ (crc & 1 ? 0xEDB88320 : 0);
+    }
+  }
+  return (crc ^ 0xFFFFFFFF) >>> 0;
+}
 
 // ─────────────────────────────────────────────────────────────
 //  Web UI
@@ -486,10 +569,14 @@ hr { border: none; border-top: 1px solid var(--b); margin: 16px 0 }
   <h3>⚠ Plugin CORS requis</h3>
   <p>
     Le navigateur ne peut pas interroger l'API WordPress sans les bons en-têtes CORS.<br>
-    <strong>Solution :</strong> Téléchargez <a onclick="window.open('/api/cors-plugin')">haroboz-cors.php</a>
-    et uploadez-le dans <code>wp-content/mu-plugins/</code> sur votre serveur WordPress (FTP / gestionnaire de fichiers de l'hébergeur).<br>
-    <span style="color:var(--ko);font-size:.7rem">⚠ Supprimez ce fichier une fois le push terminé — il ouvre l'API à tous.</span>
+    <strong>Installation en 3 clics :</strong>
   </p>
+  <ol style="margin:8px 0 8px 18px;font-size:.78rem;line-height:1.8;color:var(--t)">
+    <li><a href="/api/cors-plugin" style="color:var(--g);font-weight:600;text-decoration:underline;cursor:pointer">Télécharger haroboz-cors.zip</a></li>
+    <li>Dans WP Admin → <b>Extensions → Ajouter → Téléverser une extension</b> → choisir le .zip → Installer</li>
+    <li><b>Activer</b> le plugin, puis revenir ici et retester la connexion</li>
+  </ol>
+  <p style="color:var(--ko);font-size:.7rem;margin-top:4px">⚠ Désactivez et supprimez ce plugin une fois le push terminé.</p>
 </div>
 
 <!-- ─── STEP 1 : CONNECTION ─── -->

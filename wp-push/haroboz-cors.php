@@ -1,15 +1,16 @@
 <?php
 /**
- * Plugin Name: Haroboz CORS
- * Description: Active CORS pour l'API REST WordPress (nécessaire pour le pusher Haroboz)
+ * Plugin Name: Haroboz CORS (temporaire)
+ * Plugin URI: https://github.com/remioravec/Haroboz
+ * Description: Active CORS sur l'API REST WordPress pour le pusher Haroboz. À DÉSACTIVER et SUPPRIMER après utilisation.
  * Version: 1.0
+ * Author: Haroboz
+ * License: GPL-2.0-or-later
  *
  * INSTALLATION:
- * 1. Uploader ce fichier dans wp-content/mu-plugins/haroboz-cors.php
- *    (créer le dossier mu-plugins s'il n'existe pas)
- * 2. C'est tout — les mu-plugins sont activés automatiquement
+ *   Extensions → Ajouter → Téléverser une extension → haroboz-cors.zip
  *
- * SÉCURITÉ: Supprimez ce fichier une fois le push terminé.
+ * SÉCURITÉ: Désactivez et supprimez ce plugin une fois le push terminé.
  */
 
 add_action('rest_api_init', function () {
