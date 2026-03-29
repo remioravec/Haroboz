@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 /**
- * HAROBOZ — Remplacement Complet du Site WordPress
+ * HAROBOZ — Remplacement Complet du Site WordPress (Mode Client-Side)
  *
- * Serveur local + interface web.
- * Récupère les images existantes du WP, remplace les URLs, pousse tout.
+ * Serveur léger Node pour servir l'interface HTML.
+ * TOUS les appels WordPress se font depuis le navigateur du client.
  *
  * Usage: node wp-push/replace-site.js
  * Puis ouvrir http://localhost:4000
+ *
+ * ⚠️ IMPORTANT: Le navigateur du client doit pouvoir accéder à https://haroboz.com
+ * Les credentials WP sont entrés directement dans le navigateur (jamais au serveur).
  */
 
 const express = require('express');
@@ -17,22 +20,6 @@ app.use(express.json({ limit: '50mb' }));
 
 const PREVIEW_DIR = path.join(__dirname, '..', 'preview');
 const PORT = 4000;
-
-// ===== WordPress API proxy =====
-async function wpFetch(baseUrl, user, pass, endpoint, method = 'GET', body = null) {
-  const url = `${baseUrl}/wp-json${endpoint}`;
-  const headers = {
-    'Authorization': 'Basic ' + Buffer.from(`${user}:${pass}`).toString('base64'),
-    'Content-Type': 'application/json',
-  };
-  const opts = { method, headers };
-  if (body) opts.body = JSON.stringify(body);
-
-  const resp = await fetch(url, opts);
-  const text = await resp.text();
-  if (!resp.ok) throw new Error(`WP ${resp.status}: ${text.substring(0, 300)}`);
-  return JSON.parse(text);
-}
 
 // ===== Extract from HTML =====
 function extractTitle(html) {
@@ -135,174 +122,19 @@ function buildPages() {
 const PAGES = buildPages();
 console.log(`${PAGES.length} pages loaded from preview/`);
 
-// ===== API Routes =====
+// ===== API Routes — CÔTÉ SERVEUR (minimales) =====
 
-// Test connection
-app.post('/api/test', async (req, res) => {
-  try {
-    const { url, user, pass } = req.body;
-    const data = await wpFetch(url, user, pass, '/');
-    res.json({ ok: true, name: data.name, url: data.url });
-  } catch (e) {
-    res.json({ ok: false, error: e.message });
-  }
-});
-
-// Get all WP media (to build image URL map)
-app.post('/api/media', async (req, res) => {
-  try {
-    const { url, user, pass } = req.body;
-    let all = [], page = 1;
-    while (true) {
-      const batch = await wpFetch(url, user, pass, `/wp/v2/media?per_page=100&page=${page}`);
-      all = all.concat(batch.map(m => ({
-        id: m.id,
-        filename: m.source_url.split('/').pop(),
-        url: m.source_url,
-        title: m.title?.rendered || '',
-      })));
-      if (batch.length < 100) break;
-      page++;
-    }
-    res.json({ ok: true, media: all, count: all.length });
-  } catch (e) {
-    res.json({ ok: false, error: e.message, media: [] });
-  }
-});
-
-// Get all WP pages
-app.post('/api/wp-pages', async (req, res) => {
-  try {
-    const { url, user, pass } = req.body;
-    let all = [], page = 1;
-    while (true) {
-      const batch = await wpFetch(url, user, pass, `/wp/v2/pages?per_page=100&page=${page}&status=any`);
-      all = all.concat(batch.map(p => ({ id: p.id, slug: p.slug, title: p.title?.rendered })));
-      if (batch.length < 100) break;
-      page++;
-    }
-    res.json({ ok: true, pages: all });
-  } catch (e) {
-    res.json({ ok: false, error: e.message });
-  }
-});
-
-// Get pages registry
+// Get pages registry (le serveur lit les fichiers du preview)
 app.get('/api/pages', (req, res) => {
   res.json(PAGES.map(p => ({
     file: p.file, slug: p.slug, wpSlug: p.wpSlug,
     parentSlug: p.parentSlug, isHome: p.isHome,
     title: p.title, metaDesc: p.metaDesc,
+    styles: p.styles,
+    body: p.body,
     bodyLen: p.body.length, imageCount: p.images.length,
+    images: p.images,
   })));
-});
-
-// Push a single page
-app.post('/api/push', async (req, res) => {
-  try {
-    const { url, user, pass, index, mediaMap, parentMap, status } = req.body;
-    const p = PAGES[index];
-    if (!p) return res.json({ ok: false, error: 'Page not found' });
-
-    // Build full content with styles + assets + body
-    let content = p.body;
-
-    // Replace image URLs with WP media URLs
-    if (mediaMap) {
-      for (const [localPath, wpUrl] of Object.entries(mediaMap)) {
-        content = content.split(localPath).join(wpUrl);
-      }
-    }
-
-    // Replace internal links
-    content = content.replace(/href="\/pages\/([^"]+)\.html"/g, `href="${url}/$1/"`);
-    content = content.replace(/href="\/pages\/([^"]+)\/"/g, `href="${url}/$1/"`);
-    content = content.replace(/href="\/"/g, `href="${url}/"`);
-
-    // Wrap with styles and assets
-    const fullContent = `<style>${HIDE_WP}\n${p.styles}</style>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{brand:{DEFAULT:'#0a1a3a',light:'#122a5c','50':'#e8edf5'}},fontFamily:{sans:['Inter','sans-serif'],serif:['Playfair Display','serif']}}}}</script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<div class="haroboz-page">${content}</div>`;
-
-    const parentId = p.parentSlug && parentMap?.[p.parentSlug] ? parentMap[p.parentSlug] : 0;
-    const title = p.title.split('–')[0].split('|')[0].trim();
-    const slug = p.wpSlug || 'accueil';
-
-    // Check if exists
-    let existing = null;
-    try {
-      const ex = await wpFetch(url, user, pass, `/wp/v2/pages?slug=${slug}&status=any`);
-      if (ex.length > 0) existing = ex[0];
-    } catch(e) {}
-
-    let result;
-    if (existing) {
-      result = await wpFetch(url, user, pass, `/wp/v2/pages/${existing.id}`, 'PUT', {
-        title, content: fullContent, status: status || 'draft', parent: parentId
-      });
-    } else {
-      result = await wpFetch(url, user, pass, '/wp/v2/pages', 'POST', {
-        title, content: fullContent, slug, status: status || 'draft', parent: parentId
-      });
-    }
-
-    // Try SEO meta
-    try {
-      await wpFetch(url, user, pass, `/wp/v2/pages/${result.id}`, 'PUT', {
-        meta: { _yoast_wpseo_title: p.title, _yoast_wpseo_metadesc: p.metaDesc }
-      });
-    } catch(e) {
-      try {
-        await wpFetch(url, user, pass, `/wp/v2/pages/${result.id}`, 'PUT', {
-          meta: { rank_math_title: p.title, rank_math_description: p.metaDesc }
-        });
-      } catch(e2) {}
-    }
-
-    res.json({ ok: true, id: result.id, slug: result.slug, isNew: !existing });
-  } catch (e) {
-    res.json({ ok: false, error: e.message });
-  }
-});
-
-// Set homepage
-app.post('/api/set-homepage', async (req, res) => {
-  try {
-    const { url, user, pass, pageId } = req.body;
-    await wpFetch(url, user, pass, '/wp/v2/settings', 'PUT', {
-      show_on_front: 'page', page_on_front: pageId
-    });
-    res.json({ ok: true });
-  } catch (e) {
-    res.json({ ok: false, error: e.message });
-  }
-});
-
-// Delete all WP pages
-app.post('/api/delete-all', async (req, res) => {
-  try {
-    const { url, user, pass } = req.body;
-    let all = [], page = 1;
-    while (true) {
-      const batch = await wpFetch(url, user, pass, `/wp/v2/pages?per_page=100&page=${page}&status=any`);
-      all = all.concat(batch);
-      if (batch.length < 100) break;
-      page++;
-    }
-    let deleted = 0;
-    for (const p of all) {
-      try {
-        await wpFetch(url, user, pass, `/wp/v2/pages/${p.id}?force=true`, 'DELETE');
-        deleted++;
-      } catch(e) {}
-    }
-    res.json({ ok: true, deleted, total: all.length });
-  } catch (e) {
-    res.json({ ok: false, error: e.message });
-  }
 });
 
 // ===== Serve Web UI =====
@@ -433,96 +265,213 @@ let wpUrl='',wpUser='',wpPass='',connected=false;
 let mediaMap={};  // filename -> wpUrl
 let parentMap={}; // slug -> wpPageId
 let results={ok:[],ko:[]};
+let allPages=[];
 
 function log(m,t=''){const d=document.createElement('div');d.className='le '+t;d.textContent=new Date().toLocaleTimeString()+' — '+m;const l=document.getElementById('log');l.appendChild(d);l.scrollTop=l.scrollHeight;}
-function creds(){return{url:wpUrl,user:wpUser,pass:wpPass};}
+
+// Appel direct à l'API WP depuis le navigateur (CORS)
+async function wpFetch(endpoint, method = 'GET', body = null) {
+  const url = wpUrl + '/wp-json' + endpoint;
+  const auth = 'Basic ' + btoa(wpUser + ':' + wpPass);
+  const opts = {
+    method,
+    headers: {
+      'Authorization': auth,
+      'Content-Type': 'application/json',
+    },
+  };
+  if (body) opts.body = JSON.stringify(body);
+
+  try {
+    const resp = await fetch(url, opts);
+    if (!resp.ok) {
+      const text = await resp.text();
+      throw new Error(\`WP \${resp.status}: \${text.substring(0, 200)}\`);
+    }
+    return await resp.json();
+  } catch (e) {
+    throw new Error(e.message);
+  }
+}
 
 async function testConn(){
-  wpUrl=document.getElementById('wpUrl').value.replace(/\\/$/,'');
+  wpUrl=document.getElementById('wpUrl').value.replace(/\/$/, '');
   wpUser=document.getElementById('wpUser').value;
   wpPass=document.getElementById('wpPass').value;
   const m=document.getElementById('connMsg');
-  m.className='msg info';m.textContent='Connexion...';
+  m.className='msg info';m.textContent='Connexion en cours...';
   try{
-    const r=await(await fetch('/api/test',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(creds())})).json();
-    if(r.ok){connected=true;m.className='msg ok';m.innerHTML='<b>Connecté !</b> '+r.name;document.getElementById('dot').classList.add('on');document.getElementById('stxt').textContent=r.name;}
-    else{m.className='msg ko';m.textContent='Erreur: '+r.error;}
-  }catch(e){m.className='msg ko';m.textContent='Erreur réseau: '+e.message;}
+    log('Connexion à '+wpUrl+'...','info');
+    const data = await wpFetch('/');
+    connected=true;
+    m.className='msg ok';
+    m.innerHTML='<b>Connecté !</b> '+data.name;
+    document.getElementById('dot').classList.add('on');
+    document.getElementById('stxt').textContent=data.name;
+    log('Connecté à '+data.name,'ok');
+  }catch(e){
+    m.className='msg ko';
+    m.textContent='Erreur: '+e.message;
+    log('Erreur connexion: '+e.message,'ko');
+  }
 }
 
 async function scanMedia(){
   if(!connected)return alert('Connectez-vous d\\'abord');
-  const m=document.getElementById('mediaMsg');const btn=document.getElementById('btnMedia');
-  m.className='msg info';m.textContent='Scan en cours...';btn.disabled=true;
+  const m=document.getElementById('mediaMsg');
+  const btn=document.getElementById('btnMedia');
+  m.className='msg info';
+  m.textContent='Scan en cours...';
+  btn.disabled=true;
+  
   try{
-    const r=await(await fetch('/api/media',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(creds())})).json();
-    if(r.ok){
-      // Build mapping: match filenames from preview to WP media URLs
-      mediaMap={};
-      for(const img of r.media){
-        const fn=img.filename.toLowerCase();
-        mediaMap[fn]=img.url;
-        // Also map without extension changes
-        mediaMap[img.filename]=img.url;
-      }
-      document.getElementById('nMedia').textContent=r.count;
-      m.className='msg ok';m.innerHTML='<b>'+r.count+' images trouvées.</b> Les URLs seront automatiquement remplacées dans le contenu.';
-      log(r.count+' images récupérées de la médiathèque WP','ok');
-    }else{m.className='msg ko';m.textContent='Erreur: '+r.error;}
-  }catch(e){m.className='msg ko';m.textContent=e.message;}
+    log('Récupération de la médiathèque...','info');
+    let all = [], page = 1;
+    while (true) {
+      const batch = await wpFetch(\`/wp/v2/media?per_page=100&page=\${page}\`);
+      if (batch.length === 0) break;
+      all = all.concat(batch.map(m => ({
+        id: m.id,
+        filename: m.source_url.split('/').pop(),
+        url: m.source_url,
+        title: m.title?.rendered || '',
+      })));
+      if (batch.length < 100) break;
+      page++;
+    }
+    
+    mediaMap = {};
+    for (const img of all) {
+      const fn = img.filename.toLowerCase();
+      mediaMap[fn] = img.url;
+      mediaMap[img.filename] = img.url;
+    }
+    
+    document.getElementById('nMedia').textContent = all.length;
+    m.className='msg ok';
+    m.innerHTML='<b>'+all.length+' images trouvées.</b> Les URLs seront automatiquement remplacées dans le contenu.';
+    log(all.length+' images récupérées de la médiathèque WP','ok');
+  }catch(e){
+    m.className='msg ko';
+    m.textContent='Erreur: '+e.message;
+    log('Erreur scan media: '+e.message,'ko');
+  }
   btn.disabled=false;
 }
 
 async function pushAll(){
   if(!connected)return alert('Connectez-vous');
   if(!confirm('Remplacer TOUT le site WordPress ?'))return;
-  const btn=document.getElementById('btnPush');btn.disabled=true;
+  const btn=document.getElementById('btnPush');
+  btn.disabled=true;
   document.getElementById('log').innerHTML='';
-  results={ok:[],ko:[]};parentMap={};
+  results={ok:[],ko:[]};
+  parentMap={};
   const status=document.getElementById('optPub').checked?'publish':'draft';
   let homeId=null;
 
   log('Démarrage du remplacement...','info');
 
-  const pages=await(await fetch('/api/pages')).json();
+  // Charger les pages du preview depuis le serveur
+  allPages = await (await fetch('/api/pages')).json();
 
-  for(let i=0;i<pages.length;i++){
-    const p=pages[i];
+  const HIDE_WP = \`
+#wpadminbar{display:none!important}
+html{margin-top:0!important}
+.site-header,#masthead,.wp-site-blocks>header:first-child,
+.site-footer,#colophon,.wp-site-blocks>footer:last-child{display:none!important}
+body,html,.site,.site-content{max-width:100%!important;width:100%!important;padding:0!important;margin:0!important}
+\`;
+
+  for(let i=0;i<allPages.length;i++){
+    const p=allPages[i];
     log('Push '+p.slug+' ('+p.title.substring(0,40)+')...');
 
     try{
-      const r=await(await fetch('/api/push',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
-        ...creds(),index:i,mediaMap,parentMap,status
-      })})).json();
+      let content = p.body;
 
-      if(r.ok){
-        log('  ✓ '+(r.isNew?'Créée':'Mise à jour')+' #'+r.id,'ok');
-        if(p.isHome)homeId=r.id;
-        if(!p.parentSlug)parentMap[p.slug]=r.id;
-        if(p.file.endsWith('index.html'))parentMap[p.slug]=r.id;
-        results.ok.push(p.slug);
-      }else{
-        log('  ✗ '+r.error,'ko');
-        results.ko.push(p.slug);
+      // Remplacer les URLs d'images
+      if (mediaMap) {
+        for (const [localPath, wpUrl2] of Object.entries(mediaMap)) {
+          content = content.split(localPath).join(wpUrl2);
+        }
       }
+
+      // Remplacer les liens internes
+      content = content.replace(/href="\/pages\/([^"]+)\.html"/g, \`href="\${wpUrl}/\$1/"\`);
+      content = content.replace(/href="\/pages\/([^"]+)\/"/g, \`href="\${wpUrl}/\$1/"\`);
+      content = content.replace(/href="\/"/g, \`href="\${wpUrl}/"\`);
+
+      // Wrapper avec styles et assets
+      const fullContent = \`<style>\${HIDE_WP}\\n\${p.styles}</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<div class="haroboz-page">\${content}</div>\`;
+
+      const parentId = p.parentSlug && parentMap?.[p.parentSlug] ? parentMap[p.parentSlug] : 0;
+      const title = p.title.split('–')[0].split('|')[0].trim();
+      const slug = p.wpSlug || 'accueil';
+
+      // Vérifier si la page existe
+      let existing = null;
+      try {
+        const ex = await wpFetch(\`/wp/v2/pages?slug=\${slug}&status=any\`);
+        if (ex.length > 0) existing = ex[0];
+      } catch(e) {}
+
+      let result;
+      if (existing) {
+        result = await wpFetch(\`/wp/v2/pages/\${existing.id}\`, 'PUT', {
+          title, content: fullContent, status: status || 'draft', parent: parentId
+        });
+      } else {
+        result = await wpFetch('/wp/v2/pages', 'POST', {
+          title, content: fullContent, slug, status: status || 'draft', parent: parentId
+        });
+      }
+
+      log('  ✓ '+(p.wpSlug?'Créée':'Mise à jour')+' #'+result.id,'ok');
+      if(p.isHome)homeId=result.id;
+      if(!p.parentSlug)parentMap[p.slug]=result.id;
+      if(p.file.endsWith('index.html'))parentMap[p.slug]=result.id;
+
+      // SEO meta
+      if (document.getElementById('optSeo').checked) {
+        try {
+          await wpFetch(\`/wp/v2/pages/\${result.id}\`, 'PUT', {
+            meta: { _yoast_wpseo_title: p.title, _yoast_wpseo_metadesc: p.metaDesc }
+          });
+        } catch(e) {
+          try {
+            await wpFetch(\`/wp/v2/pages/\${result.id}\`, 'PUT', {
+              meta: { rank_math_title: p.title, rank_math_description: p.metaDesc }
+            });
+          } catch(e2) {}
+        }
+      }
+
+      results.ok.push(p.slug);
     }catch(e){
-      log('  ✗ Réseau: '+e.message,'ko');
+      log('  ✗ '+e.message,'ko');
       results.ko.push(p.slug);
     }
 
     document.getElementById('nOk').textContent=results.ok.length;
     document.getElementById('nKo').textContent=results.ko.length;
-    document.getElementById('prog').style.width=((i+1)/pages.length*100)+'%';
-    document.getElementById('progTxt').textContent=(i+1)+'/'+pages.length+' — '+results.ok.length+' OK, '+results.ko.length+' erreurs';
+    document.getElementById('prog').style.width=((i+1)/allPages.length*100)+'%';
+    document.getElementById('progTxt').textContent=(i+1)+'/'+allPages.length+' — '+results.ok.length+' OK, '+results.ko.length+' erreurs';
   }
 
-  // Set homepage
+  // Définir la page d'accueil
   if(document.getElementById('optHome').checked&&homeId){
     log('Définition page d\\'accueil #'+homeId+'...','info');
     try{
-      const r=await(await fetch('/api/set-homepage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...creds(),pageId:homeId})})).json();
-      if(r.ok)log('Page d\\'accueil définie','ok');else log('Erreur homepage: '+r.error,'ko');
-    }catch(e){log('Erreur homepage: '+e.message,'ko');}
+      await wpFetch('/wp/v2/settings', 'PUT', {
+        show_on_front: 'page', page_on_front: homeId
+      });
+      log('Page d\\'accueil définie','ok');
+    }catch(e){
+      log('Erreur homepage: '+e.message,'ko');
+    }
   }
 
   log('');
@@ -541,14 +490,35 @@ async function deleteAll(){
   if(!confirm('SUPPRIMER toutes les pages WP ?'))return;
   if(prompt('Tapez SUPPRIMER pour confirmer')!=='SUPPRIMER')return;
   log('Suppression de toutes les pages...','warn');
-  const r=await(await fetch('/api/delete-all',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(creds())})).json();
-  if(r.ok)log(r.deleted+'/'+r.total+' pages supprimées','warn');
-  else log('Erreur: '+r.error,'ko');
+  
+  try {
+    let all = [], page = 1;
+    while (true) {
+      const batch = await wpFetch(\`/wp/v2/pages?per_page=100&page=\${page}&status=any\`);
+      if (batch.length === 0) break;
+      all = all.concat(batch);
+      page++;
+    }
+    
+    let deleted = 0;
+    for (const p of all) {
+      try {
+        await wpFetch(\`/wp/v2/pages/\${p.id}?force=true\`, 'DELETE');
+        deleted++;
+      } catch(e) {}
+    }
+    log(deleted+'/'+all.length+' pages supprimées','warn');
+  } catch(e) {
+    log('Erreur: '+e.message,'ko');
+  }
 }
 
 function exportLog(){
   const b=new Blob([document.getElementById('log').innerText],{type:'text/plain'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='haroboz-push.log';a.click();
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(b);
+  a.download='haroboz-push.log';
+  a.click();
 }
 </script>
 </body>
