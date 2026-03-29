@@ -473,7 +473,10 @@
     </div>
 
     <script>
-        lucide.createIcons();
+        function initLucide() {
+            if (window.lucide) { try { lucide.createIcons(); } catch(e) { console.warn('Lucide init error:', e); } }
+        }
+        initLucide();
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -494,15 +497,16 @@
         document.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
             btn.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('i'); content.classList.toggle('hidden'); icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'; });
         });
-        function openPopup() { const p = document.getElementById('booking-popup'); p.classList.remove('popup-hidden'); p.classList.add('popup-visible'); document.body.classList.add('overflow-hidden'); lucide.createIcons(); }
+        function openPopup() { const p = document.getElementById('booking-popup'); p.classList.remove('popup-hidden'); p.classList.add('popup-visible'); document.body.classList.add('overflow-hidden'); initLucide(); }
         function closePopup() { const p = document.getElementById('booking-popup'); p.classList.remove('popup-visible'); p.classList.add('popup-hidden'); document.body.classList.remove('overflow-hidden'); }
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
-        function handleSubmit(e) { e.preventDefault(); document.getElementById('booking-form').classList.add('hidden'); document.getElementById('popup-success').classList.remove('hidden'); lucide.createIcons(); }
+        function handleSubmit(e) { e.preventDefault(); document.getElementById('booking-form').classList.add('hidden'); document.getElementById('popup-success').classList.remove('hidden'); initLucide(); }
         const floatingCta = document.getElementById('floating-cta');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) { floatingCta.classList.remove('opacity-0','translate-y-4','pointer-events-none'); floatingCta.classList.add('opacity-100','translate-y-0','pointer-events-auto'); }
             else { floatingCta.classList.add('opacity-0','translate-y-4','pointer-events-none'); floatingCta.classList.remove('opacity-100','translate-y-0','pointer-events-auto'); }
         }, { passive: true });
+        window.addEventListener('load', initLucide);
     </script>
 </body>
 </html>

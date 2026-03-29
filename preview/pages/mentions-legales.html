@@ -247,11 +247,15 @@
     </footer>
 
     <script>
-        lucide.createIcons();
+        function initLucide() {
+            if (window.lucide) { try { lucide.createIcons(); } catch(e) { console.warn('Lucide init error:', e); } }
+        }
+        initLucide();
         const mobileMenuBtn=document.getElementById('mobile-menu-btn'),closeMenuBtn=document.getElementById('close-menu-btn'),mobileMenu=document.getElementById('mobile-menu'),overlay=document.getElementById('mobile-overlay');
         function toggleMobileMenu(){mobileMenu.classList.toggle('menu-open');overlay.classList.toggle('hidden');document.body.classList.toggle('overflow-hidden');}
         mobileMenuBtn.addEventListener('click',toggleMobileMenu);closeMenuBtn.addEventListener('click',toggleMobileMenu);overlay.addEventListener('click',toggleMobileMenu);
         document.querySelectorAll('.mobile-accordion-btn').forEach(btn=>{btn.addEventListener('click',function(){const c=this.nextElementSibling,i=this.querySelector('i');c.classList.toggle('hidden');i.style.transform=c.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';});});
+        window.addEventListener('load', initLucide);
     </script>
 </body>
 </html>

@@ -16,14 +16,13 @@ scraping/output/*.json
 # Large binary files (too big for GitHub)
 *.zip
 preview/img/
-wp-push/haroboz-images.zip
-wp-push/wp-pusher.html
-wp-push/tailwind-compiled.css
 Screenshot*.png
 screencapture-*.png
+wetransfer_*.zip
 
-# WP Push status
+# WP Push artifacts
 wp-push/push-status.json
+wp-push/tailwind-compiled.css
 
 # OMC
 .claude/

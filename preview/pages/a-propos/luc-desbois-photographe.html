@@ -216,17 +216,21 @@
     <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none"><button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light flex items-center justify-center cursor-pointer pulse-ring text-brand"><i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i><span class="hidden md:inline font-medium">Prendre RDV</span></button></div>
 
     <script>
-        lucide.createIcons();
+        function initLucide() {
+            if (window.lucide) { try { lucide.createIcons(); } catch(e) { console.warn('Lucide init error:', e); } }
+        }
+        initLucide();
         const mobileMenuBtn=document.getElementById('mobile-menu-btn'),closeMenuBtn=document.getElementById('close-menu-btn'),mobileMenu=document.getElementById('mobile-menu'),overlay=document.getElementById('mobile-overlay');
         function toggleMobileMenu(){mobileMenu.classList.toggle('menu-open');overlay.classList.toggle('hidden');document.body.classList.toggle('overflow-hidden');}
         mobileMenuBtn.addEventListener('click',toggleMobileMenu);closeMenuBtn.addEventListener('click',toggleMobileMenu);overlay.addEventListener('click',toggleMobileMenu);
         document.querySelectorAll('.mobile-accordion-btn').forEach(btn=>{btn.addEventListener('click',function(){const c=this.nextElementSibling,i=this.querySelector('i');c.classList.toggle('hidden');i.style.transform=c.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';});});
-        function openPopup(){const p=document.getElementById('booking-popup');p.classList.remove('popup-hidden');p.classList.add('popup-visible');document.body.classList.add('overflow-hidden');lucide.createIcons();}
+        function openPopup(){const p=document.getElementById('booking-popup');p.classList.remove('popup-hidden');p.classList.add('popup-visible');document.body.classList.add('overflow-hidden');initLucide();}
         function closePopup(){const p=document.getElementById('booking-popup');p.classList.remove('popup-visible');p.classList.add('popup-hidden');document.body.classList.remove('overflow-hidden');}
         document.addEventListener('keydown',e=>{if(e.key==='Escape')closePopup();});
-        function handleSubmit(e){e.preventDefault();document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');lucide.createIcons();}
+        function handleSubmit(e){e.preventDefault();document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');initLucide();}
         const floatingCta=document.getElementById('floating-cta');
         window.addEventListener('scroll',()=>{if(window.scrollY>400){floatingCta.classList.remove('opacity-0','translate-y-4','pointer-events-none');floatingCta.classList.add('opacity-100','translate-y-0','pointer-events-auto');}else{floatingCta.classList.add('opacity-0','translate-y-4','pointer-events-none');floatingCta.classList.remove('opacity-100','translate-y-0','pointer-events-auto');}},{passive:true});
+        window.addEventListener('load', initLucide);
     </script>
 </body>
 </html>

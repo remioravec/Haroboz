@@ -1331,8 +1331,11 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Initialiser les icônes Lucide
-        lucide.createIcons();
+        // Initialiser les icônes Lucide (protégé si CDN pas chargé)
+        function initLucide() {
+            if (window.lucide) { try { lucide.createIcons(); } catch(e) { console.warn('Lucide init error:', e); } }
+        }
+        initLucide();
 
         // Gestion du menu mobile
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -1364,7 +1367,7 @@
                 content.style.maxHeight = content.scrollHeight + 'px';
                 chevron.style.transform = 'rotate(180deg)';
                 // Re-init lucide icons inside the newly revealed content
-                setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 50);
+                setTimeout(initLucide, 50);
             }
         }
 
@@ -1403,7 +1406,7 @@
             popup.classList.add('popup-visible');
             document.body.classList.add('overflow-hidden');
             // Re-init Lucide pour les nouvelles icones du popup
-            lucide.createIcons();
+            initLucide();
         }
 
         function closePopup() {
@@ -1423,7 +1426,7 @@
             e.preventDefault();
             document.getElementById('booking-form').classList.add('hidden');
             document.getElementById('popup-success').classList.remove('hidden');
-            lucide.createIcons();
+            initLucide();
         }
 
         // Header transparent → white on scroll
@@ -1488,6 +1491,9 @@
                 }
             });
         });
+
+        // Fallback: re-init Lucide icons once everything is loaded
+        window.addEventListener('load', initLucide);
     </script>
 </body>
 </html>
