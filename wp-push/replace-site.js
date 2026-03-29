@@ -24,7 +24,7 @@ const path    = require('path');
 const app         = express();
 const PREVIEW_DIR = path.join(__dirname, '..', 'preview');
 const CORS_FILE   = path.join(__dirname, 'haroboz-cors.php');
-const PORT        = 4000;
+const PORT        = process.env.PORT || 4000;
 
 app.use(express.json({ limit: '50mb' }));
 
@@ -956,18 +956,19 @@ function extractBody(rawHtml) {
  */
 function extractStyles(rawHtml) {
   const blocks = [];
-  const re = /<style[^>]*>([\\s\\S]*?)<\\/style>/gi;
+  const re = new RegExp('<style[^>]*>([\\\\s\\\\S]*?)</sty' + 'le>', 'gi');
   let m;
   while ((m = re.exec(rawHtml)) !== null) blocks.push(m[1]);
   return blocks.join('\\n');
 }
 
 /**
- * Extract all inline <script> blocks (no src=, not tailwind.config).
+ * Extract all inline script blocks (no src=, not tailwind.config).
  */
 function extractScripts(rawHtml) {
   const blocks = [];
-  const re = /<script(?![^>]*\\bsrc=)[^>]*>([\\s\\S]*?)<\\/script>/gi;
+  const tag = 'scr' + 'ipt';
+  const re = new RegExp('<' + tag + '(?![^>]*\\\\bsrc=)[^>]*>([\\\\s\\\\S]*?)</' + tag + '>', 'gi');
   let m;
   while ((m = re.exec(rawHtml)) !== null) {
     const content = m[1].trim();
@@ -995,8 +996,7 @@ function buildWpContent(page, siteUrl, mMap) {
   const pageStyles  = extractStyles(html);
   const pageScripts = extractScripts(html);
 
-  // 4. Assemble WP content wrapper
-  //    Note: <\/script> escaping prevents early string termination
+  // 4. Assemble WP content wrapper (split tags to avoid closing parent script)
   const fullContent =
     '<scr' + 'ipt src="https://cdn.tailwindcss.com"></scr' + 'ipt>\\n' +
     '<scr' + 'ipt>\\n' +
