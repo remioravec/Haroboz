@@ -63,19 +63,34 @@ tailwind.config = {
 <script src="https://unpkg.com/lucide@latest"></script>
 <!-- Haroboz: Hide WP theme -->
 <style>
+/* Reset WP chrome */
 #wpadminbar { display: none !important }
 html { margin-top: 0 !important }
-.site-header, #masthead, .wp-site-blocks > header:first-child,
-.site-footer, #colophon, .wp-site-blocks > footer:last-child,
+
+/* Hide ALL theme header/footer/sidebar — covers classic + block + FSE themes */
+.site-header, #masthead, header#masthead,
+.wp-site-blocks > header, .wp-site-blocks > header:first-child,
+header.wp-block-template-part,
+.main-navigation, #site-navigation, .primary-navigation,
+nav.wp-block-navigation, .wp-block-navigation,
+#site-header, .ast-header, .genesis-header,
+.site-footer, #colophon, footer#colophon,
+.wp-site-blocks > footer, .wp-site-blocks > footer:last-child,
+footer.wp-block-template-part,
 .sidebar, .widget-area, #secondary,
 .entry-header, .page-header, .entry-footer,
 .post-navigation, .nav-links, .entry-meta,
 .cat-links, .tags-links, .edit-link,
 .comments-area, #comments,
-.wp-block-template-part { display: none !important }
+.wp-block-template-part,
+.page-title, .wp-block-post-title { display: none !important }
+
+/* Full-width everything */
 body, html, .site, .site-content, .content-area, .site-main,
 .entry-content, .page-content, .wp-site-blocks,
-.wp-block-post-content, .has-global-padding {
+.wp-block-post-content, .has-global-padding,
+.wp-block-group, .alignfull, .alignwide,
+article, .type-page, .hentry {
   max-width: 100% !important; width: 100% !important;
   padding: 0 !important; margin: 0 !important;
 }
@@ -83,6 +98,8 @@ body, html, .site, .site-content, .content-area, .site-main,
   max-width: 100% !important;
   margin-left: 0 !important; margin-right: 0 !important;
 }
+
+/* Our content takes over */
 .haroboz-page {
   position: relative; z-index: 10;
   font-family: 'Inter', sans-serif;

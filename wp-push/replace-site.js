@@ -897,21 +897,27 @@ function rewriteLinks(html, siteUrl) {
 function rewriteImages(html, mMap) {
   if (!mMap || Object.keys(mMap).length === 0) return html;
 
-  // src="/img/…"
-  html = html.replace(/src="\\/img\\/([^"]+)"/g, (match, filename) => {
-    const wpUrl = mMap[filename] || mMap[filename.toLowerCase()];
+  // Helper: match by basename (last segment of path)
+  function findInMap(fullPath) {
+    var basename = fullPath.split('/').pop();
+    return mMap[basename] || mMap[basename.toLowerCase()] || mMap[fullPath] || mMap[fullPath.toLowerCase()];
+  }
+
+  // src="/img/…" (handles subdirs like /img/wetransfer/file.png)
+  html = html.replace(/src="\\/img\\/([^"]+)"/g, function(match, p) {
+    var wpUrl = findInMap(p);
     return wpUrl ? 'src="' + wpUrl + '"' : match;
   });
 
   // background-image: url(/img/…)
-  html = html.replace(/url\\(\\/img\\/([^)]+)\\)/g, (match, filename) => {
-    const wpUrl = mMap[filename] || mMap[filename.toLowerCase()];
+  html = html.replace(/url\\(\\/img\\/([^)]+)\\)/g, function(match, p) {
+    var wpUrl = findInMap(p);
     return wpUrl ? 'url(' + wpUrl + ')' : match;
   });
 
   // srcset="/img/…"
-  html = html.replace(/srcset="\\/img\\/([^"]+)"/g, (match, filename) => {
-    const wpUrl = mMap[filename] || mMap[filename.toLowerCase()];
+  html = html.replace(/srcset="\\/img\\/([^"]+)"/g, function(match, p) {
+    var wpUrl = findInMap(p);
     return wpUrl ? 'srcset="' + wpUrl + '"' : match;
   });
 
