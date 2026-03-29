@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooting Photo Mandelieu – Art Nu Masculin | Haroboz</title>
+    <meta name="description" content="Shooting photo nu masculin à Mandelieu-la-Napoule. Séance artistique entre Château de la Napoule, plages de la Rague et Estérel. Tirage d'art par Luc Desbois.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#0a1a3a', light: '#122a5c', 50: '#e8edf5' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .mega-menu-content { visibility: hidden; opacity: 0; transform: translateY(10px); transition: all 0.3s ease-in-out; }
+        .mega-menu-item:hover .mega-menu-content { visibility: visible; opacity: 1; transform: translateY(0); pointer-events: auto; }
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        .menu-open { transform: translateX(0) !important; }
+        #booking-popup { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        #booking-popup.popup-hidden { opacity: 0; visibility: hidden; }
+        #booking-popup.popup-visible { opacity: 1; visibility: visible; }
+        #popup-content { transition: transform 0.3s ease, opacity 0.3s ease; }
+        #booking-popup.popup-hidden #popup-content { transform: scale(0.95) translateY(20px); opacity: 0; }
+        #booking-popup.popup-visible #popup-content { transform: scale(1) translateY(0); opacity: 1; }
+        @keyframes pulse-ring { 0% { transform: scale(1); opacity: 1; } 80%, 100% { transform: scale(1.4); opacity: 0; } }
+        .pulse-ring::before { content: ''; position: absolute; inset: -4px; border-radius: 9999px; border: 2px solid currentColor; animation: pulse-ring 2s ease-out infinite; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-brand antialiased">
+
+    <!-- HEADER -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0"><a href="/" class="font-serif text-2xl lg:text-3xl font-bold tracking-tight text-brand">HAROBOZ</a></div>
+                <nav class="hidden lg:flex space-x-8 h-full items-center">
+                    <div class="mega-menu-item relative h-full flex items-center"><button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">Nos Séances <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button><div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-white shadow-xl rounded-b-lg border-t border-gray-100"><div class="py-2"><a href="/pages/packs-shooting/portrait-studio-cannes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Portrait en Studio</a><a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Shooting en Extérieur</a><a href="/pages/packs-shooting/photo-domicile.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Photo à Domicile</a><a href="/pages/packs-shooting/shooting-duo-couple.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Shooting Duo &amp; Couple</a></div></div></div>
+                    <div class="mega-menu-item relative h-full flex items-center"><button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">Votre Objectif <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button><div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-80 bg-white shadow-xl rounded-b-lg border-t border-gray-100"><div class="py-2"><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Confiance &amp; Acceptation</a><a href="/pages/votre-experience/book-modele-professionnel.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Book Professionnel</a><a href="/pages/votre-experience/cadeau-couple-original.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Immortaliser son Couple</a><a href="/pages/votre-experience/premier-shooting-nu.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Cadeau &amp; Célébration</a></div></div></div>
+                    <div class="mega-menu-item relative h-full flex items-center"><button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">Côte d'Azur <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button><div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-48 bg-white shadow-xl rounded-b-lg border-t border-gray-100"><div class="py-2"><a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Cannes</a><a href="/pages/photographe-cote-azur/photographe-nice.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Nice</a><a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Antibes</a><a href="/pages/photographe-cote-azur/photographe-mougins.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Mougins</a><a href="/pages/photographe-cote-azur/shooting-mandelieu.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Mandelieu</a></div></div></div>
+                    <a href="/pages/portfolio/" class="text-sm font-medium hover:text-brand-light transition-colors">Réalisations</a>
+                    <a href="/pages/a-propos/" class="text-sm font-medium hover:text-brand-light transition-colors">L'Univers</a>
+                </nav>
+                <div class="hidden lg:flex items-center"><button onclick="openPopup()" class="bg-brand text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brand-light shadow-md flex items-center cursor-pointer"><i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Prendre RDV gratuit</button></div>
+                <div class="flex items-center lg:hidden"><button id="mobile-menu-btn" class="text-brand hover:text-brand-light p-2"><i data-lucide="menu" class="w-7 h-7"></i></button></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8"><span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span><button id="close-menu-btn" class="text-gray-500 hover:text-brand"><i data-lucide="x" class="w-7 h-7"></i></button></div>
+            <nav class="space-y-2">
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/pages/packs-shooting/portrait-studio-cannes.html" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a><a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a><a href="/pages/packs-shooting/photo-domicile.html" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a><a href="/pages/packs-shooting/shooting-duo-couple.html" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a><a href="/pages/votre-experience/book-modele-professionnel.html" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a><a href="/pages/votre-experience/cadeau-couple-original.html" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a><a href="/pages/votre-experience/premier-shooting-nu.html" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; Célébration</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Côte d'Azur <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="block text-sm text-gray-600 hover:text-brand">Cannes</a><a href="/pages/photographe-cote-azur/photographe-nice.html" class="block text-sm text-gray-600 hover:text-brand">Nice</a><a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="block text-sm text-gray-600 hover:text-brand">Antibes</a><a href="/pages/photographe-cote-azur/photographe-mougins.html" class="block text-sm text-gray-600 hover:text-brand">Mougins</a>
+                        <a href="/pages/photographe-cote-azur/shooting-mandelieu.html" class="block text-sm text-gray-600 hover:text-brand">Mandelieu</a></div></div>
+                <div class="border-b border-gray-100 py-3"><a href="/pages/portfolio/" class="block font-medium text-brand">Réalisations</a></div>
+                <div class="border-b border-gray-100 py-3"><a href="/pages/a-propos/" class="block font-medium text-brand">L'Univers</a></div>
+            </nav>
+            <div class="mt-8"><button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl font-medium hover:bg-brand-light shadow-md flex justify-center items-center cursor-pointer"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit</button></div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden"></div>
+
+    <main class="w-full">
+        <!-- PAGE HERO -->
+        <section class="bg-brand pt-28 lg:pt-32 pb-12 lg:pb-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/3 translate-x-1/4 w-96 h-96 bg-brand-light rounded-full opacity-30 blur-3xl"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <nav class="text-sm text-white/60 mb-6" aria-label="Fil d'Ariane">
+                    <a href="/" class="hover:text-white">Accueil</a> <span class="mx-2">&rsaquo;</span> <a href="/pages/photographe-cote-azur/" class="hover:text-white">Photographe Côte d'Azur</a> <span class="mx-2">&rsaquo;</span> <span class="text-white/90">Mandelieu</span>
+                </nav>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Shooting Photo Nu Masculin à Mandelieu-la-Napoule</h1>
+                <p class="text-white/70 text-base md:text-lg max-w-2xl">Mandelieu-la-Napoule, entre les roches rouges de l'Estérel et les eaux turquoise de la Méditerranée, offre un cadre photographique d'exception. Le Château de la Napoule, les plages de sable fin de la Rague et les sentiers du massif de l'Estérel constituent des décors naturels d'une beauté saisissante pour vos portraits d'art.</p>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT — Section 1 -->
+
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Le Château de la Napoule : un écrin artistique</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Édifié sur les fondations d'une forteresse médiévale et restauré au début du XX<sup>e</sup> siècle par le sculpteur américain Henry Clews, le Château de la Napoule incarne une vision singulière de l'art et de la beauté. Ses jardins méditerranéens, ses cours intérieures ornées de sculptures et ses terrasses surplombant la baie offrent un cadre incomparable pour la photographie d'art. C'est dans cet héritage artistique que <a href="/pages/photographe-cote-azur/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Haroboz, photographe Côte d'Azur</a>, puise une inspiration rare.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Le contraste entre la pierre médiévale patinée par les siècles et la lumière méditerranéenne qui inonde les terrasses crée des jeux d'ombre et de clarté d'une intensité remarquable. Les arcades du château cadrent naturellement le sujet, tandis que l'arrière-plan de la baie de Cannes apporte une profondeur cinématographique à chaque prise de vue. Luc Desbois exploite cette architecture avec la précision d'un directeur artistique, transformant chaque angle en tableau vivant.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Les jardins du château, classés Jardin Remarquable, mêlent cyprès, bougainvilliers et essences méditerranéennes dans une composition végétale où chaque sentier révèle un nouveau décor. La fontaine centrale, les pergolas couvertes de glycine et les escaliers de pierre offrent autant de mises en scène naturelles pour des portraits d'art empreints de noblesse et de sérénité. La confidentialité du lieu, accessible sur réservation, garantit une intimité totale pendant votre séance.</p>
+
+
+                    </div>
+                    <div>
+                        <img src="../../img/photos/Photoroom_20260207_135734.png" alt="Haroboz — Shooting photo d'art à Mandelieu-la-Napoule, Château de la Napoule" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-8 bg-brand-50 border-y border-brand/10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-brand font-serif text-lg md:text-xl text-center sm:text-left">Envie de vivre cette expérience ?</p>
+                <button onclick="openPopup()" class="bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand-light transition-colors shadow-md flex items-center cursor-pointer whitespace-nowrap">
+                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Prendre RDV gratuit
+                </button>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT — Section 2 -->
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="../../img/wetransfer/Photoroom_20250412_182926.png" alt="Haroboz — Photographie d'art masculine, massif de l'Estérel et plages de la Rague" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">L'Estérel et la Rague : des décors à couper le souffle</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Le massif de l'Estérel est un joyau géologique unique en France. Ses roches de porphyre rouge, sculptées par des millions d'années d'érosion, plongent dans une mer d'un bleu profond pour créer des paysages d'une beauté presque irréelle. Luc connaît les sentiers discrets, les criques accessibles uniquement à pied et les promontoires rocheux qui offrent des panoramas vertigineux sur la Méditerranée. Ces lieux, à l'écart des circuits touristiques, garantissent une intimité absolue pour votre séance.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">La golden hour sur les roches de porphyre est un spectacle que seul l'Estérel peut offrir. Lorsque le soleil descend vers l'horizon, la pierre rouge s'embrase d'une lumière cuivrée qui enveloppe le corps d'une chaleur visuelle incomparable. Le contraste entre la roche ocre-rouge et le bleu intense de la mer crée des compositions photographiques d'une puissance chromatique rare, idéale pour des portraits qui transcendent le simple cliché.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Les plages de la Rague, nichées entre le port et les premières falaises de l'Estérel, offrent une alternative plus douce. Le sable fin, les pins parasols et la vue sur les îles de Lérins composent un décor méditerranéen d'une élégance naturelle. Votre expérience comprend l'entretien préalable confidentiel, la direction artistique complète, le coaching de pose bienveillant et un <a href="/pages/boutique/tirages-art-edition-limitee.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">tirage d'art signé</a>. Pour compléter l'expérience, notre <a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">studio cannois</a> se trouve à seulement dix minutes.</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RÉALISATIONS — Mini galerie -->
+        <section class="py-12 md:py-16 bg-gray-50 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold tracking-widest text-gray-400 uppercase block mb-2">Réalisations</span>
+                    <h3 class="text-2xl md:text-3xl font-serif text-brand">Un aperçu de nos créations</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="../../img/wetransfer/IMG_3779.png" alt="Réalisation Haroboz — Portrait d'art masculin" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="../../img/wetransfer/Photoroom_20250330_104731.png" alt="Réalisation Haroboz — Shooting nu artistique" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="../../img/wetransfer/Photoroom_20250405_115755.png" alt="Réalisation Haroboz — Photographie masculine Côte d'Azur" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                    <img src="../../img/wetransfer/Photoroom_20250430_230742.png" alt="Réalisation Haroboz — Art corporel masculin" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                </div>
+                <div class="text-center mt-8">
+                    <a href="/pages/portfolio/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                        <span>Voir toutes les <span class="underline underline-offset-4">réalisations</span></span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIEUX DE SHOOTING -->
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Mandelieu et la Côte d'Azur : nos lieux de shooting</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">La Riviera offre une palette infinie de décors pour votre séance. Au-delà de Mandelieu-la-Napoule, explorez nos autres lieux d'intervention sur la Côte d'Azur :</p>
+
+                <ul class="space-y-3 my-6">
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i><span><a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Photographe homme nu à Cannes</a> &mdash; Studio privé et glamour de la Croisette</span></li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i><span><a href="/pages/photographe-cote-azur/photographe-nice.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Photographe nu masculin à Nice</a> &mdash; Lumière des peintres et Baie des Anges</span></li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i><span><a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Shooting couple à Antibes</a> &mdash; Remparts, Cap et pinèdes méditerranéennes</span></li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i><span><a href="/pages/photographe-cote-azur/photographe-mougins.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Photographe à Mougins</a> &mdash; Village d'art et <span class="underline underline-offset-4">arrière-pays mouginois</span></span></li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- TIRAGES D'ART — Mise en avant -->
+        <section class="py-14 md:py-20 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-brand/60 uppercase block mb-3">Inclus dans chaque pack</span>
+                        <h3 class="text-2xl md:text-3xl font-serif text-brand mb-4">Votre tirage d'art Fine Art</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Chaque séance Haroboz aboutit à une oeuvre tangible : un tirage d'art signé et numéroté, imprimé sur papier Hahnemühle avec des encres pigmentaires de qualité muséale. Ce n'est pas un simple fichier numérique &mdash; c'est un objet d'art que vous conserverez toute votre vie.</p>
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="printer" class="w-4 h-4 text-brand"></i>
+                                <span>Papier Fine Art Hahnemühle</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="pen-tool" class="w-4 h-4 text-brand"></i>
+                                <span>Signé & numéroté</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-brand"></i>
+                                <span>Édition limitée</span>
+                            </div>
+                        </div>
+                        <a href="/pages/boutique/tirages-art-edition-limitee.html" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                            <span>Découvrir nos tirages d'art</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <img src="../../img/photos/IMG_5047.png" alt="Tirage d'art Fine Art encadré" class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg" loading="lazy">
+                        <img src="../../img/photos/IMG_5963.png" alt="Galerie de tirages d'art" class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg mt-6" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-12 lg:py-16 bg-gray-50" itemscope itemtype="https://schema.org/FAQPage">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-8 text-center">Questions fréquentes &mdash; Shooting à Mandelieu</h2>
+                <div class="space-y-3">
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Comment se rendre à Mandelieu pour la séance ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Mandelieu-la-Napoule est située à seulement 10 minutes de Cannes par la voie rapide, et à 30 minutes de l'aéroport de Nice. Luc peut également se déplacer à votre hôtel ou dans tout lieu privé de votre choix sur la commune et ses environs. La logistique est entièrement prise en charge pour que vous n'ayez qu'à profiter de l'expérience.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Les séances en extérieur dans l'Estérel sont-elles accessibles ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Oui, Luc sélectionne avec soin des sentiers accessibles et des criques privées adaptés à chaque niveau de condition physique. Les lieux de shooting sont repérés en amont, et toute la logistique &mdash; accès, matériel, timing &mdash; est entièrement prise en charge. Vous n'avez qu'à vous laisser guider dans ce décor exceptionnel.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Peut-on combiner Mandelieu et Cannes dans la même journée ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Absolument, et c'est une formule très prisée. Profitez de la lumière matinale en extérieur à Mandelieu &mdash; sur les roches de l'Estérel ou dans les jardins du Château &mdash; puis enchaînez avec une séance en studio à Cannes l'après-midi. Deux ambiances, deux univers visuels, pour un résultat d'une richesse incomparable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-brand py-16 lg:py-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-96 h-96 bg-brand-light rounded-full opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-96 h-96 bg-[#3a00a8] rounded-full opacity-50 blur-3xl"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Votre shooting d'art à Mandelieu</h2>
+                <p class="text-brand-50 text-base md:text-lg mb-8 max-w-2xl mx-auto">Château de la Napoule, Estérel, direction artistique et tirage signé inclus</p>
+                <button onclick="openPopup()" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 shadow-xl flex items-center justify-center cursor-pointer mx-auto"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Être rappelé sous 24h</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand text-white border-t border-brand-light/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+                <div><h4 class="font-serif text-lg font-bold mb-4">Nos Packs</h4><ul class="space-y-2"><li><a href="/pages/packs-shooting/portrait-studio-cannes.html" class="text-sm text-gray-300 hover:text-white">Portrait Studio</a></li><li><a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="text-sm text-gray-300 hover:text-white">Shooting Extérieur</a></li><li><a href="/pages/packs-shooting/shooting-duo-couple.html" class="text-sm text-gray-300 hover:text-white">Duo &amp; Couple</a></li><li><a href="/pages/packs-shooting/photo-domicile.html" class="text-sm text-gray-300 hover:text-white">Photo à Domicile</a></li></ul></div>
+                <div><h4 class="font-serif text-lg font-bold mb-4">Côte d'Azur</h4><ul class="space-y-2"><li><a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="text-sm text-gray-300 hover:text-white">Cannes</a></li><li><a href="/pages/photographe-cote-azur/photographe-nice.html" class="text-sm text-gray-300 hover:text-white">Nice</a></li><li><a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="text-sm text-gray-300 hover:text-white">Antibes</a></li><li><a href="/pages/photographe-cote-azur/photographe-mougins.html" class="text-sm text-gray-300 hover:text-white">Mougins</a></li><li><a href="/pages/photographe-cote-azur/shooting-mandelieu.html" class="text-sm text-gray-300 hover:text-white">Mandelieu</a></li></ul></div>
+                <div><h4 class="font-serif text-lg font-bold mb-4">Expérience</h4><ul class="space-y-2"><li><a href="/pages/votre-experience/premier-shooting-nu.html" class="text-sm text-gray-300 hover:text-white">Premier Shooting</a></li><li><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="text-sm text-gray-300 hover:text-white">Retrouver Confiance</a></li><li><a href="/pages/votre-experience/book-modele-professionnel.html" class="text-sm text-gray-300 hover:text-white">Book Modèle Pro</a></li><li><a href="/pages/portfolio/temoignages-clients.html" class="text-sm text-gray-300 hover:text-white">Témoignages</a></li></ul></div>
+                <div><h4 class="font-serif text-lg font-bold mb-4">Haroboz</h4><ul class="space-y-2"><li><a href="/pages/a-propos/" class="text-sm text-gray-300 hover:text-white">À Propos</a></li><li><a href="/pages/portfolio/" class="text-sm text-gray-300 hover:text-white">Réalisations</a></li><li><a href="/pages/contact.html" class="text-sm text-gray-300 hover:text-white">Contact</a></li><li><a href="/pages/mentions-legales.html" class="text-sm text-gray-300 hover:text-white">Mentions légales</a></li></ul></div>
+            </div>
+            <div class="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">&copy; 2026 Haroboz &mdash; Luc Desbois | Photographe Nu Masculin | Cannes, Côte d'Azur</p>
+                <div class="flex items-center gap-4"><a href="https://www.instagram.com/hbozart/" target="_blank" class="text-gray-400 hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a><a href="/pages/mentions-legales.html" class="text-sm text-gray-400 hover:text-white">Mentions légales</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP -->
+    <div id="booking-popup" class="fixed inset-0 z-[100] flex items-center justify-center p-4 popup-hidden">
+        <div class="absolute inset-0 bg-brand/60 backdrop-blur-sm" onclick="closePopup()"></div>
+        <div id="popup-content" class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+            <div class="bg-brand rounded-t-2xl p-6 text-center relative"><button onclick="closePopup()" class="absolute top-4 right-4 text-white/70 hover:text-white cursor-pointer"><i data-lucide="x" class="w-6 h-6"></i></button><h3 class="text-xl font-serif text-white font-bold">Réservez votre séance</h3><p class="text-white/70 text-sm mt-1">Réponse confidentielle sous 24h</p></div>
+            <form id="booking-form" class="p-6" onsubmit="handleSubmit(event)">
+                <div class="space-y-4">
+                    <div><label class="block text-sm font-medium text-brand mb-1">Prénom *</label><input type="text" required placeholder="Votre prénom" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand"></div>
+                    <div><label class="block text-sm font-medium text-brand mb-1">Email *</label><input type="email" required placeholder="votre@email.com" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand"></div>
+                    <div><label class="block text-sm font-medium text-brand mb-1">Téléphone *</label><input type="tel" required placeholder="06 XX XX XX XX" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand"></div>
+                    <div><label class="block text-sm font-medium text-brand mb-1">Message</label><textarea rows="3" placeholder="Parlez-moi de votre projet..." class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand resize-none"></textarea></div>
+                </div>
+                <button type="submit" class="w-full mt-6 bg-brand text-white py-4 rounded-xl font-bold hover:bg-brand-light shadow-lg flex items-center justify-center cursor-pointer"><i data-lucide="send" class="w-5 h-5 mr-2"></i> Envoyer ma demande</button>
+                <p class="text-center text-xs text-gray-400 mt-3"><i data-lucide="lock" class="w-3 h-3 inline"></i> 100% confidentiel</p>
+            </form>
+            <div id="popup-success" class="hidden p-8 text-center"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="check-circle" class="w-8 h-8 text-green-600"></i></div><h3 class="text-2xl font-serif text-brand mb-2">Demande envoyée !</h3><p class="text-gray-600 mb-6">Je vous recontacte sous 24h.</p><button onclick="closePopup()" class="bg-brand text-white px-6 py-3 rounded-xl font-medium hover:bg-brand-light cursor-pointer">Fermer</button></div>
+        </div>
+    </div>
+
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light flex items-center justify-center cursor-pointer pulse-ring text-brand"><i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i><span class="hidden md:inline font-medium">Prendre RDV</span></button>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const mobileMenuBtn=document.getElementById('mobile-menu-btn'),closeMenuBtn=document.getElementById('close-menu-btn'),mobileMenu=document.getElementById('mobile-menu'),overlay=document.getElementById('mobile-overlay');
+        function toggleFaq(btn){const card=btn.closest('.faq-card'),content=card.querySelector('.faq-content'),chevron=card.querySelector('.faq-chevron'),isOpen=content.style.maxHeight&&content.style.maxHeight!=='0px';document.querySelectorAll('.faq-card').forEach(c=>{if(c!==card){c.querySelector('.faq-content').style.maxHeight='0px';c.querySelector('.faq-chevron').style.transform='rotate(0deg)';}});if(isOpen){content.style.maxHeight='0px';chevron.style.transform='rotate(0deg)';}else{content.style.maxHeight=content.scrollHeight+'px';chevron.style.transform='rotate(180deg)';}}
+        function toggleMobileMenu(){mobileMenu.classList.toggle('menu-open');overlay.classList.toggle('hidden');document.body.classList.toggle('overflow-hidden');}
+        mobileMenuBtn.addEventListener('click',toggleMobileMenu);closeMenuBtn.addEventListener('click',toggleMobileMenu);overlay.addEventListener('click',toggleMobileMenu);
+        document.querySelectorAll('.mobile-accordion-btn').forEach(btn=>{btn.addEventListener('click',function(){const c=this.nextElementSibling,i=this.querySelector('i');c.classList.toggle('hidden');i.style.transform=c.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';});});
+        function openPopup(){const p=document.getElementById('booking-popup');p.classList.remove('popup-hidden');p.classList.add('popup-visible');document.body.classList.add('overflow-hidden');lucide.createIcons();}
+        function closePopup(){const p=document.getElementById('booking-popup');p.classList.remove('popup-visible');p.classList.add('popup-hidden');document.body.classList.remove('overflow-hidden');}
+        document.addEventListener('keydown',e=>{if(e.key==='Escape')closePopup();});
+        function handleSubmit(e){e.preventDefault();document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');lucide.createIcons();}
+        const floatingCta=document.getElementById('floating-cta');
+        window.addEventListener('scroll',()=>{if(window.scrollY>400){floatingCta.classList.remove('opacity-0','translate-y-4','pointer-events-none');floatingCta.classList.add('opacity-100','translate-y-0','pointer-events-auto');}else{floatingCta.classList.add('opacity-0','translate-y-4','pointer-events-none');floatingCta.classList.remove('opacity-100','translate-y-0','pointer-events-auto');}},{passive:true});
+    </script>
+</body>
+</html>

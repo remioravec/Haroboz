@@ -1,0 +1,17 @@
+{
+  "_comment": "FORMAT ATTENDU pour chaque page dans content/pages/. Le champ 'content' contient le HTML des sections <main> (sans header/footer — ajoutés par le build).",
+  "title": "Photographe Nu Homme Cannes — Pack Shooting Privé",
+  "slug": "photographe-homme-nu-cannes",
+  "meta_title": "Photographe Homme Nu Cannes – Pack Privé | Luc Desbois",
+  "meta_description": "Shooting photo nu masculin à Cannes. Pack complet : séance + tirages d'art. Confidentialité absolue. Réservez votre expérience.",
+  "silo": "Silo 3 — Localité",
+  "role": "fille",
+  "page_mere": "/photographe-cote-azur/",
+  "content": "\n    <section class=\"hrb-hero\" style=\"background-image: url('https://haroboz.com/wp-content/uploads/cannes-hero.jpg');\">\n      <div class=\"hrb-hero__content\">\n        <h1>Photographe Homme Nu à Cannes : Votre Shooting Privé sur la Côte d'Azur</h1>\n        <p class=\"hrb-hero__subtitle\">Une expérience photographique libératrice, en toute confidentialité.</p>\n        <a href=\"#contact\" class=\"hrb-btn\">Réservez Votre Expérience</a>\n      </div>\n    </section>\n\n    <section class=\"hrb-section\">\n      <h2>Pourquoi Choisir Cannes pour Votre Shooting</h2>\n      <p>Votre <a href=\"/photographe-cote-azur/\">photographe sur toute la Côte d'Azur</a>, Luc Desbois, vous accueille à Cannes pour une séance personnalisée...</p>\n    </section>\n\n    <section class=\"hrb-section hrb-section--dark\">\n      <h2>Le Déroulement de Votre Séance</h2>\n      <p>Chaque <a href=\"/packs-shooting/portrait-studio-cannes/\">pack portrait studio</a> inclut...</p>\n    </section>\n\n    <section class=\"hrb-section hrb-faq\" itemscope itemtype=\"https://schema.org/FAQPage\">\n      <h2>Questions Fréquentes</h2>\n      <div class=\"hrb-faq__item\" itemscope itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n        <h3 itemprop=\"name\">Le shooting est-il confidentiel ?</h3>\n        <div itemscope itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\">\n          <p itemprop=\"text\">Oui. Toutes vos photos sont accessibles uniquement via votre galerie privée sécurisée.</p>\n        </div>\n      </div>\n    </section>\n\n    <section class=\"hrb-cta\">\n      <h2>Prêt à Vous Lancer ?</h2>\n      <p>Découvrez les <a href=\"/portfolio/temoignages-clients/\">témoignages de nos clients</a>.</p>\n      <a href=\"#contact\" class=\"hrb-btn\">Prendre Rendez-Vous</a>\n    </section>",
+  "maillage_sortant": [
+    { "type": "mere", "url": "/photographe-cote-azur/", "ancre": "photographe sur toute la Côte d'Azur" },
+    { "type": "soeur", "url": "/photographe-cote-azur/shooting-couple-antibes/", "ancre": "séance couple à Antibes" },
+    { "type": "inter-silo", "url": "/packs-shooting/portrait-studio-cannes/", "ancre": "pack portrait studio" },
+    { "type": "inter-silo", "url": "/portfolio/temoignages-clients/", "ancre": "témoignages de nos clients" }
+  ]
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Couples – Shooting Photo Duo Intime | Haroboz</title>
+    <meta name="description" content="Galerie photo couples : shooting duo intime et artistique à Cannes. Immortalisez votre complicité avec Haroboz, photographe spécialiste sur la Côte d'Azur.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#0a1a3a', light: '#122a5c', 50: '#e8edf5' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .mega-menu-content { visibility: hidden; opacity: 0; transform: translateY(10px); transition: all 0.3s ease-in-out; }
+        .mega-menu-item:hover .mega-menu-content { visibility: visible; opacity: 1; transform: translateY(0); pointer-events: auto; }
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        .menu-open { transform: translateX(0) !important; }
+        #booking-popup { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        #booking-popup.popup-hidden { opacity: 0; visibility: hidden; }
+        #booking-popup.popup-visible { opacity: 1; visibility: visible; }
+        #popup-content { transition: transform 0.3s ease, opacity 0.3s ease; }
+        #booking-popup.popup-hidden #popup-content { transform: scale(0.95) translateY(20px); opacity: 0; }
+        #booking-popup.popup-visible #popup-content { transform: scale(1) translateY(0); opacity: 1; }
+        @keyframes pulse-ring { 0% { transform: scale(1); opacity: 1; } 80%, 100% { transform: scale(1.4); opacity: 0; } }
+        .pulse-ring::before { content: ''; position: absolute; inset: -4px; border-radius: 9999px; border: 2px solid currentColor; animation: pulse-ring 2s ease-out infinite; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-brand antialiased">
+
+    <!-- HEADER -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0"><a href="/" class="font-serif text-2xl lg:text-3xl font-bold tracking-tight text-brand">HAROBOZ</a></div>
+                <nav class="hidden lg:flex space-x-8 h-full items-center">
+                    <div class="mega-menu-item relative h-full flex items-center"><button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">Nos Séances <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button><div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-white shadow-xl rounded-b-lg border-t border-gray-100"><div class="py-2"><a href="/pages/packs-shooting/portrait-studio-cannes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Portrait en Studio</a><a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Shooting en Extérieur</a><a href="/pages/packs-shooting/photo-domicile.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Photo à Domicile</a><a href="/pages/packs-shooting/shooting-duo-couple.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Shooting Duo &amp; Couple</a></div></div></div>
+                    <div class="mega-menu-item relative h-full flex items-center"><button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">Votre Objectif <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button><div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-80 bg-white shadow-xl rounded-b-lg border-t border-gray-100"><div class="py-2"><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Confiance &amp; Acceptation</a><a href="/pages/votre-experience/book-modele-professionnel.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Book Professionnel</a><a href="/pages/votre-experience/cadeau-couple-original.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Immortaliser son Couple</a><a href="/pages/votre-experience/premier-shooting-nu.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Cadeau &amp; Célébration</a></div></div></div>
+                    <div class="mega-menu-item relative h-full flex items-center"><button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">Côte d'Azur <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button><div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-48 bg-white shadow-xl rounded-b-lg border-t border-gray-100"><div class="py-2"><a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Cannes</a><a href="/pages/photographe-cote-azur/photographe-nice.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Nice</a><a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Antibes</a><a href="/pages/photographe-cote-azur/photographe-mougins.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Mougins</a><a href="/pages/photographe-cote-azur/shooting-mandelieu.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Mandelieu</a></div></div></div>
+                    <a href="/pages/portfolio/" class="text-sm font-medium hover:text-brand-light transition-colors">Réalisations</a>
+                    <a href="/pages/a-propos/" class="text-sm font-medium hover:text-brand-light transition-colors">L'Univers</a>
+                </nav>
+                <div class="hidden lg:flex items-center"><button onclick="openPopup()" class="bg-brand text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brand-light shadow-md flex items-center cursor-pointer"><i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Prendre RDV gratuit</button></div>
+                <div class="flex items-center lg:hidden"><button id="mobile-menu-btn" class="text-brand hover:text-brand-light p-2"><i data-lucide="menu" class="w-7 h-7"></i></button></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8"><span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span><button id="close-menu-btn" class="text-gray-500 hover:text-brand"><i data-lucide="x" class="w-7 h-7"></i></button></div>
+            <nav class="space-y-2">
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/pages/packs-shooting/portrait-studio-cannes.html" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a><a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a><a href="/pages/packs-shooting/photo-domicile.html" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a><a href="/pages/packs-shooting/shooting-duo-couple.html" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a><a href="/pages/votre-experience/book-modele-professionnel.html" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a><a href="/pages/votre-experience/cadeau-couple-original.html" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a><a href="/pages/votre-experience/premier-shooting-nu.html" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; Célébration</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Côte d'Azur <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="block text-sm text-gray-600 hover:text-brand">Cannes</a><a href="/pages/photographe-cote-azur/photographe-nice.html" class="block text-sm text-gray-600 hover:text-brand">Nice</a><a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="block text-sm text-gray-600 hover:text-brand">Antibes</a><a href="/pages/photographe-cote-azur/photographe-mougins.html" class="block text-sm text-gray-600 hover:text-brand">Mougins</a>
+                        <a href="/pages/photographe-cote-azur/shooting-mandelieu.html" class="block text-sm text-gray-600 hover:text-brand">Mandelieu</a></div></div>
+                <div class="border-b border-gray-100 py-3"><a href="/pages/portfolio/" class="block font-medium text-brand">Réalisations</a></div>
+                <div class="border-b border-gray-100 py-3"><a href="/pages/a-propos/" class="block font-medium text-brand">L'Univers</a></div>
+            </nav>
+            <div class="mt-8"><button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl font-medium hover:bg-brand-light shadow-md flex justify-center items-center cursor-pointer"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit</button></div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden"></div>
+
+    <main class="w-full">
+        <!-- PAGE HERO -->
+        <section class="bg-brand pt-28 lg:pt-32 pb-12 lg:pb-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/3 translate-x-1/4 w-96 h-96 bg-brand-light rounded-full opacity-30 blur-3xl"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <nav class="text-sm text-white/60 mb-6" aria-label="Fil d'Ariane">
+                    <a href="/" class="hover:text-white">Accueil</a> <span class="mx-2">/</span> <a href="/pages/portfolio/" class="hover:text-white">Portfolio</a> <span class="mx-2">/</span> <span class="text-white/90">Galerie Couples</span>
+                </nav>
+                <p class="text-white/70 text-sm uppercase tracking-widest mb-3">Complicité et intimité partagée</p>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Galerie Couples</h1>
+                <p class="text-white/70 text-base md:text-lg max-w-2xl">Quand deux personnes se révèlent ensemble devant l'objectif, la magie opère. Découvrez nos shootings duo où la complicité, la tendresse et la sensualité se mêlent dans un cadre privé et respectueux.</p>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT: Introduction -->
+        <section class="py-12 lg:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">La photographie de couple, un art de l'intime</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">La galerie couples de <a href="/pages/portfolio/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Haroboz</a> présente une sélection de nos réalisations en <strong>shooting duo intime</strong>. Chaque séance est le fruit d'un échange approfondi avec le couple, pour comprendre leur histoire, leur dynamique et leurs envies. Qu'il s'agisse de célébrer un anniversaire, de marquer une étape de vie ou simplement de s'offrir un moment d'exception à deux, Luc Desbois crée les conditions d'une expérience photographique unique sur la <strong>Côte d'Azur</strong>.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">La photographie de couple chez Haroboz va bien au-delà du portrait classique. C'est une exploration de la relation, des gestes tendres, des regards complices, de cette alchimie invisible qui unit deux êtres. Dans notre studio privé à <strong>Marseille</strong> ou en extérieur dans les <strong>Alpes-Maritimes</strong>, chaque détail est pensé pour que le couple se sente en confiance&nbsp;: ambiance musicale adaptée, éclairage flatteur, direction artistique délicate et progressive.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">La <strong>discrétion</strong> est un pilier fondamental de notre démarche. Chaque couple bénéficie d'une <a href="/pages/boutique/galerie-privee-client.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">galerie privée sécurisée</a> pour visionner et sélectionner ses photos. Aucune image n'est jamais publiée sans le consentement explicite des deux partenaires. Les photos présentées dans cette galerie sont diffusées avec l'accord enthousiaste de chaque couple.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">Pour découvrir nos réalisations individuelles, consultez la <a href="/pages/portfolio/galerie-portraits-hommes.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">galerie portraits hommes</a>. Et si l'idée d'un shooting duo vous séduit, notre <a href="/pages/packs-shooting/shooting-duo-couple.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">pack Duo &amp; Couple</a> détaille l'ensemble de la prestation, du premier échange au tirage d'art final.</p>
+            </div>
+        </section>
+
+        <!-- GALLERY GRID PLACEHOLDERS -->
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="/img/photos/IMG_0887.png" alt="Shooting couple intime studio Marseille" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="/img/photos/Photoroom_20260301_222124.png" alt="Photo couple complicité artistique" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="/img/wetransfer/Photoroom_20251014_091425.png" alt="Portrait duo tendresse Côte d'Azur" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="/img/photos/IMG_4690.png" alt="Shooting couple lumière naturelle" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="/img/photos/Photoroom_20250911_161040.png" alt="Photo couple intimité et complicité" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="/img/wetransfer/Photoroom_20260306_172002.png" alt="Shooting duo extérieur méditerranée" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTAGRAM -->
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Couples sur Instagram</h2>
+                <p class="text-gray-600 leading-relaxed mb-8">Retrouvez nos publications couples et les coulisses de nos séances duo sur le compte <strong>@hbozart</strong>.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"><img src="/img/photos/IMG_3960.png" alt="Couple shooting Haroboz" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"><img src="/img/photos/Photoroom_20251013_233426.png" alt="Duo complicité artistique" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow hidden md:block"><img src="/img/photos/IMG_5047.png" alt="Shooting couple extérieur" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow hidden md:block"><img src="/img/photos/IMG_5963.png" alt="Couple portrait intime" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                </div>
+                <a href="https://www.instagram.com/hbozart/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center border-2 border-brand text-brand px-6 py-3 rounded-full font-medium hover:bg-brand hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5 mr-2"></i> Suivre @hbozart sur Instagram</a>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT: Déroulement -->
+        <section class="py-12 lg:py-20 bg-gray-50">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">Comment se déroule un shooting couple</h2>
+
+                <h3 class="text-xl md:text-2xl font-serif text-brand mt-8 mb-3">L'échange préalable</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Tout commence par une conversation confidentielle avec les deux partenaires. Luc prend le temps de comprendre votre relation, vos zones de confort et vos aspirations pour la séance. C'est un moment clé qui permet de poser les fondations d'une séance sereine et épanouissante. Aucune question n'est taboue, et chaque limite est respectée sans discussion.</p>
+
+                <h3 class="text-xl md:text-2xl font-serif text-brand mt-8 mb-3">La séance en duo</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Le jour J, le studio est préparé exclusivement pour vous. Musique d'ambiance, éclairage chaleureux, boissons à disposition&nbsp;: tout est pensé pour que vous vous sentiez chez vous. La direction artistique est progressive&nbsp;: on commence par des poses naturelles et décontractées avant d'explorer, si vous le souhaitez, des mises en scène plus intimistes. Luc sait exactement quand appuyer sur le déclencheur pour capturer ces instants de connexion authentique.</p>
+
+                <h3 class="text-xl md:text-2xl font-serif text-brand mt-8 mb-3">La sélection et le tirage</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Après la séance, les photos sont déposées dans votre <a href="/pages/boutique/galerie-privee-client.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">galerie privée</a>. Vous prenez le temps, ensemble, de choisir les clichés qui vous touchent le plus. Le tirage final &mdash; sur <a href="/pages/boutique/tirages-art-edition-limitee.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">papier d'art, plexiglas, toile ou autre support</a> &mdash; transforme votre moment partagé en une oeuvre durable et confidentielle.</p>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT: Cadeau -->
+        <section class="py-12 lg:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">Le shooting couple comme cadeau</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">Offrir un shooting duo Haroboz, c'est offrir bien plus qu'une séance photo. C'est un moment de complicité, une parenthèse hors du quotidien et un souvenir tangible d'une rare intensité. Notre <a href="/pages/boutique/carte-cadeau.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">carte cadeau</a> permet d'offrir cette expérience avec élégance, sans que le bénéficiaire ait à se soucier de quoi que ce soit&nbsp;: le montant, la date et le format de la séance restent entièrement personnalisables.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">Lisez les <a href="/pages/portfolio/temoignages-clients.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">témoignages de nos clients</a> pour découvrir ce que les couples qui ont vécu l'expérience Haroboz en disent.</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-brand py-16 lg:py-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-96 h-96 bg-brand-light rounded-full opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-96 h-96 bg-[#3a00a8] rounded-full opacity-50 blur-3xl"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Immortalisez votre complicité</h2>
+                <p class="text-brand-50 text-base md:text-lg mb-8 max-w-2xl mx-auto">Shooting duo privé à Cannes et sur la Côte d'Azur</p>
+                <button onclick="openPopup()" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 shadow-xl flex items-center justify-center cursor-pointer mx-auto"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Être rappelé sous 24h</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand text-white border-t border-brand-light/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+                <div><h4 class="font-serif text-lg font-bold mb-4">Nos Packs</h4><ul class="space-y-2"><li><a href="/pages/packs-shooting/portrait-studio-cannes.html" class="text-sm text-gray-300 hover:text-white">Portrait Studio</a></li><li><a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="text-sm text-gray-300 hover:text-white">Shooting Extérieur</a></li><li><a href="/pages/packs-shooting/shooting-duo-couple.html" class="text-sm text-gray-300 hover:text-white">Duo &amp; Couple</a></li><li><a href="/pages/packs-shooting/photo-domicile.html" class="text-sm text-gray-300 hover:text-white">Photo à Domicile</a></li></ul></div>
+                <div><h4 class="font-serif text-lg font-bold mb-4">Côte d'Azur</h4><ul class="space-y-2"><li><a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="text-sm text-gray-300 hover:text-white">Cannes</a></li><li><a href="/pages/photographe-cote-azur/photographe-nice.html" class="text-sm text-gray-300 hover:text-white">Nice</a></li><li><a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="text-sm text-gray-300 hover:text-white">Antibes</a></li><li><a href="/pages/photographe-cote-azur/photographe-mougins.html" class="text-sm text-gray-300 hover:text-white">Mougins</a></li><li><a href="/pages/photographe-cote-azur/shooting-mandelieu.html" class="text-sm text-gray-300 hover:text-white">Mandelieu</a></li></ul></div>
+                <div><h4 class="font-serif text-lg font-bold mb-4">Expérience</h4><ul class="space-y-2"><li><a href="/pages/votre-experience/premier-shooting-nu.html" class="text-sm text-gray-300 hover:text-white">Premier Shooting</a></li><li><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="text-sm text-gray-300 hover:text-white">Retrouver Confiance</a></li><li><a href="/pages/votre-experience/book-modele-professionnel.html" class="text-sm text-gray-300 hover:text-white">Book Modèle Pro</a></li><li><a href="/pages/portfolio/temoignages-clients.html" class="text-sm text-gray-300 hover:text-white">Témoignages</a></li></ul></div>
+                <div><h4 class="font-serif text-lg font-bold mb-4">Haroboz</h4><ul class="space-y-2"><li><a href="/pages/a-propos/" class="text-sm text-gray-300 hover:text-white">À Propos</a></li><li><a href="/pages/portfolio/" class="text-sm text-gray-300 hover:text-white">Réalisations</a></li><li><a href="/pages/contact.html" class="text-sm text-gray-300 hover:text-white">Contact</a></li><li><a href="/pages/mentions-legales.html" class="text-sm text-gray-300 hover:text-white">Mentions légales</a></li></ul></div>
+            </div>
+            <div class="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">&copy; 2026 Haroboz — Luc Desbois | Photographe Nu Masculin | Cannes, Côte d'Azur</p>
+                <div class="flex items-center gap-4"><a href="https://www.instagram.com/hbozart/" target="_blank" class="text-gray-400 hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a><a href="/pages/mentions-legales.html" class="text-sm text-gray-400 hover:text-white">Mentions légales</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP -->
+    <div id="booking-popup" class="fixed inset-0 z-[100] flex items-center justify-center p-4 popup-hidden">
+        <div class="absolute inset-0 bg-brand/60 backdrop-blur-sm" onclick="closePopup()"></div>
+        <div id="popup-content" class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+            <div class="bg-brand rounded-t-2xl p-6 text-center relative"><button onclick="closePopup()" class="absolute top-4 right-4 text-white/70 hover:text-white cursor-pointer"><i data-lucide="x" class="w-6 h-6"></i></button><h3 class="text-xl font-serif text-white font-bold">Réservez votre séance</h3><p class="text-white/70 text-sm mt-1">Réponse confidentielle sous 24h</p></div>
+            <form id="booking-form" class="p-6" onsubmit="handleSubmit(event)">
+                <div class="space-y-4">
+                    <div><label class="block text-sm font-medium text-brand mb-1">Prénom *</label><input type="text" required placeholder="Votre prénom" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand"></div>
+                    <div><label class="block text-sm font-medium text-brand mb-1">Email *</label><input type="email" required placeholder="votre@email.com" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand"></div>
+                    <div><label class="block text-sm font-medium text-brand mb-1">Téléphone *</label><input type="tel" required placeholder="06 XX XX XX XX" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand"></div>
+                    <div><label class="block text-sm font-medium text-brand mb-1">Message</label><textarea rows="3" placeholder="Parlez-moi de votre projet..." class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand resize-none"></textarea></div>
+                </div>
+                <button type="submit" class="w-full mt-6 bg-brand text-white py-4 rounded-xl font-bold hover:bg-brand-light shadow-lg flex items-center justify-center cursor-pointer"><i data-lucide="send" class="w-5 h-5 mr-2"></i> Envoyer ma demande</button>
+                <p class="text-center text-xs text-gray-400 mt-3"><i data-lucide="lock" class="w-3 h-3 inline"></i> 100% confidentiel</p>
+            </form>
+            <div id="popup-success" class="hidden p-8 text-center"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="check-circle" class="w-8 h-8 text-green-600"></i></div><h3 class="text-2xl font-serif text-brand mb-2">Demande envoyée !</h3><p class="text-gray-600 mb-6">Je vous recontacte sous 24h.</p><button onclick="closePopup()" class="bg-brand text-white px-6 py-3 rounded-xl font-medium hover:bg-brand-light cursor-pointer">Fermer</button></div>
+        </div>
+    </div>
+
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light flex items-center justify-center cursor-pointer pulse-ring text-brand"><i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i><span class="hidden md:inline font-medium">Prendre RDV</span></button>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const mobileMenuBtn=document.getElementById('mobile-menu-btn'),closeMenuBtn=document.getElementById('close-menu-btn'),mobileMenu=document.getElementById('mobile-menu'),overlay=document.getElementById('mobile-overlay');
+        function toggleFaq(btn){const card=btn.closest('.faq-card'),content=card.querySelector('.faq-content'),chevron=card.querySelector('.faq-chevron'),isOpen=content.style.maxHeight&&content.style.maxHeight!=='0px';document.querySelectorAll('.faq-card').forEach(c=>{if(c!==card){c.querySelector('.faq-content').style.maxHeight='0px';c.querySelector('.faq-chevron').style.transform='rotate(0deg)';}});if(isOpen){content.style.maxHeight='0px';chevron.style.transform='rotate(0deg)';}else{content.style.maxHeight=content.scrollHeight+'px';chevron.style.transform='rotate(180deg)';}}
+        function toggleMobileMenu(){mobileMenu.classList.toggle('menu-open');overlay.classList.toggle('hidden');document.body.classList.toggle('overflow-hidden');}
+        mobileMenuBtn.addEventListener('click',toggleMobileMenu);closeMenuBtn.addEventListener('click',toggleMobileMenu);overlay.addEventListener('click',toggleMobileMenu);
+        document.querySelectorAll('.mobile-accordion-btn').forEach(btn=>{btn.addEventListener('click',function(){const c=this.nextElementSibling,i=this.querySelector('i');c.classList.toggle('hidden');i.style.transform=c.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';});});
+        function openPopup(){const p=document.getElementById('booking-popup');p.classList.remove('popup-hidden');p.classList.add('popup-visible');document.body.classList.add('overflow-hidden');lucide.createIcons();}
+        function closePopup(){const p=document.getElementById('booking-popup');p.classList.remove('popup-visible');p.classList.add('popup-hidden');document.body.classList.remove('overflow-hidden');}
+        document.addEventListener('keydown',e=>{if(e.key==='Escape')closePopup();});
+        function handleSubmit(e){e.preventDefault();document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');lucide.createIcons();}
+        const floatingCta=document.getElementById('floating-cta');
+        window.addEventListener('scroll',()=>{if(window.scrollY>400){floatingCta.classList.remove('opacity-0','translate-y-4','pointer-events-none');floatingCta.classList.add('opacity-100','translate-y-0','pointer-events-auto');}else{floatingCta.classList.add('opacity-0','translate-y-4','pointer-events-none');floatingCta.classList.remove('opacity-100','translate-y-0','pointer-events-auto');}},{passive:true});
+    </script>
+</body>
+</html>

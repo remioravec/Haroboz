@@ -1,0 +1,45 @@
+{
+  "menu": "principal",
+  "items": [
+    { "label": "Accueil", "url": "/" },
+    {
+      "label": "Nos Packs",
+      "url": "/pages/packs-shooting/",
+      "children": [
+        { "label": "Portrait Studio", "url": "/pages/packs-shooting/portrait-studio-cannes.html" },
+        { "label": "Shooting Extérieur", "url": "/pages/packs-shooting/shooting-exterieur-cote-azur.html" },
+        { "label": "Duo & Couple", "url": "/pages/packs-shooting/shooting-duo-couple.html" },
+        { "label": "Photo à Domicile", "url": "/pages/packs-shooting/photo-domicile.html" }
+      ]
+    },
+    {
+      "label": "Votre Expérience",
+      "url": "/pages/votre-experience/",
+      "children": [
+        { "label": "Premier Shooting", "url": "/pages/votre-experience/premier-shooting-nu.html" },
+        { "label": "Retrouver Confiance", "url": "/pages/votre-experience/retrouver-confiance-corps.html" },
+        { "label": "Book Modèle", "url": "/pages/votre-experience/book-modele-professionnel.html" }
+      ]
+    },
+    {
+      "label": "Portfolio",
+      "url": "/pages/portfolio/",
+      "children": [
+        { "label": "Galerie Hommes", "url": "/pages/portfolio/galerie-portraits-hommes.html" },
+        { "label": "Galerie Couples", "url": "/pages/portfolio/galerie-couples.html" },
+        { "label": "Témoignages", "url": "/pages/portfolio/temoignages-clients.html" }
+      ]
+    },
+    {
+      "label": "Boutique",
+      "url": "/pages/boutique/",
+      "children": [
+        { "label": "Tirages d'Art", "url": "/pages/boutique/tirages-art-edition-limitee.html" },
+        { "label": "Carte Cadeau", "url": "/pages/boutique/carte-cadeau.html" },
+        { "label": "Galerie Privée", "url": "/pages/boutique/galerie-privee-client.html" }
+      ]
+    },
+    { "label": "À Propos", "url": "/pages/a-propos/" },
+    { "label": "Contact", "url": "/pages/contact.html", "cta": true }
+  ]
+}

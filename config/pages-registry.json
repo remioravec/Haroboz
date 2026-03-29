@@ -1,0 +1,45 @@
+{
+  "_comment": "Registre de toutes les pages à produire. Cocher 'done' quand le contenu est prêt dans content/pages/",
+  "pages": [
+    { "slug": "accueil", "silo": "Home", "role": "home", "priority": 1, "done": false },
+
+    { "slug": "packs-shooting", "silo": "1-Packs", "role": "mere", "priority": 2, "done": false },
+    { "slug": "portrait-studio-cannes", "silo": "1-Packs", "role": "fille", "priority": 3, "done": false },
+    { "slug": "shooting-exterieur-cote-azur", "silo": "1-Packs", "role": "fille", "priority": 3, "done": false },
+    { "slug": "shooting-duo-couple", "silo": "1-Packs", "role": "fille", "priority": 3, "done": false },
+    { "slug": "photo-domicile", "silo": "1-Packs", "role": "fille", "priority": 4, "done": false },
+
+    { "slug": "votre-experience", "silo": "2-Parcours", "role": "mere", "priority": 2, "done": false },
+    { "slug": "retrouver-confiance-corps", "silo": "2-Parcours", "role": "fille", "priority": 3, "done": false },
+    { "slug": "book-modele-professionnel", "silo": "2-Parcours", "role": "fille", "priority": 3, "done": false },
+    { "slug": "premier-shooting-nu", "silo": "2-Parcours", "role": "fille", "priority": 3, "done": false },
+    { "slug": "cadeau-couple-original", "silo": "2-Parcours", "role": "fille", "priority": 4, "done": false },
+
+    { "slug": "photographe-cote-azur", "silo": "3-Local", "role": "mere", "priority": 1, "done": false },
+    { "slug": "photographe-homme-nu-cannes", "silo": "3-Local", "role": "fille", "priority": 1, "done": false },
+    { "slug": "shooting-couple-antibes", "silo": "3-Local", "role": "fille", "priority": 2, "done": false },
+    { "slug": "photographe-mougins", "silo": "3-Local", "role": "fille", "priority": 2, "done": false },
+    { "slug": "photographe-nice", "silo": "3-Local", "role": "fille", "priority": 2, "done": false },
+    { "slug": "shooting-mandelieu", "silo": "3-Local", "role": "fille", "priority": 3, "done": false },
+
+    { "slug": "portfolio", "silo": "4-Preuve", "role": "mere", "priority": 2, "done": false },
+    { "slug": "temoignages-clients", "silo": "4-Preuve", "role": "fille", "priority": 3, "done": false },
+    { "slug": "galerie-portraits-hommes", "silo": "4-Preuve", "role": "fille", "priority": 3, "done": false },
+    { "slug": "galerie-couples", "silo": "4-Preuve", "role": "fille", "priority": 4, "done": false },
+
+    { "slug": "boutique", "silo": "5-Boutique", "role": "mere", "priority": 2, "done": false },
+    { "slug": "tirages-art-edition-limitee", "silo": "5-Boutique", "role": "fille", "priority": 3, "done": false },
+    { "slug": "carte-cadeau", "silo": "5-Boutique", "role": "fille", "priority": 3, "done": false },
+    { "slug": "galerie-privee-client", "silo": "5-Boutique", "role": "fille", "priority": 3, "done": false },
+
+    { "slug": "a-propos", "silo": "6-About", "role": "mere", "priority": 3, "done": false },
+    { "slug": "contact", "silo": "Standalone", "role": "standalone", "priority": 2, "done": false }
+  ],
+  "stats": {
+    "total": 27,
+    "priority_1": 3,
+    "priority_2": 9,
+    "priority_3": 12,
+    "priority_4": 3
+  }
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Priv&eacute;e Client – Acc&egrave;s S&eacute;curis&eacute; Photos | Haroboz</title>
+    <meta name="description" content="Votre galerie priv&eacute;e Haroboz : acc&egrave;s s&eacute;curis&eacute; &agrave; vos photos de shooting. S&eacute;lection, commande de tirages et confidentialit&eacute; garantie. Studio photo Marseille.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#0a1a3a', light: '#122a5c', 50: '#e8edf5' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .mega-menu-content { visibility: hidden; opacity: 0; transform: translateY(10px); transition: all 0.3s ease-in-out; }
+        .mega-menu-item:hover .mega-menu-content { visibility: visible; opacity: 1; transform: translateY(0); pointer-events: auto; }
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        .menu-open { transform: translateX(0) !important; }
+        #booking-popup { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        #booking-popup.popup-hidden { opacity: 0; visibility: hidden; }
+        #booking-popup.popup-visible { opacity: 1; visibility: visible; }
+        #popup-content { transition: transform 0.3s ease, opacity 0.3s ease; }
+        #booking-popup.popup-hidden #popup-content { transform: scale(0.95) translateY(20px); opacity: 0; }
+        #booking-popup.popup-visible #popup-content { transform: scale(1) translateY(0); opacity: 1; }
+        @keyframes pulse-ring { 0% { transform: scale(1); opacity: 1; } 80%, 100% { transform: scale(1.4); opacity: 0; } }
+        .pulse-ring::before { content: ''; position: absolute; inset: -4px; border-radius: 9999px; border: 2px solid currentColor; animation: pulse-ring 2s ease-out infinite; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-brand antialiased">
+
+    <!-- HEADER -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0"><a href="/" class="font-serif text-2xl lg:text-3xl font-bold tracking-tight text-brand">HAROBOZ</a></div>
+                <nav class="hidden lg:flex space-x-8 h-full items-center">
+                    <div class="mega-menu-item relative h-full flex items-center"><button class="flex items-center text-sm font-medium hover:text-brand-light py-8">Nos S&eacute;ances <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button><div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-white shadow-xl rounded-b-lg border-t border-gray-100"><div class="py-2"><a href="/pages/packs-shooting/portrait-studio-cannes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Portrait en Studio</a><a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Shooting en Ext&eacute;rieur</a><a href="/pages/packs-shooting/photo-domicile.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Photo &agrave; Domicile</a><a href="/pages/packs-shooting/shooting-duo-couple.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Shooting Duo &amp; Couple</a></div></div></div>
+                    <div class="mega-menu-item relative h-full flex items-center"><button class="flex items-center text-sm font-medium hover:text-brand-light py-8">Votre Objectif <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button><div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-80 bg-white shadow-xl rounded-b-lg border-t border-gray-100"><div class="py-2"><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Confiance &amp; Acceptation</a><a href="/pages/votre-experience/book-modele-professionnel.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Book Professionnel</a><a href="/pages/votre-experience/cadeau-couple-original.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Immortaliser son Couple</a><a href="/pages/votre-experience/premier-shooting-nu.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Cadeau &amp; C&eacute;l&eacute;bration</a></div></div></div>
+                    <div class="mega-menu-item relative h-full flex items-center"><button class="flex items-center text-sm font-medium hover:text-brand-light py-8">C&ocirc;te d'Azur <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button><div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-48 bg-white shadow-xl rounded-b-lg border-t border-gray-100"><div class="py-2"><a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Cannes</a><a href="/pages/photographe-cote-azur/photographe-nice.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Nice</a><a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Antibes</a><a href="/pages/photographe-cote-azur/photographe-mougins.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand">Mougins</a><a href="/pages/photographe-cote-azur/shooting-mandelieu.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Mandelieu</a></div></div></div>
+                    <a href="/pages/portfolio/" class="text-sm font-medium hover:text-brand-light">R&eacute;alisations</a>
+                    <a href="/pages/a-propos/" class="text-sm font-medium hover:text-brand-light">L'Univers</a>
+                </nav>
+                <div class="hidden lg:flex items-center"><button onclick="openPopup()" class="bg-brand text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brand-light shadow-md flex items-center cursor-pointer"><i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Prendre RDV gratuit</button></div>
+                <div class="flex items-center lg:hidden"><button id="mobile-menu-btn" class="text-brand hover:text-brand-light p-2"><i data-lucide="menu" class="w-7 h-7"></i></button></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8"><span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span><button id="close-menu-btn" class="text-gray-500 hover:text-brand"><i data-lucide="x" class="w-7 h-7"></i></button></div>
+            <nav class="space-y-2">
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos S&eacute;ances <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/pages/packs-shooting/portrait-studio-cannes.html" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a><a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="block text-sm text-gray-600 hover:text-brand">Shooting en Ext&eacute;rieur</a><a href="/pages/packs-shooting/photo-domicile.html" class="block text-sm text-gray-600 hover:text-brand">Photo &agrave; Domicile</a><a href="/pages/packs-shooting/shooting-duo-couple.html" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a><a href="/pages/votre-experience/book-modele-professionnel.html" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a><a href="/pages/votre-experience/cadeau-couple-original.html" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a><a href="/pages/votre-experience/premier-shooting-nu.html" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; C&eacute;l&eacute;bration</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">C&ocirc;te d'Azur <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="block text-sm text-gray-600 hover:text-brand">Cannes</a><a href="/pages/photographe-cote-azur/photographe-nice.html" class="block text-sm text-gray-600 hover:text-brand">Nice</a><a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="block text-sm text-gray-600 hover:text-brand">Antibes</a><a href="/pages/photographe-cote-azur/photographe-mougins.html" class="block text-sm text-gray-600 hover:text-brand">Mougins</a>
+                        <a href="/pages/photographe-cote-azur/shooting-mandelieu.html" class="block text-sm text-gray-600 hover:text-brand">Mandelieu</a></div></div>
+                <div class="border-b border-gray-100 py-3"><a href="/pages/portfolio/" class="block font-medium text-brand">R&eacute;alisations</a></div>
+                <div class="border-b border-gray-100 py-3"><a href="/pages/a-propos/" class="block font-medium text-brand">L'Univers</a></div>
+            </nav>
+            <div class="mt-8"><button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl font-medium hover:bg-brand-light shadow-md flex justify-center items-center cursor-pointer"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit</button></div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden"></div>
+
+    <main class="w-full">
+
+        <!-- HERO -->
+        <section class="bg-brand pt-28 lg:pt-32 pb-16 lg:pb-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="mb-8" aria-label="Fil d'Ariane">
+                    <ol class="flex items-center space-x-2 text-sm text-white/60" itemscope itemtype="https://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/" class="hover:text-white"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1"></li>
+                        <li><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/pages/boutique/" class="hover:text-white"><span itemprop="name">Boutique</span></a><meta itemprop="position" content="2"></li>
+                        <li><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name" class="text-white/90">Galerie Priv&eacute;e Client</span><meta itemprop="position" content="3"></li>
+                    </ol>
+                </nav>
+                <p class="text-white/70 text-sm font-medium tracking-widest uppercase mb-4">Votre espace confidentiel et s&eacute;curis&eacute;</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">Votre Galerie Priv&eacute;e</h1>
+                <p class="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">Apr&egrave;s votre s&eacute;ance avec Haroboz, retrouvez l'ensemble de vos photos dans un espace en ligne prot&eacute;g&eacute;. Prenez le temps de choisir, commandez vos tirages et gardez le contr&ocirc;le total sur vos images.</p>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="py-12 lg:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-12 mb-4">La confidentialit&eacute; au coeur de notre engagement</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Chez <a href="/pages/boutique/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">Haroboz</a>, la <strong>discr&eacute;tion</strong> n'est pas une option marketing&nbsp;: c'est le fondement m&ecirc;me de notre relation avec chaque client. La galerie priv&eacute;e en est la concr&eacute;tisation technologique. D&egrave;s que <a href="/pages/a-propos/luc-desbois-photographe.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">Luc Desbois</a> a termin&eacute; le traitement de vos images, elles sont d&eacute;pos&eacute;es dans un espace en ligne accessible uniquement par vous, via un lien personnel et un mot de passe s&eacute;curis&eacute;.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Cette galerie a &eacute;t&eacute; con&ccedil;ue pour que le moment de la d&eacute;couverte de vos photos soit aussi intense et intime que la s&eacute;ance elle-m&ecirc;me. Pas de pression, pas de d&eacute;lai artificiel&nbsp;: vous prenez le temps qu'il vous faut pour revisiter vos images, les comparer, les partager avec un proche de confiance si vous le souhaitez, avant de faire votre s&eacute;lection finale pour le <a href="/pages/boutique/tirages-art-edition-limitee.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">tirage d'art</a>.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Chaque galerie est h&eacute;berg&eacute;e sur des serveurs s&eacute;curis&eacute;s, avec un chiffrement de bout en bout. Vos photos ne sont jamais index&eacute;es par les moteurs de recherche, ne sont jamais utilis&eacute;es &agrave; des fins promotionnelles sans votre accord explicite, et ne sont jamais partag&eacute;es avec des tiers. Vous &ecirc;tes le seul ma&icirc;tre de vos images.</p>
+            </div>
+        </section>
+
+        <!-- FONCTIONNALITÉS -->
+        <section class="py-12 lg:py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand text-center mb-12">Ce que vous offre votre galerie</h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-14 h-14 bg-brand rounded-full flex items-center justify-center mx-auto mb-6"><span class="text-white text-xl font-bold">1</span></div>
+                        <h3 class="text-xl font-serif font-semibold text-brand mb-3">D&eacute;couverte</h3>
+                        <p class="text-gray-600 leading-relaxed">Quelques jours apr&egrave;s votre <a href="/pages/packs-shooting/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">s&eacute;ance photo</a>, vous recevez un lien confidentiel par email. Connectez-vous et d&eacute;couvrez l'ensemble de vos photos retouch&eacute;es, en haute r&eacute;solution, dans une interface claire et &eacute;pur&eacute;e. Le moment de la d&eacute;couverte est souvent riche en &eacute;motions&nbsp;: laissez-vous le temps de savourer.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-14 h-14 bg-brand rounded-full flex items-center justify-center mx-auto mb-6"><span class="text-white text-xl font-bold">2</span></div>
+                        <h3 class="text-xl font-serif font-semibold text-brand mb-3">S&eacute;lection</h3>
+                        <p class="text-gray-600 leading-relaxed">Marquez vos photos favorites, comparez-les, cr&eacute;ez vos s&eacute;lections. Vous pouvez prendre plusieurs jours &mdash; ou plusieurs semaines &mdash; pour affiner votre choix. Luc reste disponible pour vous conseiller sur les images les plus adapt&eacute;es &agrave; chaque format et support de tirage.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-14 h-14 bg-brand rounded-full flex items-center justify-center mx-auto mb-6"><span class="text-white text-xl font-bold">3</span></div>
+                        <h3 class="text-xl font-serif font-semibold text-brand mb-3">Commande</h3>
+                        <p class="text-gray-600 leading-relaxed">Une fois votre s&eacute;lection finalis&eacute;e, commandez vos <a href="/pages/boutique/tirages-art-edition-limitee.html" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">tirages d'art</a> directement depuis votre galerie. Choisissez le support &mdash; papier fine art, plexiglas, m&eacute;tal, toile, voile de soie ou verre &mdash; et le format qui sublimera chaque image. Livraison soign&eacute;e &agrave; votre adresse.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SÉCURITÉ DÉTAILLÉE -->
+        <section class="py-12 lg:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-12 mb-4">Notre engagement s&eacute;curit&eacute;</h2>
+
+                <h3 class="text-xl font-serif text-brand mt-8 mb-3">Acc&egrave;s prot&eacute;g&eacute;</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Votre galerie est accessible via un lien unique et un mot de passe personnel. Aucune autre personne &mdash; pas m&ecirc;me d'autres clients Haroboz &mdash; ne peut acc&eacute;der &agrave; votre espace. Vous pouvez modifier votre mot de passe &agrave; tout moment.</p>
+
+                <h3 class="text-xl font-serif text-brand mt-8 mb-3">H&eacute;bergement s&eacute;curis&eacute;</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Vos images sont stock&eacute;es sur des serveurs conformes aux normes RGPD, avec un chiffrement SSL/TLS. Les donn&eacute;es sont sauvegard&eacute;es quotidiennement pour &eacute;viter toute perte. Aucun tiers &mdash; employ&eacute;, partenaire ou sous-traitant &mdash; n'a acc&egrave;s &agrave; vos photos sans votre autorisation.</p>
+
+                <h3 class="text-xl font-serif text-brand mt-8 mb-3">Droit &agrave; l'effacement</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Conform&eacute;ment &agrave; la r&eacute;glementation europ&eacute;enne, vous pouvez demander la suppression compl&egrave;te de vos images &agrave; tout moment. Il vous suffit de nous contacter par email ou t&eacute;l&eacute;phone, et vos photos seront d&eacute;finitivement effac&eacute;es de nos serveurs sous 48 heures. Votre vie priv&eacute;e est notre priorit&eacute; absolue.</p>
+
+                <h3 class="text-xl font-serif text-brand mt-8 mb-3">Contr&ocirc;le de publication</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Si vous souhaitez que certaines de vos photos soient int&eacute;gr&eacute;es &agrave; notre <a href="/pages/portfolio/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">portfolio</a> public, nous vous soumettrons un formulaire de consentement d&eacute;taill&eacute; pr&eacute;cisant exactement quelles images seront utilis&eacute;es, dans quel contexte et pour quelle dur&eacute;e. Vous conservez un droit de retrait permanent.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-12 lg:py-20 bg-gray-50" itemscope itemtype="https://schema.org/FAQPage">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand text-center mb-12">Questions fr&eacute;quentes</h2>
+
+                <div class="space-y-4">
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left cursor-pointer">
+                            <h3 class="text-base font-semibold text-brand pr-4" itemprop="name">Combien de temps ma galerie reste-t-elle accessible ?</h3>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-brand flex-shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="px-6 pb-6 text-gray-600 leading-relaxed" itemprop="text">Votre galerie priv&eacute;e reste accessible pendant 6 mois apr&egrave;s le d&eacute;p&ocirc;t de vos photos. Ce d&eacute;lai vous laisse largement le temps de faire votre s&eacute;lection et de commander vos tirages. Une extension est possible sur demande.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left cursor-pointer">
+                            <h3 class="text-base font-semibold text-brand pr-4" itemprop="name">Puis-je partager ma galerie avec un proche ?</h3>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-brand flex-shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="px-6 pb-6 text-gray-600 leading-relaxed" itemprop="text">Oui, vous pouvez partager le lien et le mot de passe de votre galerie avec la personne de votre choix. C'est vous qui d&eacute;cidez qui peut voir vos photos. Nous vous recommandons cependant de limiter le partage aux personnes de confiance.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left cursor-pointer">
+                            <h3 class="text-base font-semibold text-brand pr-4" itemprop="name">Mes photos peuvent-elles &ecirc;tre t&eacute;l&eacute;charg&eacute;es depuis la galerie ?</h3>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-brand flex-shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="px-6 pb-6 text-gray-600 leading-relaxed" itemprop="text">Les photos affich&eacute;es dans la galerie sont en haute r&eacute;solution pour appr&eacute;ciation, mais prot&eacute;g&eacute;es contre le t&eacute;l&eacute;chargement non autoris&eacute;. Les fichiers num&eacute;riques en pleine r&eacute;solution sont disponibles en option, selon les conditions de votre pack.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- RÉALISATIONS — Mini galerie -->
+        <section class="py-12 md:py-16 bg-gray-50 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold tracking-widest text-gray-400 uppercase block mb-2">Réalisations</span>
+                    <h3 class="text-2xl md:text-3xl font-serif text-brand">Un aperçu de nos créations</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="../../img/wetransfer/IMG_2919.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="../../img/wetransfer/Photoroom_20250615_213259.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="../../img/wetransfer/Photoroom_20250414_131832.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                    <img src="../../img/wetransfer/Photoroom_20251011_225926.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                </div>
+                <div class="text-center mt-8">
+                    <a href="/pages/portfolio/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                        <span>Voir toutes les réalisations</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+<!-- CTA -->
+        <section class="bg-brand py-16 lg:py-20">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Vivez l'exp&eacute;rience Haroboz en toute s&eacute;r&eacute;nit&eacute;</h2>
+                <p class="text-white/70 text-lg mb-8">Shooting priv&eacute; et galerie s&eacute;curis&eacute;e &mdash; Marseille, C&ocirc;te d'Azur</p>
+                <button onclick="openPopup()" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 shadow-lg inline-flex items-center cursor-pointer"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> R&eacute;servez votre exp&eacute;rience</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand text-white border-t border-brand-light/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+                <div><h4 class="font-serif text-lg font-bold mb-4">Nos Packs</h4><ul class="space-y-2"><li><a href="/pages/packs-shooting/portrait-studio-cannes.html" class="text-sm text-gray-300 hover:text-white">Portrait Studio</a></li><li><a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="text-sm text-gray-300 hover:text-white">Shooting Ext&eacute;rieur</a></li><li><a href="/pages/packs-shooting/shooting-duo-couple.html" class="text-sm text-gray-300 hover:text-white">Duo &amp; Couple</a></li><li><a href="/pages/packs-shooting/photo-domicile.html" class="text-sm text-gray-300 hover:text-white">Photo &agrave; Domicile</a></li></ul></div>
+                <div><h4 class="font-serif text-lg font-bold mb-4">C&ocirc;te d'Azur</h4><ul class="space-y-2"><li><a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="text-sm text-gray-300 hover:text-white">Cannes</a></li><li><a href="/pages/photographe-cote-azur/photographe-nice.html" class="text-sm text-gray-300 hover:text-white">Nice</a></li><li><a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="text-sm text-gray-300 hover:text-white">Antibes</a></li><li><a href="/pages/photographe-cote-azur/photographe-mougins.html" class="text-sm text-gray-300 hover:text-white">Mougins</a></li><li><a href="/pages/photographe-cote-azur/shooting-mandelieu.html" class="text-sm text-gray-300 hover:text-white">Mandelieu</a></li></ul></div>
+                <div><h4 class="font-serif text-lg font-bold mb-4">Exp&eacute;rience</h4><ul class="space-y-2"><li><a href="/pages/votre-experience/premier-shooting-nu.html" class="text-sm text-gray-300 hover:text-white">Premier Shooting</a></li><li><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="text-sm text-gray-300 hover:text-white">Retrouver Confiance</a></li><li><a href="/pages/votre-experience/book-modele-professionnel.html" class="text-sm text-gray-300 hover:text-white">Book Mod&egrave;le Pro</a></li><li><a href="/pages/portfolio/temoignages-clients.html" class="text-sm text-gray-300 hover:text-white">T&eacute;moignages</a></li></ul></div>
+                <div><h4 class="font-serif text-lg font-bold mb-4">Haroboz</h4><ul class="space-y-2"><li><a href="/pages/a-propos/" class="text-sm text-gray-300 hover:text-white">&Agrave; Propos</a></li><li><a href="/pages/portfolio/" class="text-sm text-gray-300 hover:text-white">R&eacute;alisations</a></li><li><a href="/pages/contact.html" class="text-sm text-gray-300 hover:text-white">Contact</a></li><li><a href="/pages/mentions-legales.html" class="text-sm text-gray-300 hover:text-white">Mentions l&eacute;gales</a></li></ul></div>
+            </div>
+            <div class="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">&copy; 2026 Haroboz &mdash; Luc Desbois | Photographe Nu Masculin | Cannes, C&ocirc;te d'Azur</p>
+                <div class="flex items-center gap-4"><a href="https://www.instagram.com/hbozart/" target="_blank" class="text-gray-400 hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a><a href="/pages/mentions-legales.html" class="text-sm text-gray-400 hover:text-white">Mentions l&eacute;gales</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP -->
+    <div id="booking-popup" class="fixed inset-0 z-[100] flex items-center justify-center p-4 popup-hidden">
+        <div class="absolute inset-0 bg-brand/60 backdrop-blur-sm" onclick="closePopup()"></div>
+        <div id="popup-content" class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+            <div class="bg-brand rounded-t-2xl p-6 text-center relative"><button onclick="closePopup()" class="absolute top-4 right-4 text-white/70 hover:text-white cursor-pointer"><i data-lucide="x" class="w-6 h-6"></i></button><h3 class="text-xl font-serif text-white font-bold">R&eacute;servez votre s&eacute;ance</h3><p class="text-white/70 text-sm mt-1">R&eacute;ponse confidentielle sous 24h</p></div>
+            <form id="booking-form" class="p-6" onsubmit="handleSubmit(event)"><div class="space-y-4"><div><label class="block text-sm font-medium text-brand mb-1">Pr&eacute;nom *</label><input type="text" required placeholder="Votre pr&eacute;nom" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand"></div><div><label class="block text-sm font-medium text-brand mb-1">Email *</label><input type="email" required placeholder="votre@email.com" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand"></div><div><label class="block text-sm font-medium text-brand mb-1">T&eacute;l&eacute;phone *</label><input type="tel" required placeholder="06 XX XX XX XX" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand"></div><div><label class="block text-sm font-medium text-brand mb-1">Message</label><textarea rows="3" placeholder="Parlez-moi de votre projet..." class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand resize-none"></textarea></div></div><button type="submit" class="w-full mt-6 bg-brand text-white py-4 rounded-xl font-bold hover:bg-brand-light shadow-lg flex items-center justify-center cursor-pointer"><i data-lucide="send" class="w-5 h-5 mr-2"></i> Envoyer ma demande</button><p class="text-center text-xs text-gray-400 mt-3"><i data-lucide="lock" class="w-3 h-3 inline"></i> 100% confidentiel</p></form>
+            <div id="popup-success" class="hidden p-8 text-center"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="check-circle" class="w-8 h-8 text-green-600"></i></div><h3 class="text-2xl font-serif text-brand mb-2">Demande envoy&eacute;e !</h3><p class="text-gray-600 mb-6">Je vous recontacte sous 24h.</p><button onclick="closePopup()" class="bg-brand text-white px-6 py-3 rounded-xl font-medium hover:bg-brand-light cursor-pointer">Fermer</button></div>
+        </div>
+    </div>
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none"><button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light flex items-center justify-center cursor-pointer pulse-ring text-brand"><i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i><span class="hidden md:inline font-medium">Prendre RDV</span></button></div>
+
+    <script>
+        lucide.createIcons();
+        const mobileMenuBtn=document.getElementById('mobile-menu-btn'),closeMenuBtn=document.getElementById('close-menu-btn'),mobileMenu=document.getElementById('mobile-menu'),overlay=document.getElementById('mobile-overlay');
+        function toggleFaq(btn){const card=btn.closest('.faq-card'),content=card.querySelector('.faq-content'),chevron=card.querySelector('.faq-chevron'),isOpen=content.style.maxHeight&&content.style.maxHeight!=='0px';document.querySelectorAll('.faq-card').forEach(c=>{if(c!==card){c.querySelector('.faq-content').style.maxHeight='0px';c.querySelector('.faq-chevron').style.transform='rotate(0deg)';}});if(isOpen){content.style.maxHeight='0px';chevron.style.transform='rotate(0deg)';}else{content.style.maxHeight=content.scrollHeight+'px';chevron.style.transform='rotate(180deg)';}}
+        function toggleMobileMenu(){mobileMenu.classList.toggle('menu-open');overlay.classList.toggle('hidden');document.body.classList.toggle('overflow-hidden');}
+        mobileMenuBtn.addEventListener('click',toggleMobileMenu);closeMenuBtn.addEventListener('click',toggleMobileMenu);overlay.addEventListener('click',toggleMobileMenu);
+        document.querySelectorAll('.mobile-accordion-btn').forEach(btn=>{btn.addEventListener('click',function(){const c=this.nextElementSibling,i=this.querySelector('i');c.classList.toggle('hidden');i.style.transform=c.classList.contains('hidden')?'rotate(0deg)':'rotate(180deg)';});});
+        function openPopup(){const p=document.getElementById('booking-popup');p.classList.remove('popup-hidden');p.classList.add('popup-visible');document.body.classList.add('overflow-hidden');lucide.createIcons();}
+        function closePopup(){const p=document.getElementById('booking-popup');p.classList.remove('popup-visible');p.classList.add('popup-hidden');document.body.classList.remove('overflow-hidden');}
+        document.addEventListener('keydown',e=>{if(e.key==='Escape')closePopup();});
+        function handleSubmit(e){e.preventDefault();document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');lucide.createIcons();}
+        const floatingCta=document.getElementById('floating-cta');
+        window.addEventListener('scroll',()=>{if(window.scrollY>400){floatingCta.classList.remove('opacity-0','translate-y-4','pointer-events-none');floatingCta.classList.add('opacity-100','translate-y-0','pointer-events-auto');}else{floatingCta.classList.add('opacity-0','translate-y-4','pointer-events-none');floatingCta.classList.remove('opacity-100','translate-y-0','pointer-events-auto');}},{passive:true});
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+# Credentials
+wp-push/.env
+.mcp.json
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scraping output (regenerable)
+scraping/output/*.json
+!scraping/output/.gitkeep
+
+# Large binary files (too big for GitHub)
+*.zip
+preview/img/
+wp-push/haroboz-images.zip
+wp-push/wp-pusher.html
+wp-push/tailwind-compiled.css
+Screenshot*.png
+screencapture-*.png
+
+# WP Push status
+wp-push/push-status.json
+
+# OMC
+.claude/

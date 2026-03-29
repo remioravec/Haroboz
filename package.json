@@ -1,0 +1,24 @@
+{
+  "name": "haroboz-claude-code",
+  "version": "1.0.0",
+  "description": "Refonte WordPress + SEO pour haroboz.com — Preview statique + futur push WP",
+  "private": true,
+  "scripts": {
+    "scrape": "node scripts/01-scrape-public.js",
+    "analyze": "node scripts/02-analyze-structure.js",
+    "build": "node scripts/03-build-preview.js",
+    "serve": "node scripts/04-serve-local.js",
+    "dev": "node scripts/03-build-preview.js && node scripts/04-serve-local.js",
+    "deploy:netlify": "npx netlify-cli deploy --dir=preview --prod",
+    "deploy:surge": "npx surge preview haroboz-preview.surge.sh",
+    "deploy:vercel": "cd preview && npx vercel --prod"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "lucide-static": "^1.7.0",
+    "tailwindcss": "^3.4.19"
+  }
+}

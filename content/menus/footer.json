@@ -1,0 +1,41 @@
+{
+  "columns": [
+    {
+      "title": "Packs Shooting",
+      "items": [
+        { "title": "Portrait Studio", "url": "/pages/portrait-studio-cannes.html" },
+        { "title": "Shooting Extérieur", "url": "/pages/shooting-exterieur-cote-azur.html" },
+        { "title": "Duo & Couple", "url": "/pages/shooting-duo-couple.html" },
+        { "title": "Photo à Domicile", "url": "/pages/photo-domicile.html" }
+      ]
+    },
+    {
+      "title": "Côte d'Azur",
+      "items": [
+        { "title": "Cannes", "url": "/pages/photographe-homme-nu-cannes.html" },
+        { "title": "Antibes", "url": "/pages/shooting-couple-antibes.html" },
+        { "title": "Mougins", "url": "/pages/photographe-mougins.html" },
+        { "title": "Nice", "url": "/pages/photographe-nice.html" },
+        { "title": "Mandelieu", "url": "/pages/shooting-mandelieu.html" }
+      ]
+    },
+    {
+      "title": "Votre Expérience",
+      "items": [
+        { "title": "Premier Shooting", "url": "/pages/premier-shooting-nu.html" },
+        { "title": "Retrouver Confiance", "url": "/pages/retrouver-confiance-corps.html" },
+        { "title": "Book Modèle Pro", "url": "/pages/book-modele-professionnel.html" },
+        { "title": "Témoignages", "url": "/pages/temoignages-clients.html" }
+      ]
+    },
+    {
+      "title": "HAROBOZ",
+      "items": [
+        { "title": "Tirages d'Art", "url": "/pages/tirages-art-edition-limitee.html" },
+        { "title": "Carte Cadeau", "url": "/pages/carte-cadeau.html" },
+        { "title": "À Propos", "url": "/pages/a-propos.html" },
+        { "title": "Contact", "url": "/pages/contact.html" }
+      ]
+    }
+  ]
+}
