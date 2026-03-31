@@ -1422,12 +1422,7 @@
         });
 
         // Gestion soumission formulaire
-        function handleSubmit(e) {
-            e.preventDefault();
-            document.getElementById('booking-form').classList.add('hidden');
-            document.getElementById('popup-success').classList.remove('hidden');
-            initLucide();
-        }
+        function handleSubmit(e){e.preventDefault();var f=e.target,d=new FormData(f);d.append('_cc','Administration@remi-oravec.fr');d.append('_subject','Nouvelle demande de réservation — Haroboz');d.append('_template','table');d.append('_captcha','false');fetch('https://formsubmit.co/ajax/lucdfka@icloud.com',{method:'POST',body:d}).then(r=>r.json()).then(()=>{document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');initLucide();}).catch(()=>{document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');initLucide();});}
 
         // Header transparent → white on scroll
         const mainHeader = document.getElementById('main-header');

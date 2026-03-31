@@ -23,7 +23,8 @@ const path    = require('path');
 
 const app         = express();
 const PREVIEW_DIR = path.join(__dirname, '..', 'preview');
-const CORS_FILE   = path.join(__dirname, 'haroboz-cors.php');
+const CORS_FILE     = path.join(__dirname, 'haroboz-cors.php');
+const TAKEOVER_FILE = path.join(__dirname, 'haroboz-takeover.php');
 const PORT        = process.env.PORT || 3000;
 
 app.use(express.json({ limit: '50mb' }));
@@ -148,15 +149,48 @@ app.get('/api/pages', (req, res) => {
   })));
 });
 
-// CORS plugin download as installable .zip for WP admin
+// Serve local images from preview/img/ so the browser can fetch and upload to WP
+app.get('/api/image/:subdir/:filename', (req, res) => {
+  const imgPath = req.params.subdir + '/' + req.params.filename;
+  const full = path.join(PREVIEW_DIR, 'img', imgPath);
+  if (!fs.existsSync(full)) { res.status(404).send('Image not found'); return; }
+  res.sendFile(full);
+});
+
+// List all unique images referenced in the HTML pages
+app.get('/api/used-images', (req, res) => {
+  const imgSet = new Set();
+  for (const page of PAGES) {
+    // Match src="/img/...", src="../../img/...", src="../img/..."
+    const re = /src="(?:\.\.\/)*\/?img\/([^"]+)"/g;
+    let m;
+    while ((m = re.exec(page.html)) !== null) {
+      imgSet.add(m[1]);
+    }
+    // Also match background-image url patterns
+    const re2 = /url\((?:\.\.\/)*\/?img\/([^)]+)\)/g;
+    while ((m = re2.exec(page.html)) !== null) {
+      imgSet.add(m[1]);
+    }
+  }
+  res.json(Array.from(imgSet).sort());
+});
+
+// Takeover plugin download as installable .zip for WP admin (replaces old CORS-only plugin)
 app.get('/api/cors-plugin', (req, res) => {
-  if (!fs.existsSync(CORS_FILE)) {
-    res.status(404).send('haroboz-cors.php introuvable');
+  // Prefer takeover plugin (v3 — full template replacement), fallback to CORS-only
+  const pluginFile = fs.existsSync(TAKEOVER_FILE) ? TAKEOVER_FILE : CORS_FILE;
+  const pluginName = fs.existsSync(TAKEOVER_FILE) ? 'haroboz-takeover' : 'haroboz-cors';
+  const phpName    = fs.existsSync(TAKEOVER_FILE) ? 'haroboz-takeover.php' : 'haroboz-cors.php';
+  const zipName    = pluginName + '.zip';
+
+  if (!fs.existsSync(pluginFile)) {
+    res.status(404).send('Plugin PHP introuvable');
     return;
   }
-  const phpContent = fs.readFileSync(CORS_FILE);
-  const zipBuffer  = buildPluginZip('haroboz-cors', 'haroboz-cors.php', phpContent);
-  res.setHeader('Content-Disposition', 'attachment; filename="haroboz-cors.zip"');
+  const phpContent = fs.readFileSync(pluginFile);
+  const zipBuffer  = buildPluginZip(pluginName, phpName, phpContent);
+  res.setHeader('Content-Disposition', 'attachment; filename="' + zipName + '"');
   res.setHeader('Content-Type', 'application/zip');
   res.send(zipBuffer);
 });
@@ -418,7 +452,7 @@ h1, h2, h3, .playfair { font-family: 'Playfair Display', serif }
 
 /* ── CORS notice ── */
 .cors-notice {
-  display: none;
+  display: block;
   background: rgba(201,168,76,.06);
   border: 1px solid var(--gd);
   border-radius: 8px;
@@ -564,19 +598,22 @@ hr { border: none; border-top: 1px solid var(--b); margin: 16px 0 }
 
 <div class="wrap">
 
-<!-- ─── CORS NOTICE ─── -->
+<!-- ─── PLUGIN NOTICE ─── -->
 <div class="cors-notice" id="corsNotice">
-  <h3>⚠ Plugin CORS requis</h3>
+  <h3>⚠ Plugin Takeover requis (v3)</h3>
   <p>
-    Le navigateur ne peut pas interroger l'API WordPress sans les bons en-têtes CORS.<br>
+    Ce plugin fait <b>deux choses</b> :<br>
+    1) Active CORS pour que le push fonctionne depuis ce navigateur<br>
+    2) <b>Court-circuite 100% du thème WordPress</b> — chaque page affiche directement votre HTML Haroboz, sans aucun élément WP<br>
     <strong>Installation en 3 clics :</strong>
   </p>
   <ol style="margin:8px 0 8px 18px;font-size:.78rem;line-height:1.8;color:var(--t)">
-    <li><a href="/api/cors-plugin" style="color:var(--g);font-weight:600;text-decoration:underline;cursor:pointer">Télécharger haroboz-cors.zip</a></li>
+    <li><a href="/api/cors-plugin" style="color:var(--g);font-weight:600;text-decoration:underline;cursor:pointer">Télécharger haroboz-takeover.zip</a></li>
     <li>Dans WP Admin → <b>Extensions → Ajouter → Téléverser une extension</b> → choisir le .zip → Installer</li>
-    <li><b>Activer</b> le plugin, puis revenir ici et retester la connexion</li>
+    <li><b>Activer</b> le plugin (désactivez l'ancien haroboz-cors si présent), puis revenir ici et retester la connexion</li>
   </ol>
-  <p style="color:var(--ko);font-size:.7rem;margin-top:4px">⚠ Désactivez et supprimez ce plugin une fois le push terminé.</p>
+  <p style="color:var(--warn);font-size:.7rem;margin-top:4px">💡 Ce plugin remplace le thème — le site affichera vos pages exactement comme dans le preview.</p>
+  <p style="color:var(--ko);font-size:.7rem;margin-top:2px">⚠ Désactivez et supprimez ce plugin une fois le site stabilisé.</p>
 </div>
 
 <!-- ─── STEP 1 : CONNECTION ─── -->
@@ -610,9 +647,14 @@ hr { border: none; border-top: 1px solid var(--b); margin: 16px 0 }
   </p>
   <div class="actions">
     <button class="btn btn-gold" id="btnMedia" onclick="scanMedia()">Scanner la médiathèque WP</button>
+    <button class="btn btn-gold" id="btnUpload" onclick="uploadMissingMedia()">Uploader les images manquantes</button>
     <div class="media-badge" id="mediaBadge" style="display:none">
       <span>🖼</span><b id="mediaCount">0</b> images trouvées
     </div>
+  </div>
+  <div class="pb-wrap" id="uploadProgress" style="display:none">
+    <div class="pb-track"><div class="pb-fill" id="uploadFill"></div></div>
+    <div class="pb-label" id="uploadLabel">Upload en cours…</div>
   </div>
   <div class="alert" id="mediaAlert"></div>
 </div>
@@ -761,7 +803,7 @@ async function wpFetch(endpoint, method = 'GET', body = null) {
     return await resp.json();
   } catch (e) {
     if (e instanceof TypeError && e.message.includes('Failed to fetch')) {
-      throw new Error('CORS bloqué — Installez haroboz-cors.php dans wp-content/mu-plugins/ (voir ci-dessus)');
+      throw new Error('CORS bloqué — Installez le plugin haroboz-takeover.zip via Extensions → Ajouter (voir ci-dessus)');
     }
     throw e;
   }
@@ -783,7 +825,7 @@ async function testConn() {
   const btn = document.getElementById('btnTest');
   btn.disabled = true;
   showAlert('connAlert', 'info', 'Connexion en cours…');
-  document.getElementById('corsNotice').style.display = 'none';
+  // corsNotice reste toujours visible
 
   try {
     log('Connexion à ' + wpUrl + '…', 'info');
@@ -856,6 +898,120 @@ async function scanMedia() {
 }
 
 /* ================================================================
+   STEP 2b — UPLOAD MISSING IMAGES TO WP
+================================================================ */
+async function uploadMissingMedia() {
+  if (!connected) { alert('Connectez-vous d\\'abord (étape 1).'); return; }
+
+  const btn = document.getElementById('btnUpload');
+  btn.disabled = true;
+  const progWrap = document.getElementById('uploadProgress');
+  progWrap.style.display = 'block';
+
+  // If media map is empty, scan first
+  if (Object.keys(mediaMap).length === 0) {
+    log('Scan de la médiathèque WP avant upload…', 'info');
+    await scanMedia();
+  }
+
+  try {
+    // Get list of images used in HTML
+    const resp = await fetch('/api/used-images');
+    const usedImages = await resp.json();
+    log(usedImages.length + ' images référencées dans les pages HTML.', 'info');
+
+    // Find missing ones
+    const missing = usedImages.filter(imgPath => {
+      const basename = imgPath.split('/').pop();
+      return !mediaMap[basename] && !mediaMap[basename.toLowerCase()];
+    });
+
+    if (missing.length === 0) {
+      log('Toutes les images sont déjà dans la médiathèque WP !', 'ok');
+      showAlert('mediaAlert', 'ok', '<b>Aucune image manquante !</b> Toutes les ' + usedImages.length + ' images sont déjà dans WP.');
+      progWrap.style.display = 'none';
+      btn.disabled = false;
+      return;
+    }
+
+    log(missing.length + ' images manquantes à uploader…', 'warn');
+
+    let uploaded = 0;
+    let errors   = 0;
+
+    for (let i = 0; i < missing.length; i++) {
+      const imgPath = missing[i];
+      const basename = imgPath.split('/').pop();
+      const pct = Math.round((i + 1) / missing.length * 100);
+      document.getElementById('uploadFill').style.width = pct + '%';
+      document.getElementById('uploadLabel').textContent = (i + 1) + '/' + missing.length + ' — ' + basename;
+
+      try {
+        // Fetch image from local server
+        const imgResp = await fetch('/api/image/' + imgPath);
+        if (!imgResp.ok) throw new Error('Image locale introuvable: ' + imgPath);
+        const blob = await imgResp.blob();
+
+        // Determine content type
+        const ext = basename.split('.').pop().toLowerCase();
+        const mimeTypes = { png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp', gif: 'image/gif', svg: 'image/svg+xml' };
+        const contentType = mimeTypes[ext] || 'image/png';
+
+        // Upload to WP media library
+        const auth = 'Basic ' + btoa(wpUser + ':' + wpPass);
+        const uploadResp = await fetch(wpUrl + '/wp-json/wp/v2/media', {
+          method: 'POST',
+          headers: {
+            'Authorization': auth,
+            'Content-Disposition': 'attachment; filename="' + basename + '"',
+            'Content-Type': contentType,
+          },
+          body: blob,
+        });
+
+        if (!uploadResp.ok) {
+          const errText = await uploadResp.text().catch(() => '');
+          throw new Error('WP ' + uploadResp.status + ': ' + errText.substring(0, 200));
+        }
+
+        const wpMedia = await uploadResp.json();
+        const wpMediaUrl = wpMedia.source_url || '';
+
+        // Update media map
+        mediaMap[basename]              = wpMediaUrl;
+        mediaMap[basename.toLowerCase()] = wpMediaUrl;
+
+        log('  ✓ ' + basename + ' → ' + wpMediaUrl, 'ok');
+        uploaded++;
+      } catch (e) {
+        log('  ✗ ' + basename + ' — ' + e.message, 'ko');
+        errors++;
+      }
+
+      // Yield to keep UI responsive
+      await new Promise(r => setTimeout(r, 50));
+    }
+
+    // Update UI
+    const totalInMap = Object.keys(mediaMap).length / 2; // each image has 2 entries
+    document.getElementById('nMedia').textContent    = Math.round(totalInMap);
+    document.getElementById('mediaCount').textContent = Math.round(totalInMap);
+    document.getElementById('mediaBadge').style.display = 'inline-flex';
+
+    const summary = uploaded + ' uploadée' + (uploaded > 1 ? 's' : '') + ', ' + errors + ' erreur' + (errors > 1 ? 's' : '');
+    log('Upload terminé : ' + summary, errors > 0 ? 'warn' : 'ok');
+    showAlert('mediaAlert', errors > 0 ? 'warn' : 'ok', '<b>Upload terminé.</b> ' + summary);
+
+  } catch (e) {
+    log('Erreur upload : ' + e.message, 'ko');
+    showAlert('mediaAlert', 'ko', 'Erreur : ' + e.message);
+  }
+
+  progWrap.style.display = 'none';
+  btn.disabled = false;
+}
+
+/* ================================================================
    CONTENT PROCESSING — runs in browser
 ================================================================ */
 
@@ -903,19 +1059,31 @@ function rewriteImages(html, mMap) {
     return mMap[basename] || mMap[basename.toLowerCase()] || mMap[fullPath] || mMap[fullPath.toLowerCase()];
   }
 
-  // src="/img/…" (handles subdirs like /img/wetransfer/file.png)
+  // src="/img/…" or src="../../img/…" (absolute and relative paths)
+  html = html.replace(/src="(?:\\.\\.\\/)*img\\/([^"]+)"/g, function(match, p) {
+    var wpUrl = findInMap(p);
+    return wpUrl ? 'src="' + wpUrl + '"' : match;
+  });
   html = html.replace(/src="\\/img\\/([^"]+)"/g, function(match, p) {
     var wpUrl = findInMap(p);
     return wpUrl ? 'src="' + wpUrl + '"' : match;
   });
 
-  // background-image: url(/img/…)
+  // background-image: url(/img/…) or url(../../img/…)
+  html = html.replace(/url\\((?:\\.\\.\\/)*img\\/([^)]+)\\)/g, function(match, p) {
+    var wpUrl = findInMap(p);
+    return wpUrl ? 'url(' + wpUrl + ')' : match;
+  });
   html = html.replace(/url\\(\\/img\\/([^)]+)\\)/g, function(match, p) {
     var wpUrl = findInMap(p);
     return wpUrl ? 'url(' + wpUrl + ')' : match;
   });
 
-  // srcset="/img/…"
+  // srcset="/img/…" or srcset="../../img/…"
+  html = html.replace(/srcset="(?:\\.\\.\\/)*img\\/([^"]+)"/g, function(match, p) {
+    var wpUrl = findInMap(p);
+    return wpUrl ? 'srcset="' + wpUrl + '"' : match;
+  });
   html = html.replace(/srcset="\\/img\\/([^"]+)"/g, function(match, p) {
     var wpUrl = findInMap(p);
     return wpUrl ? 'srcset="' + wpUrl + '"' : match;
