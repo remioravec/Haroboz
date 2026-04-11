@@ -9,6 +9,10 @@ node_modules/
 .DS_Store
 Thumbs.db
 
+# Python
+__pycache__/
+*.pyc
+
 # Scraping output (regenerable)
 scraping/output/*.json
 !scraping/output/.gitkeep
@@ -19,6 +23,13 @@ preview/img/
 Screenshot*.png
 screencapture-*.png
 wetransfer_*.zip
+image_map.json
+
+# Generated plugin output (rebuild with build_wp_plugin.py)
+wp-plugin/
+
+# Source images (too large for git)
+image0.jpeg
 
 # WP Push artifacts
 wp-push/push-status.json
