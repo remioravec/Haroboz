@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <title>Photographe Art Masculin – Shooting &amp; Tirage d'Art | Haroboz</title>
+    <title>Photographe Art Masculin – Shooting & Tirage | Haroboz</title>
     <meta name="description" content="Haroboz, photographe d'art consacré au masculin. Shootings, books, créations, tirages d'art. Marseille, Toulon, Nice, Paris. Expérience photographique unique.">
+    <meta property="og:title" content="Photographe Art Masculin – Shooting & Tirage | Haroboz">
+    <meta property="og:description" content="Haroboz, photographe d'art consacré au masculin. Shootings, books, créations, tirages d'art. Marseille, Toulon, Nice, Paris. Expérience photographique unique.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://haroboz.com/">
+    <meta property="og:image" content="https://haroboz.com/wp-content/uploads/haroboz-og.jpg">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -134,6 +139,7 @@
             border-radius: 0.75rem;
         }
     </style>
+    <link rel="canonical" href="https://haroboz.com/">
 </head>
 <body class="bg-gray-50 font-sans text-brand antialiased">
 
@@ -158,8 +164,8 @@
                         </button>
                         <div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-white shadow-xl rounded-b-lg border-t border-gray-100 overflow-hidden">
                             <div class="py-2">
-                                <a href="/pages/packs-shooting/portrait-studio-cannes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Portrait en Studio</a>
-                                <a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Shooting en Extérieur</a>
+                                <a href="/pages/packs-shooting/portrait-studio.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Portrait en Studio</a>
+                                <a href="/pages/packs-shooting/shooting-exterieur.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Shooting en Extérieur</a>
                                 <a href="/pages/packs-shooting/photo-domicile.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Photo à Domicile</a>
                                 <a href="/pages/packs-shooting/shooting-duo-couple.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Shooting Duo & Couple</a>
                             </div>
@@ -202,10 +208,10 @@
                         </button>
                         <div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-48 bg-white shadow-xl rounded-b-lg border-t border-gray-100 overflow-hidden">
                             <div class="py-2">
-                                <span class="block px-6 py-3 text-sm text-brand font-medium">Marseille</span>
-                                <span class="block px-6 py-3 text-sm text-brand font-medium">Toulon</span>
-                                <a href="/pages/photographe-cote-azur/photographe-nice.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Nice</a>
-                                <span class="block px-6 py-3 text-sm text-brand font-medium">Paris</span>
+                                <a href="/pages/photographe/photographe-marseille.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Marseille</a>
+                                <a href="/pages/photographe/photographe-toulon.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Toulon</a>
+                                <a href="/pages/photographe/photographe-nice.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Nice</a>
+                                <a href="/pages/photographe/photographe-paris.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Paris</a>
                             </div>
                         </div>
                     </div>
@@ -246,7 +252,7 @@
 
                 <!-- MOBILE MENU BUTTON -->
                 <div class="flex items-center lg:hidden">
-                    <button id="mobile-menu-btn" class="text-brand hover:text-brand-light focus:outline-none p-2">
+                    <button id="mobile-menu-btn" class="text-brand hover:text-brand-light focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded-lg p-2">
                         <i data-lucide="menu" class="w-7 h-7"></i>
                     </button>
                 </div>
@@ -260,7 +266,7 @@
         <div class="p-6">
             <div class="flex items-center justify-between mb-8">
                 <span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span>
-                <button id="close-menu-btn" class="text-gray-500 hover:text-brand focus:outline-none">
+                <button id="close-menu-btn" class="text-gray-500 hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded-lg">
                     <i data-lucide="x" class="w-7 h-7"></i>
                 </button>
             </div>
@@ -274,8 +280,8 @@
                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
                     </button>
                     <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
-                        <a href="/pages/packs-shooting/portrait-studio-cannes.html" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a>
-                        <a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a>
+                        <a href="/pages/packs-shooting/portrait-studio.html" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a>
+                        <a href="/pages/packs-shooting/shooting-exterieur.html" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a>
                         <a href="/pages/packs-shooting/photo-domicile.html" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a>
                         <a href="/pages/packs-shooting/shooting-duo-couple.html" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo & Couple</a>
                     </div>
@@ -312,10 +318,10 @@
                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
                     </button>
                     <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
-                        <span class="block text-sm text-gray-600">Marseille</span>
-                        <span class="block text-sm text-gray-600">Toulon</span>
-                        <a href="/pages/photographe-cote-azur/photographe-nice.html" class="block text-sm text-gray-600 hover:text-brand">Nice</a>
-                        <span class="block text-sm text-gray-600">Paris</span>
+                        <a href="/pages/photographe/photographe-marseille.html" class="block text-sm text-gray-600 hover:text-brand">Marseille</a>
+                        <a href="/pages/photographe/photographe-toulon.html" class="block text-sm text-gray-600 hover:text-brand">Toulon</a>
+                        <a href="/pages/photographe/photographe-nice.html" class="block text-sm text-gray-600 hover:text-brand">Nice</a>
+                        <a href="/pages/photographe/photographe-paris.html" class="block text-sm text-gray-600 hover:text-brand">Paris</a>
                     </div>
                 </div>
 
@@ -377,7 +383,7 @@
                         </p>
                         <!-- Offre claire -->
                         <div class="flex flex-wrap items-center gap-3 sm:gap-5 mb-8 text-white/70 text-xs sm:text-sm">
-                            <span class="flex items-center gap-1.5"><i data-lucide="camera" class="w-4 h-4"></i> Shooting prive</span>
+                            <span class="flex items-center gap-1.5"><i data-lucide="camera" class="w-4 h-4"></i> Shooting privé</span>
                             <span class="w-1 h-1 rounded-full bg-white/40"></span>
                             <span class="flex items-center gap-1.5"><i data-lucide="image" class="w-4 h-4"></i> Tirage Fine Art inclus</span>
                             <span class="w-1 h-1 rounded-full bg-white/40"></span>
@@ -672,7 +678,7 @@
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
                     <!-- Séance 1 -->
-                    <a href="/pages/packs-shooting/portrait-studio-cannes.html" class="group relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-800 block">
+                    <a href="/pages/packs-shooting/portrait-studio.html" class="group relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-800 block">
                         <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500 z-10"></div>
                         <img src="/img/wetransfer/Photoroom_20260217_122033.png" alt="Portrait homme torse nu en studio, eclairage clair-obscur artistique" class="absolute inset-0 w-full h-full object-cover object-top z-0" loading="lazy">
                         <div class="absolute bottom-0 left-0 p-6 lg:p-8 z-20 w-full bg-gradient-to-t from-brand/90 to-transparent">
@@ -682,7 +688,7 @@
                         </div>
                     </a>
                     <!-- Séance 2 -->
-                    <a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="group relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-800 block">
+                    <a href="/pages/packs-shooting/shooting-exterieur.html" class="group relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-800 block">
                         <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500 z-10"></div>
                         <img src="/img/wetransfer/IMG_4769.png" alt="Homme torse nu en exterieur lumiere naturelle artistique" class="absolute inset-0 w-full h-full object-cover object-top z-0" loading="lazy">
                         <div class="absolute bottom-0 left-0 p-6 lg:p-8 z-20 w-full bg-gradient-to-t from-brand/90 to-transparent">
@@ -971,7 +977,7 @@
                                         <a href="/pages/votre-experience/premier-shooting-nu.html" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
                                             <i data-lucide="arrow-right" class="w-4 h-4 mr-1"></i> Déroulement complet d'une séance
                                         </a>
-                                        <a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
+                                        <a href="/pages/photographe/" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
                                             <i data-lucide="arrow-right" class="w-4 h-4 mr-1"></i> Notre atelier privé
                                         </a>
                                     </div>
@@ -1156,19 +1162,19 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <span class="text-xs md:text-sm font-bold tracking-widest text-gray-400 uppercase mb-6 md:mb-8 block">Mes lieux d'exercice</span>
                 <div class="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-12">
-                    <a href="/pages/photographe-cote-azur/photographe-homme-nu-cannes.html" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
+                    <a href="/pages/photographe/photographe-marseille.html" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
                         <i data-lucide="map-pin" class="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-gray-400 group-hover:text-brand-light transition-colors"></i>
                         Marseille
                     </a>
-                    <a href="/pages/photographe-cote-azur/photographe-nice.html" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
+                    <a href="/pages/photographe/photographe-nice.html" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
                         <i data-lucide="map-pin" class="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-gray-400 group-hover:text-brand-light transition-colors"></i>
                         Nice
                     </a>
-                    <a href="/pages/photographe-cote-azur/shooting-couple-antibes.html" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
+                    <a href="/pages/photographe/photographe-toulon.html" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
                         <i data-lucide="map-pin" class="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-gray-400 group-hover:text-brand-light transition-colors"></i>
                         Toulon
                     </a>
-                    <a href="/pages/photographe-cote-azur/photographe-mougins.html" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
+                    <a href="/pages/photographe/photographe-paris.html" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
                         <i data-lucide="map-pin" class="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-gray-400 group-hover:text-brand-light transition-colors"></i>
                         Paris
                     </a>
@@ -1185,14 +1191,14 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-4 md:mb-6">Votre shooting + votre tirage d'art vous attendent</h2>
                 <p class="text-brand-50 text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto px-2">
-                    Prenez 30 secondes pour nous laisser vos coordonnees. On vous rappelle sous 24h pour un echange confidentiel, sans engagement. Vous repartirez avec un souvenir tangible de cette experience.
+                    Prenez 30 secondes pour nous laisser vos coordonnées. On vous rappelle sous 24h pour un échange confidentiel, sans engagement. Vous repartirez avec un souvenir tangible de cette expérience.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <button onclick="openPopup()" class="bg-white text-brand px-6 py-4 md:px-8 rounded-full text-base md:text-lg font-bold hover:bg-gray-100 transition-colors shadow-xl flex items-center justify-center cursor-pointer">
                         <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
-                        Etre rappele sous 24h
+                        Être rappelé sous 24h
                     </button>
-                    <a href="tel:+33600000000" class="border-2 border-white text-white px-6 py-4 md:px-8 rounded-full text-base md:text-lg font-bold hover:bg-white/10 transition-colors flex items-center justify-center">
+                    <a href="tel:+33688704041" class="border-2 border-white text-white px-6 py-4 md:px-8 rounded-full text-base md:text-lg font-bold hover:bg-white/10 transition-colors flex items-center justify-center">
                         <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
                         Appeler maintenant
                     </a>
@@ -1210,27 +1216,27 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
 
                 <div>
-                    <h4 class="font-serif text-lg font-bold mb-4">Nos Packs</h4>
+                    <div class="font-serif text-lg font-bold mb-4">Nos Packs</div>
                     <ul class="space-y-2">
-                        <li><a href="/pages/packs-shooting/portrait-studio-cannes.html" class="text-sm text-gray-300 hover:text-white transition-colors">Portrait Studio</a></li>
-                        <li><a href="/pages/packs-shooting/shooting-exterieur-cote-azur.html" class="text-sm text-gray-300 hover:text-white transition-colors">Shooting Extérieur</a></li>
+                        <li><a href="/pages/packs-shooting/portrait-studio.html" class="text-sm text-gray-300 hover:text-white transition-colors">Portrait Studio</a></li>
+                        <li><a href="/pages/packs-shooting/shooting-exterieur.html" class="text-sm text-gray-300 hover:text-white transition-colors">Shooting Extérieur</a></li>
                         <li><a href="/pages/packs-shooting/shooting-duo-couple.html" class="text-sm text-gray-300 hover:text-white transition-colors">Duo & Couple</a></li>
                         <li><a href="/pages/packs-shooting/photo-domicile.html" class="text-sm text-gray-300 hover:text-white transition-colors">Photo à Domicile</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-serif text-lg font-bold mb-4">Lieux</h4>
+                    <div class="font-serif text-lg font-bold mb-4">Lieux</div>
                     <ul class="space-y-2">
-                        <li><span class="text-sm text-gray-300">Marseille</span></li>
-                        <li><span class="text-sm text-gray-300">Toulon</span></li>
-                        <li><a href="/pages/photographe-cote-azur/photographe-nice.html" class="text-sm text-gray-300 hover:text-white transition-colors">Nice</a></li>
-                        <li><span class="text-sm text-gray-300">Paris</span></li>
+                        <li><a href="/pages/photographe/photographe-marseille.html" class="text-sm text-gray-300 hover:text-white">Marseille</a></li>
+                        <li><a href="/pages/photographe/photographe-toulon.html" class="text-sm text-gray-300 hover:text-white">Toulon</a></li>
+                        <li><a href="/pages/photographe/photographe-nice.html" class="text-sm text-gray-300 hover:text-white transition-colors">Nice</a></li>
+                        <li><a href="/pages/photographe/photographe-paris.html" class="text-sm text-gray-300 hover:text-white">Paris</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-serif text-lg font-bold mb-4">Expérience</h4>
+                    <div class="font-serif text-lg font-bold mb-4">Expérience</div>
                     <ul class="space-y-2">
                         <li><a href="/pages/votre-experience/premier-shooting-nu.html" class="text-sm text-gray-300 hover:text-white transition-colors">Premier Shooting</a></li>
                         <li><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="text-sm text-gray-300 hover:text-white transition-colors">Retrouver Confiance</a></li>
@@ -1240,7 +1246,7 @@
                 </div>
 
                 <div>
-                    <h4 class="font-serif text-lg font-bold mb-4">Haroboz</h4>
+                    <div class="font-serif text-lg font-bold mb-4">Haroboz</div>
                     <ul class="space-y-2">
                         <li><a href="/pages/a-propos/" class="text-sm text-gray-300 hover:text-white transition-colors">À Propos</a></li>
                         <li><a href="/pages/portfolio/" class="text-sm text-gray-300 hover:text-white transition-colors">Réalisations</a></li>
@@ -1281,7 +1287,7 @@
                     <i data-lucide="image" class="w-5 h-5 text-brand-50"></i>
                 </div>
                 <h3 class="text-2xl md:text-3xl font-serif text-white mb-1">Parlons de votre projet</h3>
-                <p class="text-brand-50 text-sm">Plus j'en sais, mieux je prepare votre seance. Reponse sous 24h.</p>
+                <p class="text-brand-50 text-sm">Plus j'en sais, mieux je prépare votre séance. Réponse sous 24h.</p>
             </div>
 
             <!-- Formulaire complet photographe -->
@@ -1291,16 +1297,16 @@
                 <div class="mb-6">
                     <h4 class="text-brand font-serif text-lg font-bold mb-4 flex items-center gap-2">
                         <span class="w-7 h-7 bg-brand text-white rounded-full text-xs flex items-center justify-center font-bold">1</span>
-                        Vos coordonnees
+                        Vos coordonnées
                     </h4>
                     <div class="grid md:grid-cols-2 gap-4">
                         <div>
-                            <label for="popup-firstname" class="block text-sm font-medium text-brand mb-1">Prenom *</label>
-                            <input type="text" id="popup-firstname" name="firstname" required placeholder="Votre prenom"
+                            <label for="popup-firstname" class="block text-sm font-medium text-brand mb-1">Prénom *</label>
+                            <input type="text" id="popup-firstname" name="firstname" required placeholder="Votre prénom"
                                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
                         </div>
                         <div>
-                            <label for="popup-age" class="block text-sm font-medium text-brand mb-1">Age (optionnel)</label>
+                            <label for="popup-age" class="block text-sm font-medium text-brand mb-1">Âge (optionnel)</label>
                             <input type="number" id="popup-age" name="age" placeholder="Ex: 35" min="18" max="99"
                                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
                         </div>
@@ -1312,7 +1318,7 @@
                                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
                         </div>
                         <div>
-                            <label for="popup-phone" class="block text-sm font-medium text-brand mb-1">Telephone *</label>
+                            <label for="popup-phone" class="block text-sm font-medium text-brand mb-1">Téléphone *</label>
                             <input type="tel" id="popup-phone" name="phone" required placeholder="06 XX XX XX XX"
                                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
                         </div>
@@ -1326,16 +1332,16 @@
                     <h4 class="text-brand font-serif text-lg font-bold mb-4 flex items-center gap-2">
                         <span class="w-7 h-7 bg-brand text-white rounded-full text-xs flex items-center justify-center font-bold">2</span>
                         Votre projet shooting
-                    </h4>
+                    </div>
 
                     <div class="mb-4">
                         <label for="popup-pack" class="block text-sm font-medium text-brand mb-1">Quel pack vous interesse ?</label>
                         <select id="popup-pack" name="pack"
                             class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand bg-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
                             <option value="">Je ne sais pas encore — conseillez-moi</option>
-                            <option value="studio">Studio Intimiste (clair-obscur) — a partir de 250 EUR + tirage inclus</option>
-                            <option value="exterieur">Evasion Exterieur — a partir de 350 EUR + tirage inclus</option>
-                            <option value="domicile">A Domicile (lifestyle) — sur devis + tirage inclus</option>
+                            <option value="studio">Studio Intimiste (clair-obscur) — à partir de 250 EUR + tirage inclus</option>
+                            <option value="exterieur">Évasion Extérieur — à partir de 350 EUR + tirage inclus</option>
+                            <option value="domicile">À Domicile (lifestyle) — sur devis + tirage inclus</option>
                             <option value="couple">Duo & Couple — sur devis + tirage pour chacun</option>
                         </select>
                     </div>
@@ -1356,16 +1362,16 @@
                                 <input type="checkbox" name="motivation" value="couple" class="accent-brand w-4 h-4"> Shooting couple
                             </label>
                             <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
-                                <input type="checkbox" name="motivation" value="etape" class="accent-brand w-4 h-4"> Marquer une etape
+                                <input type="checkbox" name="motivation" value="etape" class="accent-brand w-4 h-4"> Marquer une étape
                             </label>
                             <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
-                                <input type="checkbox" name="motivation" value="curiosite" class="accent-brand w-4 h-4"> Simple curiosite
+                                <input type="checkbox" name="motivation" value="curiosite" class="accent-brand w-4 h-4"> Simple curiosité
                             </label>
                         </div>
                     </div>
 
                     <div class="mb-4">
-                        <label class="block text-sm font-medium text-brand mb-2">Avez-vous deja pose nu ou en sous-vetements ?</label>
+                        <label class="block text-sm font-medium text-brand mb-2">Avez-vous déjà posé nu ou en sous-vêtements ?</label>
                         <div class="flex gap-3">
                             <label class="flex-1 flex items-center justify-center gap-2 p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
                                 <input type="radio" name="experience" value="jamais" class="accent-brand"> Jamais
@@ -1386,8 +1392,8 @@
                 <div class="mb-6">
                     <h4 class="text-brand font-serif text-lg font-bold mb-4 flex items-center gap-2">
                         <span class="w-7 h-7 bg-brand text-white rounded-full text-xs flex items-center justify-center font-bold">3</span>
-                        Inspiration & style recherche
-                    </h4>
+                        Inspiration & style recherché
+                    </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-brand mb-2">Quelle ambiance vous attire ?</label>
@@ -1399,13 +1405,13 @@
                                 <input type="checkbox" name="ambiance" value="noir-blanc" class="accent-brand w-4 h-4"> Noir & blanc
                             </label>
                             <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
-                                <input type="checkbox" name="ambiance" value="lumiere-naturelle" class="accent-brand w-4 h-4"> Lumiere naturelle
+                                <input type="checkbox" name="ambiance" value="lumiere-naturelle" class="accent-brand w-4 h-4"> Lumière naturelle
                             </label>
                             <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
                                 <input type="checkbox" name="ambiance" value="artistique" class="accent-brand w-4 h-4"> Artistique / abstrait
                             </label>
                             <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
-                                <input type="checkbox" name="ambiance" value="sensuel" class="accent-brand w-4 h-4"> Sensuel / epure
+                                <input type="checkbox" name="ambiance" value="sensuel" class="accent-brand w-4 h-4"> Sensuel / épuré
                             </label>
                             <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
                                 <input type="checkbox" name="ambiance" value="brut" class="accent-brand w-4 h-4"> Brut / sauvage
@@ -1414,16 +1420,16 @@
                     </div>
 
                     <div class="mb-4">
-                        <label class="block text-sm font-medium text-brand mb-2">Niveau de nudite envisage</label>
+                        <label class="block text-sm font-medium text-brand mb-2">Niveau de nudité envisagé</label>
                         <div class="flex gap-3">
                             <label class="flex-1 text-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
-                                <input type="radio" name="nudite" value="habille" class="accent-brand block mx-auto mb-1"> Habille / suggestif
+                                <input type="radio" name="nudite" value="habille" class="accent-brand block mx-auto mb-1"> Habillé / suggestif
                             </label>
                             <label class="flex-1 text-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
                                 <input type="radio" name="nudite" value="partiel" class="accent-brand block mx-auto mb-1"> Nu partiel
                             </label>
                             <label class="flex-1 text-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
-                                <input type="radio" name="nudite" value="integral" class="accent-brand block mx-auto mb-1"> Nu integral
+                                <input type="radio" name="nudite" value="integral" class="accent-brand block mx-auto mb-1"> Nu intégral
                             </label>
                             <label class="flex-1 text-center p-3 border border-gray-200 rounded-xl cursor-pointer hover:border-brand hover:bg-brand-50 transition-all text-sm text-gray-700">
                                 <input type="radio" name="nudite" value="ne-sais-pas" class="accent-brand block mx-auto mb-1"> On en discute
@@ -1438,13 +1444,13 @@
                     </div>
 
                     <div>
-                        <label for="popup-tirage" class="block text-sm font-medium text-brand mb-1">Format de tirage d'art souhaite</label>
+                        <label for="popup-tirage" class="block text-sm font-medium text-brand mb-1">Format de tirage d'art souhaité</label>
                         <select id="popup-tirage" name="tirage"
                             class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand bg-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
                             <option value="">Conseillez-moi</option>
                             <option value="20x30">20x30 cm — inclus dans le pack</option>
-                            <option value="30x45">30x45 cm — supplement</option>
-                            <option value="50x70">50x70 cm — supplement</option>
+                            <option value="30x45">30x45 cm — supplément</option>
+                            <option value="50x70">50x70 cm — supplément</option>
                             <option value="70x100">70x100 cm — grand format</option>
                             <option value="multiple">Plusieurs tirages</option>
                         </select>
@@ -1457,8 +1463,8 @@
                 <div class="mb-6">
                     <h4 class="text-brand font-serif text-lg font-bold mb-4 flex items-center gap-2">
                         <span class="w-7 h-7 bg-brand text-white rounded-full text-xs flex items-center justify-center font-bold">4</span>
-                        Cote pratique
-                    </h4>
+                        Côté pratique
+                    </div>
                     <div class="grid md:grid-cols-2 gap-4">
                         <div>
                             <label for="popup-ville" class="block text-sm font-medium text-brand mb-1">Votre ville</label>
@@ -1469,30 +1475,30 @@
                             <label for="popup-quand" class="block text-sm font-medium text-brand mb-1">Quand souhaitez-vous shooter ?</label>
                             <select id="popup-quand" name="quand"
                                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand bg-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all">
-                                <option value="">Pas de date precise</option>
-                                <option value="asap">Le plus tot possible</option>
+                                <option value="">Pas de date précise</option>
+                                <option value="asap">Le plus tôt possible</option>
                                 <option value="1-mois">Dans le mois</option>
                                 <option value="2-3-mois">Dans 2-3 mois</option>
-                                <option value="plus-tard">Plus tard / je reflechis</option>
+                                <option value="plus-tard">Plus tard / je réfléchis</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="mt-4">
-                        <label for="popup-message" class="block text-sm font-medium text-brand mb-1">Message libre — envies, questions, apprehensions...</label>
-                        <textarea id="popup-message" name="message" rows="3" placeholder="Dites-moi tout ce qui vous passe par la tete. Chaque detail m'aide a preparer une seance sur mesure pour vous..."
+                        <label for="popup-message" class="block text-sm font-medium text-brand mb-1">Message libre — envies, questions, appréhensions...</label>
+                        <textarea id="popup-message" name="message" rows="3" placeholder="Dites-moi tout ce qui vous passe par la tête. Chaque detail m'aide à préparer une séance sur mesure pour vous..."
                             class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all resize-none"></textarea>
                     </div>
                 </div>
 
                 <button type="submit" class="w-full bg-brand text-white py-4 rounded-xl font-bold text-lg hover:bg-brand-light transition-colors shadow-lg flex items-center justify-center cursor-pointer">
                     <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-                    Envoyer ma demande — Reponse sous 24h
+                    Envoyer ma demande — Réponse sous 24h
                 </button>
 
                 <p class="text-center text-xs text-gray-400 mt-3 flex items-center justify-center gap-1">
                     <i data-lucide="lock" class="w-3 h-3"></i>
-                    100% confidentiel — vos donnees ne seront jamais partagees
+                    100% confidentiel — vos données ne seront jamais partagées
                 </p>
             </form>
 
@@ -1501,11 +1507,11 @@
                 <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i data-lucide="check-circle" class="w-10 h-10 text-green-600"></i>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-serif text-brand mb-3">Demande envoyee !</h3>
-                <p class="text-gray-600 mb-2">Merci pour votre confiance et ces precieux details.</p>
-                <p class="text-gray-600 mb-6">Je vous recontacte <strong class="text-brand">sous 24h</strong> pour un echange telephonique confidentiel et personnalise.</p>
+                <h3 class="text-2xl md:text-3xl font-serif text-brand mb-3">Demande envoyée !</h3>
+                <p class="text-gray-600 mb-2">Merci pour votre confiance et ces précieux détails.</p>
+                <p class="text-gray-600 mb-6">Je vous recontacte <strong class="text-brand">sous 24h</strong> pour un échange téléphonique confidentiel et personnalisé.</p>
                 <div class="bg-brand-50 rounded-xl p-4 mb-6 text-sm text-brand">
-                    <strong>Rappel :</strong> votre pack inclut la seance photo + votre tirage d'art Fine Art. Rien a ajouter.
+                    <strong>Rappel :</strong> votre pack inclut la séance photo + votre tirage d'art Fine Art. Rien à ajouter.
                 </div>
                 <button onclick="closePopup()" class="bg-brand text-white px-8 py-3 rounded-xl font-medium hover:bg-brand-light transition-colors cursor-pointer">Fermer</button>
             </div>
@@ -1513,8 +1519,8 @@
     </div>
 
     <!-- BOUTON FLOTTANT CTA (visible au scroll) -->
-    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
-        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light transition-colors flex items-center justify-center cursor-pointer pulse-ring text-brand">
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-40 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light transition-colors flex items-center justify-center cursor-pointer pulse-ring">
             <i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i>
             <span class="hidden md:inline font-medium">Prendre RDV</span>
         </button>
@@ -1613,7 +1619,7 @@
         });
 
         // Gestion soumission formulaire
-        function handleSubmit(e){e.preventDefault();var f=e.target,d=new FormData(f);d.append('_cc','Administration@remi-oravec.fr');d.append('_subject','Nouvelle demande de réservation — Haroboz');d.append('_template','table');d.append('_captcha','false');fetch('https://formsubmit.co/ajax/lucdfka@icloud.com',{method:'POST',body:d}).then(r=>r.json()).then(()=>{document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');initLucide();}).catch(()=>{document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');initLucide();});}
+        function handleSubmit(e){e.preventDefault();var f=e.target,d=new FormData(f);d.append('_cc','Administration@remi-oravec.fr');d.append('_subject','Nouvelle demande de réservation — Haroboz');d.append('_template','table');d.append('_captcha','false');fetch('https://formsubmit.co/ajax/lucdfka@icloud.com',{method:'POST',body:d}).then(r=>r.json()).then(()=>{document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');initLucide();}).catch(()=>{alert('Une erreur est survenue. Veuillez réessayer ou nous contacter au 06 88 70 40 41.');});}
 
         // Header transparent → white on scroll
         const mainHeader = document.getElementById('main-header');

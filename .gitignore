@@ -31,9 +31,13 @@ wp-plugin/
 # Source images (too large for git)
 image0.jpeg
 
-# WP Push artifacts
+# WP Push artifacts (generated — rebuild with: node scripts/build-deploy-plugin.js)
+wp-push/haroboz-deploy.php
+wp-push/haroboz-deploy.zip
 wp-push/push-status.json
 wp-push/tailwind-compiled.css
+scripts/push-data.json
+scripts/media-map.json
 
 # OMC
 .claude/
