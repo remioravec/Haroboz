@@ -882,7 +882,7 @@
     </footer>
 
     <!-- POPUP DE RESERVATION — Formulaire photographe complet -->
-    <div id="booking-popup" class="fixed inset-0 z-[100] flex items-center justify-center p-4 popup-hidden">
+    <div id="booking-popup" class="fixed inset-0 z-[100] flex items-center justify-center p-4 popup-hidden" style="display:none">
         <!-- Overlay -->
         <div class="absolute inset-0 bg-brand/60 backdrop-blur-sm" onclick="closePopup()"></div>
 
@@ -1211,7 +1211,7 @@
         // Popup de reservation
         function openPopup() {
             const popup = document.getElementById('booking-popup');
-            popup.classList.remove('popup-hidden');
+            popup.style.display='';popup.classList.remove('popup-hidden');
             popup.classList.add('popup-visible');
             document.body.classList.add('overflow-hidden');
             // Re-init Lucide pour les nouvelles icones du popup
@@ -1221,7 +1221,7 @@
         function closePopup() {
             const popup = document.getElementById('booking-popup');
             popup.classList.remove('popup-visible');
-            popup.classList.add('popup-hidden');
+            popup.classList.add('popup-hidden');popup.style.display='none';
             document.body.classList.remove('overflow-hidden');
         }
 
