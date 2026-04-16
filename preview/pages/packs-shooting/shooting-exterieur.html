@@ -54,8 +54,12 @@
                     <a href="/" class="font-serif text-2xl lg:text-3xl font-bold tracking-tight text-brand">HAROBOZ</a>
                 </div>
                 <nav class="hidden lg:flex space-x-8 h-full items-center">
+                    <!-- Séances (dropdown) -->
                     <div class="mega-menu-item relative h-full flex items-center">
-                        <button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">Nos Séances <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button>
+                        <button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">
+                            Séances
+                            <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i>
+                        </button>
                         <div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-white shadow-xl rounded-b-lg border-t border-gray-100 overflow-hidden">
                             <div class="py-2">
                                 <a href="/pages/packs-shooting/portrait-studio.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Portrait en Studio</a>
@@ -65,46 +69,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mega-menu-item relative h-full flex items-center">
-                        <button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">Votre Objectif <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button>
-                        <div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-80 bg-white shadow-xl rounded-b-lg border-t border-gray-100 overflow-hidden">
-                            <div class="py-2">
-                                <a href="/pages/votre-experience/retrouver-confiance-corps.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Confiance &amp; Acceptation</a>
-                                <a href="/pages/votre-experience/book-modele-professionnel.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Book Professionnel</a>
-                                <a href="/pages/votre-experience/cadeau-couple-original.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Immortaliser son Couple</a>
-                                <a href="/pages/votre-experience/premier-shooting-nu.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Cadeau &amp; Célébration</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mega-menu-item relative h-full flex items-center">
-                        <button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">Où me trouver ? <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button>
-                        <div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-48 bg-white shadow-xl rounded-b-lg border-t border-gray-100 overflow-hidden">
-                            <div class="py-2">
-                                <a href="/pages/photographe/photographe-marseille.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Marseille</a>
-                                <a href="/pages/photographe/photographe-toulon.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Toulon</a>
-                                <a href="/pages/photographe/photographe-nice.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Nice</a>
-                                <a href="/pages/photographe/photographe-paris.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Paris</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mega-menu-item relative h-full flex items-center">
-                    <button class="flex items-center text-sm font-medium hover:text-brand-light transition-colors py-8">L'Oeuvre <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i></button>
-                    <div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-white shadow-xl rounded-b-lg border-t border-gray-100 overflow-hidden">
-                        <div class="py-2">
-                            <a href="/pages/portfolio/" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Toutes les oeuvres</a>
-                            <a href="/pages/portfolio/galerie-portraits-hommes.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Portraits</a>
-                            <a href="/pages/portfolio/#nus" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Nus &amp; Attributs</a>
-                            <a href="/pages/portfolio/galerie-couples.html" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Couples &amp; Duos</a>
-                            <a href="/pages/portfolio/#creation" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Création d'art</a>
-                            <a href="/pages/portfolio/#reportages" class="block px-6 py-3 text-sm hover:bg-brand-50 hover:text-brand transition-colors">Reportages</a>
-                        </div>
-                    </div>
-                </div>
+                    <!-- Réalisations (lien direct) -->
+                    <a href="/pages/portfolio/" class="text-sm font-medium hover:text-brand-light transition-colors">Réalisations</a>
+                    <!-- L'Univers (lien direct) -->
                     <a href="/pages/a-propos/" class="text-sm font-medium hover:text-brand-light transition-colors">L'Univers</a>
+                    <!-- Contact (lien direct) -->
+                    <a href="/pages/contact.html" class="text-sm font-medium hover:text-brand-light transition-colors">Contact</a>
                 </nav>
-                <div class="hidden lg:flex items-center">
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="https://www.instagram.com/hbozart/" target="_blank" rel="noopener" class="text-gray-400 hover:text-brand transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
                     <button onclick="openPopup()" class="bg-brand text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brand-light transition-colors shadow-md hover:shadow-lg flex items-center cursor-pointer">
-                        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Prendre RDV gratuit
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                        Rendez-vous
                     </button>
                 </div>
                 <div class="flex items-center lg:hidden">
@@ -124,8 +102,12 @@
                 <button id="close-menu-btn" class="text-gray-500 hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded-lg"><i data-lucide="x" class="w-7 h-7"></i></button>
             </div>
             <nav class="space-y-2">
+                <!-- Séances accordion -->
                 <div class="border-b border-gray-100 py-3">
-                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i></button>
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">
+                        Séances
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+                    </button>
                     <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
                         <a href="/pages/packs-shooting/portrait-studio.html" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a>
                         <a href="/pages/packs-shooting/shooting-exterieur.html" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a>
@@ -133,31 +115,27 @@
                         <a href="/pages/packs-shooting/shooting-duo-couple.html" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a>
                     </div>
                 </div>
+                <!-- Réalisations lien direct -->
                 <div class="border-b border-gray-100 py-3">
-                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i></button>
-                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
-                        <a href="/pages/votre-experience/retrouver-confiance-corps.html" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a>
-                        <a href="/pages/votre-experience/book-modele-professionnel.html" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a>
-                        <a href="/pages/votre-experience/cadeau-couple-original.html" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a>
-                        <a href="/pages/votre-experience/premier-shooting-nu.html" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; Célébration</a>
-                    </div>
+                    <a href="/pages/portfolio/" class="block w-full text-left font-medium text-brand">Réalisations</a>
                 </div>
+                <!-- L'Univers lien direct -->
                 <div class="border-b border-gray-100 py-3">
-                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Où me trouver ? <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i></button>
-                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
-                        <a href="/pages/photographe/photographe-marseille.html" class="block text-sm text-gray-600 hover:text-brand">Marseille</a>
-                        <a href="/pages/photographe/photographe-toulon.html" class="block text-sm text-gray-600 hover:text-brand">Toulon</a>
-                        <a href="/pages/photographe/photographe-nice.html" class="block text-sm text-gray-600 hover:text-brand">Nice</a>
-                        <a href="/pages/photographe/photographe-paris.html" class="block text-sm text-gray-600 hover:text-brand">Paris</a>
-                    </div>
+                    <a href="/pages/a-propos/" class="block w-full text-left font-medium text-brand">L'Univers</a>
                 </div>
-                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">L'Oeuvre <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/pages/portfolio/" class="block text-sm text-gray-600 hover:text-brand">Toutes les oeuvres</a><a href="/pages/portfolio/galerie-portraits-hommes.html" class="block text-sm text-gray-600 hover:text-brand">Portraits</a><a href="/pages/portfolio/#nus" class="block text-sm text-gray-600 hover:text-brand">Nus &amp; Attributs</a><a href="/pages/portfolio/galerie-couples.html" class="block text-sm text-gray-600 hover:text-brand">Couples &amp; Duos</a><a href="/pages/portfolio/#creation" class="block text-sm text-gray-600 hover:text-brand">Création d'art</a><a href="/pages/portfolio/#reportages" class="block text-sm text-gray-600 hover:text-brand">Reportages</a></div></div>
-                <div class="border-b border-gray-100 py-3"><a href="/pages/a-propos/" class="block w-full text-left font-medium text-brand">L'Univers</a></div>
+                <!-- Contact lien direct -->
+                <div class="border-b border-gray-100 py-3">
+                    <a href="/pages/contact.html" class="block w-full text-left font-medium text-brand">Contact</a>
+                </div>
             </nav>
             <div class="mt-8">
                 <button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl text-center font-medium hover:bg-brand-light transition-colors shadow-md flex justify-center items-center cursor-pointer">
-                    <i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit
+                    <i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Rendez-vous
                 </button>
+                <p class="mt-4 text-center text-sm text-gray-500 flex items-center justify-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    06 88 70 40 41
+                </p>
             </div>
         </div>
     </div>
@@ -201,7 +179,7 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p class="text-brand font-serif text-lg md:text-xl text-center sm:text-left">Envie de vivre cette expérience ?</p>
                 <button onclick="openPopup()" class="bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand-light transition-colors shadow-md flex items-center cursor-pointer whitespace-nowrap">
-                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Prendre RDV gratuit
+                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Rendez-vous
                 </button>
             </div>
         </section>
@@ -238,7 +216,7 @@
                 </div>
                 <div class="text-center mt-8">
                     <a href="/pages/portfolio/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
-                        <span>Voir toutes les réalisations</span>
+                        <span>Réalisations</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
@@ -387,7 +365,7 @@
                 <p class="text-brand-50 text-base md:text-lg mb-8 max-w-2xl mx-auto">Discutons ensemble du lieu et de la lumière parfaits pour votre séance.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <button onclick="openPopup()" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-colors shadow-xl flex items-center justify-center cursor-pointer">
-                        <i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Être rappelé sous 24h
+                        <i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Rendez-vous
                     </button>
                 </div>
             </div>
@@ -397,50 +375,60 @@
     <!-- FOOTER -->
     <footer class="bg-brand text-white border-t border-brand-light/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-                <div>
-                    <div class="font-serif text-lg font-bold mb-4">Nos Packs</div>
-                    <ul class="space-y-2">
-                        <li><a href="/pages/packs-shooting/portrait-studio.html" class="text-sm text-gray-300 hover:text-white transition-colors">Portrait Studio</a></li>
-                        <li><a href="/pages/packs-shooting/shooting-exterieur.html" class="text-sm text-gray-300 hover:text-white transition-colors">Shooting Extérieur</a></li>
-                        <li><a href="/pages/packs-shooting/shooting-duo-couple.html" class="text-sm text-gray-300 hover:text-white transition-colors">Duo &amp; Couple</a></li>
-                        <li><a href="/pages/packs-shooting/photo-domicile.html" class="text-sm text-gray-300 hover:text-white transition-colors">Photo à Domicile</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="font-serif text-lg font-bold mb-4">Lieux</div>
-                    <ul class="space-y-2">
-                        <li><a href="/pages/photographe/photographe-marseille.html" class="text-sm text-gray-300 hover:text-white">Marseille</a></li>
-                        <li><a href="/pages/photographe/photographe-toulon.html" class="text-sm text-gray-300 hover:text-white">Toulon</a></li>
-                        <li><a href="/pages/photographe/photographe-nice.html" class="text-sm text-gray-300 hover:text-white transition-colors">Nice</a></li>
-                        <li><a href="/pages/photographe/photographe-paris.html" class="text-sm text-gray-300 hover:text-white">Paris</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="font-serif text-lg font-bold mb-4">Expérience</div>
-                    <ul class="space-y-2">
-                        <li><a href="/pages/votre-experience/premier-shooting-nu.html" class="text-sm text-gray-300 hover:text-white transition-colors">Premier Shooting</a></li>
-                        <li><a href="/pages/votre-experience/retrouver-confiance-corps.html" class="text-sm text-gray-300 hover:text-white transition-colors">Retrouver Confiance</a></li>
-                        <li><a href="/pages/votre-experience/book-modele-professionnel.html" class="text-sm text-gray-300 hover:text-white transition-colors">Book Modèle Pro</a></li>
-                        <li><a href="/pages/portfolio/temoignages-clients.html" class="text-sm text-gray-300 hover:text-white transition-colors">Témoignages</a></li>
-                    </ul>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+
+                <!-- Colonne 1 : Haroboz -->
                 <div>
                     <div class="font-serif text-lg font-bold mb-4">Haroboz</div>
-                    <ul class="space-y-2">
-                        <li><a href="/pages/a-propos/" class="text-sm text-gray-300 hover:text-white transition-colors">À Propos</a></li>
-                        <li><a href="/pages/portfolio/" class="text-sm text-gray-300 hover:text-white transition-colors">Réalisations</a></li>
+                    <ul class="space-y-2 mb-4">
+                        <li><a href="/pages/a-propos/" class="text-sm text-gray-300 hover:text-white transition-colors">L'Univers</a></li>
                         <li><a href="/pages/contact.html" class="text-sm text-gray-300 hover:text-white transition-colors">Contact</a></li>
                         <li><a href="/pages/mentions-legales.html" class="text-sm text-gray-300 hover:text-white transition-colors">Mentions légales</a></li>
                     </ul>
+                    <div class="flex flex-wrap gap-x-3 gap-y-1 text-sm text-gray-400">
+                        <a href="/pages/photographe/photographe-marseille.html" class="hover:text-white transition-colors">Marseille</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="/pages/photographe/photographe-toulon.html" class="hover:text-white transition-colors">Toulon</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="/pages/photographe/photographe-nice.html" class="hover:text-white transition-colors">Nice</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="/pages/photographe/photographe-paris.html" class="hover:text-white transition-colors">Paris</a>
+                    </div>
                 </div>
+
+                <!-- Colonne 2 : Explorer -->
+                <div>
+                    <div class="font-serif text-lg font-bold mb-4">Explorer</div>
+                    <ul class="space-y-2">
+                        <li><a href="/pages/portfolio/galerie-portraits-hommes.html" class="text-sm text-gray-300 hover:text-white transition-colors">Portraits</a></li>
+                        <li><a href="/pages/portfolio/#nus" class="text-sm text-gray-300 hover:text-white transition-colors">Nus &amp; Attributs</a></li>
+                        <li><a href="/pages/portfolio/galerie-couples.html" class="text-sm text-gray-300 hover:text-white transition-colors">Couples &amp; Duos</a></li>
+                        <li><a href="/pages/boutique/tirages-art-edition-limitee.html" class="text-sm text-gray-300 hover:text-white transition-colors">Tirages d'Art</a></li>
+                        <li><a href="/pages/boutique/carte-cadeau.html" class="text-sm text-gray-300 hover:text-white transition-colors">Carte Cadeau</a></li>
+                    </ul>
+                </div>
+
             </div>
+
+            <!-- Barre inférieure -->
             <div class="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-400">&copy; 2026 Haroboz — Luc Desbois | Photographe Art Masculin | Marseille, Toulon, Nice, Paris</p>
-                <div class="flex items-center gap-4">
-                    <a href="https://www.instagram.com/hbozart/" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="/pages/mentions-legales.html" class="text-sm text-gray-400 hover:text-white transition-colors">Mentions légales</a>
+                <div class="flex items-center gap-4 flex-wrap justify-center md:justify-start">
+                    <a href="https://www.instagram.com/hbozart/" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                        <span class="text-sm">@hbozart</span>
+                    </a>
+                    <span class="text-gray-600 hidden md:inline">|</span>
+                    <a href="tel:0688704041" class="text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 text-sm">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        06 88 70 40 41
+                    </a>
+                    <span class="text-gray-600 hidden md:inline">|</span>
+                    <p class="text-sm text-gray-400">&copy; 2026 Haroboz &mdash; Luc Desbois</p>
                 </div>
+                <button onclick="openPopup()" class="bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full text-sm font-medium transition-colors flex items-center gap-2 cursor-pointer">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    Rendez-vous
+                </button>
             </div>
         </div>
     </footer>
@@ -488,10 +476,10 @@
     </div>
 
     <!-- FLOATING CTA -->
-    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
-        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light transition-colors flex items-center justify-center cursor-pointer pulse-ring text-brand">
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-40 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light transition-colors flex items-center justify-center cursor-pointer">
             <i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i>
-            <span class="hidden md:inline font-medium">Prendre RDV</span>
+            <span class="hidden md:inline font-medium">Rendez-vous</span>
         </button>
     </div>
 
@@ -526,7 +514,7 @@
         function handleSubmit(e){e.preventDefault();var f=e.target,d=new FormData(f);d.append('_cc','Administration@remi-oravec.fr');d.append('_subject','Nouvelle demande de réservation — Haroboz');d.append('_template','table');d.append('_captcha','false');fetch('https://formsubmit.co/ajax/lucdfka@icloud.com',{method:'POST',body:d}).then(r=>r.json()).then(()=>{document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');initLucide();}).catch(()=>{document.getElementById('booking-form').classList.add('hidden');document.getElementById('popup-success').classList.remove('hidden');initLucide();});}
         const floatingCta = document.getElementById('floating-cta');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) { floatingCta.classList.remove('opacity-0','translate-y-4','pointer-events-none'); floatingCta.classList.add('opacity-100','translate-y-0','pointer-events-auto'); }
+            if (window.scrollY > document.documentElement.scrollHeight * 0.4) { floatingCta.classList.remove('opacity-0','translate-y-4','pointer-events-none'); floatingCta.classList.add('opacity-100','translate-y-0','pointer-events-auto'); }
             else { floatingCta.classList.add('opacity-0','translate-y-4','pointer-events-none'); floatingCta.classList.remove('opacity-100','translate-y-0','pointer-events-auto'); }
         }, { passive: true });
         window.addEventListener('load', initLucide);
