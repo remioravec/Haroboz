@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book Modèle Professionnel | Haroboz</title>
+<meta name="description" content="Book Modèle Professionnel">
+<link rel="icon" href="https://haroboz.com/wp-content/uploads/2025/10/cropped-Group-1959.webp">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#0f1115',accent:'#c8a86c',ink:'#222228',muted:'#6e6e76',paper:'#faf8f4'},fontFamily:{serif:['Playfair Display','serif'],sans:['Inter','system-ui','sans-serif']}}}};</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body{font-family:Inter,system-ui,sans-serif;color:#222228}
+.mega-menu-content{visibility:hidden;opacity:0;transform:translateY(10px);transition:all .3s ease-in-out}
+.mega-menu-item:hover .mega-menu-content{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+#mobile-menu{transition:transform .3s ease-in-out}
+.menu-open{transform:translateX(0)!important}
+#booking-popup{transition:opacity .3s ease,visibility .3s ease}
+#booking-popup.popup-hidden{opacity:0;visibility:hidden}
+#booking-popup.popup-visible{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+    
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span>
+                <button id="close-menu-btn" class="text-gray-500 hover:text-brand"><i data-lucide="x" class="w-7 h-7"></i></button>
+            </div>
+            <nav class="space-y-2">
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/packs-shooting/portrait-studio/" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a><a href="/packs-shooting/shooting-exterieur/" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a><a href="/packs-shooting/photo-domicile/" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a><a href="/packs-shooting/shooting-duo-couple/" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/votre-experience/retrouver-confiance-corps/" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a><a href="/votre-experience/book-modele-professionnel/" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a><a href="/votre-experience/cadeau-couple-original/" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a><a href="/votre-experience/premier-shooting-nu/" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; Célébration</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Où me trouver ? <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/photographe/photographe-marseille/" class="block text-sm text-gray-600 hover:text-brand">Marseille</a><a href="/photographe/photographe-toulon/" class="block text-sm text-gray-600 hover:text-brand">Toulon</a><a href="/photographe/photographe-nice/" class="block text-sm text-gray-600 hover:text-brand">Nice</a><a href="/photographe/photographe-paris/" class="block text-sm text-gray-600 hover:text-brand">Paris</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">L'Oeuvre <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/portfolio/" class="block text-sm text-gray-600 hover:text-brand">Toutes les oeuvres</a><a href="/portfolio/galerie-portraits-hommes/" class="block text-sm text-gray-600 hover:text-brand">Portraits</a><a href="/portfolio/#nus" class="block text-sm text-gray-600 hover:text-brand">Nus &amp; Attributs</a><a href="/portfolio/galerie-couples/" class="block text-sm text-gray-600 hover:text-brand">Couples &amp; Duos</a><a href="/portfolio/#creation" class="block text-sm text-gray-600 hover:text-brand">Création d'art</a><a href="/portfolio/#reportages" class="block text-sm text-gray-600 hover:text-brand">Reportages</a></div></div>
+                <div class="border-b border-gray-100 py-3"><a href="/a-propos/" class="block font-medium text-brand">L'Univers</a></div>
+            </nav>
+            <div class="mt-8"><button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl font-medium hover:bg-brand-light transition-colors shadow-md flex justify-center items-center cursor-pointer"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit</button></div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden"></div>
+
+    <main class="w-full">
+        <!-- PAGE HERO -->
+        <section class="bg-brand pt-28 lg:pt-32 pb-12 lg:pb-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/3 translate-x-1/4 w-96 h-96 bg-brand-light rounded-full opacity-30 blur-3xl"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <nav class="text-sm text-white/60 mb-6" aria-label="Fil d'Ariane">
+                    <a href="/" class="hover:text-white">Accueil</a> <span class="mx-2">›</span> <a href="/votre-experience/" class="hover:text-white">Votre Expérience</a> <span class="mx-2">›</span> <span class="text-white/90">Book Modèle Professionnel</span>
+                </nav>
+                <p class="text-white/70 text-base md:text-lg max-w-2xl mb-2">Votre Carrière Commence Ici</p>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Book Modèle Professionnel</h1>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT -->
+        
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Un Book à la Hauteur de Vos Ambitions</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Dans le cadre de <a href="/votre-experience/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">l'expérience photographique Haroboz</a>, la création d'un book modèle professionnel occupe une place particulière. À Marseille, sur la Sud de la France, Luc Desbois met son expertise de photographe spécialiste du masculin au service de votre carrière de mannequin. Que vous débutiez dans le milieu ou que vous souhaitiez enrichir un portfolio existant, la qualité de vos images fera la différence auprès des agences.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Un book modèle ne se résume pas à une série de belles photos. C'est un outil professionnel qui doit montrer votre polyvalence, votre présence devant l'objectif et votre capacité à incarner différentes émotions. Luc maîtrise les codes de l'industrie et construit avec vous un ensemble d'images cohérent, percutant et conforme aux attentes des directeurs de casting.</p>
+
+                
+                    </div>
+                    <div>
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251011_225926.png" alt="Haroboz — Photographie d'art" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-8 bg-brand-50 border-y border-brand/10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-brand font-serif text-lg md:text-xl text-center sm:text-left">Envie de vivre cette expérience ?</p>
+                <button onclick="openPopup()" class="bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand-light transition-colors shadow-md flex items-center cursor-pointer whitespace-nowrap">
+                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Prendre RDV gratuit
+                </button>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260213_102220.png" alt="Haroboz — Photographie d'art" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Ce Que Les Agences Recherchent</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Les agences de mannequins évaluent un book selon des critères précis. Les photos doivent révéler votre personnalité tout en restant professionnelles. La qualité technique — lumière, cadrage, netteté — doit être irréprochable. L'originalité du regard artistique fait également la différence face aux centaines de books que les bookers reçoivent chaque semaine.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Chez Haroboz, chaque séance book comprend plusieurs ambiances et configurations. Portrait rapproché, plan américain, plein pied, regard caméra et hors champ : Luc couvre toutes les exigences classiques tout en apportant sa signature artistique en clair-obscur. Cette dualité entre rigueur professionnelle et vision créative donne à votre book une identité forte, immédiatement reconnaissable.</p>
+
+                
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- RÉALISATIONS — Mini galerie -->
+        <section class="py-12 md:py-16 bg-gray-50 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold tracking-widest text-gray-400 uppercase block mb-2">Réalisations</span>
+                    <h3 class="text-2xl md:text-3xl font-serif text-brand">Un aperçu de nos créations</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260128_103932.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20251222_144602.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_2909-1-scaled.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2025/11/IMG_2919.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                </div>
+                <div class="text-center mt-8">
+                    <a href="/portfolio/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                        <span>Voir toutes les réalisations</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">La Séance : Un Accompagnement Complet</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Avant la séance, un échange préparatoire définit ensemble les objectifs de votre book. Quel type de mannequinat visez-vous ? Commercial, éditorial, artistique ? Avez-vous des exigences spécifiques de la part d'une agence ? Ces informations orientent la direction artistique pour produire exactement ce dont vous avez besoin.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Le jour de la séance, dans le studio privé de Marseille, Luc vous coache dans chaque pose. Gestion du regard, posture, mains, expression faciale : chaque détail compte. Même si vous n'avez jamais posé professionnellement, son approche pédagogique vous permet de progresser rapidement et de livrer des expressions naturelles et convaincantes.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Si l'idée de poser vous intimide encore, consultez notre guide sur le <a href="/votre-experience/premier-shooting-nu/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">premier shooting nu</a> pour découvrir comment Luc met à l'aise chacun de ses modèles.</p>
+
+                
+                    </div>
+                    <div>
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250911_161040-1-scaled.png" alt="Haroboz — Photographie d'art" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251011_225926.png" alt="Haroboz — Photographie d'art" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Qualité Agence, Finitions Haut de Gamme</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Après la séance, chaque image sélectionnée fait l'objet d'une retouche professionnelle minutieuse. Correction colorimétrique, harmonisation de la peau, travail des contrastes : le résultat est une série d'images prêtes à être envoyées directement aux agences. Les fichiers sont livrés en haute résolution, dans les formats standards de l'industrie.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Au-delà du numérique, chaque pack Haroboz inclut un tirage d'art professionnel. Ce support physique peut également servir lors de vos castings en personne, ajoutant une dimension tangible et premium à votre présentation.</p>
+
+                
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Marseille, Toulon, Nice, Paris : Partout où Vous Êtes</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Implanté dans le sud de la France, Haroboz intervient à Marseille, Toulon, Nice et Paris. Marseille, ville de festivals et de mode, offre un environnement propice à la création de contenu visuel haut de gamme. Les séances en extérieur, disponibles sur demande, permettent d'exploiter la lumière méditerranéenne et les décors naturels de la région.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Que vous résidiez dans le sud de la France ou que vous fassiez le déplacement spécifiquement pour votre book, l'expérience complète se déroule avec fluidité. Luc peut également vous conseiller sur les agences locales et nationales à contacter une fois votre book finalisé.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Pour ceux qui souhaitent aller au-delà du book et explorer une démarche plus personnelle, découvrez comment la photographie peut vous aider à <a href="/votre-experience/retrouver-confiance-corps/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">retrouver confiance en votre corps</a>, un atout précieux devant l'objectif comme dans la vie quotidienne.</p>
+
+            
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        
+        <!-- TIRAGES D'ART — Mise en avant -->
+        <section class="py-14 md:py-20 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-brand/60 uppercase block mb-3">Inclus dans chaque pack</span>
+                        <h3 class="text-2xl md:text-3xl font-serif text-brand mb-4">Votre tirage d'art Fine Art</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Chaque séance Haroboz aboutit à une œuvre tangible : un tirage d'art signé et numéroté, imprimé sur papier Hahnemühle avec des encres pigmentaires de qualité muséale. Ce n'est pas un simple fichier numérique — c'est un objet d'art que vous conserverez toute votre vie.</p>
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="printer" class="w-4 h-4 text-brand"></i>
+                                <span>Papier Fine Art Hahnemühle</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="pen-tool" class="w-4 h-4 text-brand"></i>
+                                <span>Signé &amp; numéroté</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-brand"></i>
+                                <span>Édition limitée</span>
+                            </div>
+                        </div>
+                        <a href="/boutique/tirages-art-edition-limitee/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                            <span>Découvrir nos tirages d'art</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/IMG_3960.png" alt="Tirage d'art Fine Art encadré" class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg" loading="lazy">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251013_233426.png" alt="Galerie de tirages d'art" class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg mt-6" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 lg:py-16 bg-gray-50" itemscope="" itemtype="https://schema.org/FAQPage">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-8 text-center">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Combien de photos sont incluses dans un book professionnel ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Le nombre d'images dépend du pack choisi, mais un book professionnel comprend généralement entre 15 et 30 photos retouchées couvrant différentes ambiances, cadrages et expressions. Luc sélectionne avec vous les images les plus percutantes pour constituer un ensemble cohérent.</p>
+                        </div>
+                    </div>
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Dois-je avoir de l'expérience en tant que mannequin ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Aucune expérience préalable n'est requise. Luc dirige entièrement la séance et vous guide dans chaque pose. Beaucoup de nos clients réalisent leur premier book chez Haroboz et obtiennent des résultats qui impressionnent les agences.</p>
+                        </div>
+                    </div>
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Les photos sont-elles compatibles avec les standards des agences ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Oui. Les images sont livrées en haute résolution dans les formats standards de l'industrie. Luc connaît les attentes des agences et adapte la séance en conséquence : portraits, plans larges, différentes expressions, fond neutre et ambiance créative.</p>
+                        </div>
+                    </div>
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Puis-je réaliser un book partiellement nu ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Absolument. Selon votre projet et le type de mannequinat visé, le book peut inclure des photos en tenue, torse nu ou nu artistique. Vous décidez du degré de dévoilement en toute liberté. Toutes les images restent strictement confidentielles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-brand py-16 lg:py-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-96 h-96 bg-brand-light rounded-full opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-96 h-96 bg-[#3a00a8] rounded-full opacity-50 blur-3xl"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Lancez Votre Book</h2>
+                <p class="text-brand-50 text-base md:text-lg mb-8 max-w-2xl mx-auto">Prenez rendez-vous pour définir ensemble votre projet professionnel</p>
+                <button onclick="openPopup()" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-colors shadow-xl flex items-center justify-center cursor-pointer mx-auto"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Être rappelé sous 24h</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    
+
+    <!-- POPUP -->
+    
+
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light flex items-center justify-center cursor-pointer pulse-ring text-brand"><i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i><span class="hidden md:inline font-medium">Prendre RDV</span></button>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.lucide)lucide.createIcons();
+  const mobileBtn=document.getElementById('mobile-menu-button');
+  const mobileMenu=document.getElementById('mobile-menu');
+  const closeBtn=document.getElementById('mobile-close-button');
+  if(mobileBtn&&mobileMenu){mobileBtn.onclick=()=>mobileMenu.classList.toggle('menu-open');}
+  if(closeBtn&&mobileMenu){closeBtn.onclick=()=>mobileMenu.classList.remove('menu-open');}
+  document.querySelectorAll('[data-popup="open"]').forEach(b=>b.onclick=e=>{e.preventDefault();const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-hidden','popup-visible');});
+  document.querySelectorAll('[data-popup="close"]').forEach(b=>b.onclick=()=>{const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-visible','popup-hidden');});
+});
+</script>
+</body>
+</html>

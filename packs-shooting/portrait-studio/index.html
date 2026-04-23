@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portrait Studio Privé | Haroboz</title>
+<meta name="description" content="Portrait Studio Privé">
+<link rel="icon" href="https://haroboz.com/wp-content/uploads/2025/10/cropped-Group-1959.webp">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#0f1115',accent:'#c8a86c',ink:'#222228',muted:'#6e6e76',paper:'#faf8f4'},fontFamily:{serif:['Playfair Display','serif'],sans:['Inter','system-ui','sans-serif']}}}};</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body{font-family:Inter,system-ui,sans-serif;color:#222228}
+.mega-menu-content{visibility:hidden;opacity:0;transform:translateY(10px);transition:all .3s ease-in-out}
+.mega-menu-item:hover .mega-menu-content{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+#mobile-menu{transition:transform .3s ease-in-out}
+.menu-open{transform:translateX(0)!important}
+#booking-popup{transition:opacity .3s ease,visibility .3s ease}
+#booking-popup.popup-hidden{opacity:0;visibility:hidden}
+#booking-popup.popup-visible{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+    
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span>
+                <button id="close-menu-btn" class="text-gray-500 hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded-lg"><i data-lucide="x" class="w-7 h-7"></i></button>
+            </div>
+            <nav class="space-y-2">
+                <div class="border-b border-gray-100 py-3">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i></button>
+                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
+                        <a href="/packs-shooting/portrait-studio/" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a>
+                        <a href="/packs-shooting/shooting-exterieur/" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a>
+                        <a href="/packs-shooting/photo-domicile/" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a>
+                        <a href="/packs-shooting/shooting-duo-couple/" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a>
+                    </div>
+                </div>
+                <div class="border-b border-gray-100 py-3">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i></button>
+                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
+                        <a href="/votre-experience/retrouver-confiance-corps/" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a>
+                        <a href="/votre-experience/book-modele-professionnel/" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a>
+                        <a href="/votre-experience/cadeau-couple-original/" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a>
+                        <a href="/votre-experience/premier-shooting-nu/" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; Célébration</a>
+                    </div>
+                </div>
+                <div class="border-b border-gray-100 py-3">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Où me trouver ? <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i></button>
+                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
+                        <a href="/photographe/photographe-marseille/" class="block text-sm text-gray-600 hover:text-brand">Marseille</a>
+                        <a href="/photographe/photographe-toulon/" class="block text-sm text-gray-600 hover:text-brand">Toulon</a>
+                        <a href="/photographe/photographe-nice/" class="block text-sm text-gray-600 hover:text-brand">Nice</a>
+                        <a href="/photographe/photographe-paris/" class="block text-sm text-gray-600 hover:text-brand">Paris</a>
+                    </div>
+                </div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">L'Oeuvre <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/portfolio/" class="block text-sm text-gray-600 hover:text-brand">Toutes les oeuvres</a><a href="/portfolio/galerie-portraits-hommes/" class="block text-sm text-gray-600 hover:text-brand">Portraits</a><a href="/portfolio/#nus" class="block text-sm text-gray-600 hover:text-brand">Nus &amp; Attributs</a><a href="/portfolio/galerie-couples/" class="block text-sm text-gray-600 hover:text-brand">Couples &amp; Duos</a><a href="/portfolio/#creation" class="block text-sm text-gray-600 hover:text-brand">Création d'art</a><a href="/portfolio/#reportages" class="block text-sm text-gray-600 hover:text-brand">Reportages</a></div></div>
+                <div class="border-b border-gray-100 py-3"><a href="/a-propos/" class="block w-full text-left font-medium text-brand">L'Univers</a></div>
+            </nav>
+            <div class="mt-8">
+                <button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl text-center font-medium hover:bg-brand-light transition-colors shadow-md flex justify-center items-center cursor-pointer">
+                    <i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden transition-opacity"></div>
+
+    <main class="w-full">
+        <!-- PAGE HERO -->
+        <section class="bg-brand pt-28 lg:pt-32 pb-12 lg:pb-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/3 translate-x-1/4 w-96 h-96 bg-brand-light rounded-full opacity-30 blur-3xl"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <nav class="text-sm text-white/60 mb-6" aria-label="Fil d'Ariane">
+                    <a href="/" class="hover:text-white transition-colors">Accueil</a> <span class="mx-2">›</span> <a href="/packs-shooting/" class="hover:text-white transition-colors">Nos Packs</a> <span class="mx-2">›</span> <span class="text-white/90">Portrait Studio</span>
+                </nav>
+                <p class="text-white/70 text-sm uppercase tracking-widest mb-3">Éclairage maîtrisé, intimité absolue</p>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Portrait Studio Privé</h1>
+                <p class="text-white/70 text-base md:text-lg max-w-2xl">Shooting portrait en studio privé. Éclairage professionnel, ambiance confidentielle et tirage d'art inclus.</p>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT -->
+        
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Le studio : votre espace de liberté</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Le pack Portrait Studio est l'un des quatre <a href="/packs-shooting/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">packs shooting Haroboz</a>. Il offre le cadre le plus maîtrisé de notre gamme : un espace privé, entièrement dédié à votre séance, où chaque source de lumière est positionnée pour sculpter votre silhouette et révéler les contrastes de votre corps. Ici, pas de passants, pas de contraintes météo, pas de regard extérieur. Juste vous, l'appareil photo et la direction artistique de Luc Desbois.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Le studio est bien plus qu'un lieu technique. C'est un <strong>cocon confidentiel</strong> pensé pour que vous vous sentiez en sécurité dès les premières minutes. La musique, la température, l'éclairage d'ambiance — tout est calibré pour favoriser le lâcher-prise. Beaucoup de nos clients nous confient que c'est la première fois qu'ils posent. Et pourtant, au bout de vingt minutes, ils oublient l'objectif.</p>
+
+                
+                    </div>
+                    <div>
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260125_192255.png" alt="Haroboz — Portrait studio artistique" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-8 bg-brand-50 border-y border-brand/10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-brand font-serif text-lg md:text-xl text-center sm:text-left">Envie de vivre cette expérience ?</p>
+                <button onclick="openPopup()" class="bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand-light transition-colors shadow-md flex items-center cursor-pointer whitespace-nowrap">
+                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Prendre RDV gratuit
+                </button>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260213_102220.png" alt="Haroboz — Direction artistique studio" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Un éclairage qui raconte une histoire</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">La photographie de nu masculin en studio repose sur un dialogue subtil entre la lumière et l'ombre. Luc utilise un éclairage professionnel modulable — softbox, réflecteurs, spots directionnels — pour créer des ambiances qui vont du clair-obscur dramatique au high-key lumineux et épuré. Chaque configuration est choisie en fonction de votre morphologie, de votre teint et du rendu artistique que vous souhaitez.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Le résultat ? Des images qui évoquent davantage la peinture Renaissance ou le cinéma noir et blanc que la simple photo de portrait. Chaque cliché est une <strong>composition artistique</strong> pensée pour sublimer la masculinité dans ce qu'elle a de plus authentique.</p>
+
+                
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- RÉALISATIONS — Mini galerie -->
+        <section class="py-12 md:py-16 bg-gray-50 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold tracking-widest text-gray-400 uppercase block mb-2">Réalisations</span>
+                    <h3 class="text-2xl md:text-3xl font-serif text-brand">Un aperçu de nos créations</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260213_102220.png" alt="Réalisation Haroboz — Portrait studio" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251014_091425.png" alt="Réalisation Haroboz — Shooting artistique" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250330_154516-1-scaled.png" alt="Réalisation Haroboz — Portrait masculin" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251014_223830.png" alt="Réalisation Haroboz — Éclairage studio" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                </div>
+                <div class="text-center mt-8">
+                    <a href="/portfolio/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                        <span>Voir toutes les réalisations</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Ce que comprend le pack Portrait Studio</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Notre pack studio est une expérience complète, pas une simple prestation horaire. Il inclut :</p>
+
+                <ul class="space-y-3 my-6">
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> Un appel préparatoire pour définir vos envies et le style artistique</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> La mise à disposition exclusive du studio privé</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> La direction artistique intégrale : posing, cadrage, expression</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> La retouche fine de vos meilleures images</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> L'accès à votre galerie privée sécurisée en ligne</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> Un tirage d'art Fine Art signé et numéroté</li>
+                </ul>
+
+                
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251014_091425.png" alt="Haroboz — Séance photo portrait studio" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Pour qui est fait le pack studio ?</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Le portrait studio s'adresse à tous les hommes qui souhaitent découvrir une image d'eux-mêmes qu'ils n'ont jamais vue. Que vous ayez 25 ou 60 ans, que vous soyez sportif ou non, l'objectif reste le même : <strong>capturer votre essence</strong> dans un cadre où tout est pensé pour vous mettre en valeur.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Si vous préférez la lumière naturelle et les grands espaces, notre <a href="/packs-shooting/shooting-exterieur/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">pack Shooting Extérieur</a> sera peut-être plus adapté. Si vous envisagez de vivre cette expérience avec votre partenaire, découvrez notre <a href="/packs-shooting/shooting-duo-couple/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">pack Duo &amp; Couple</a>. Et si l'idée de vous déplacer vous freine, notre <a href="/packs-shooting/photo-domicile/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">pack À Domicile</a> apporte le studio chez vous.</p>
+
+                
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Un studio privé, un moment pour vous</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Notre studio est un espace privé et confidentiel, accessible à Marseille, Toulon, Nice et Paris selon les disponibilités. Au-delà de la séance elle-même, c'est une occasion de vous accorder un moment pour vous, dans un cadre bienveillant et élégant. Certains de nos clients en profitent pour prolonger l'expérience avec un dîner en ville. Parce que prendre soin de soi commence par s'accorder du temps.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">La discrétion est totale. L'adresse du studio est communiquée uniquement après confirmation de votre rendez-vous. Aucune enseigne extérieure, aucun signe distinctif. Vous entrez dans un espace qui vous est entièrement réservé, en toute sérénité.</p>
+
+            
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        
+        <!-- TIRAGES D'ART — Mise en avant -->
+        <section class="py-14 md:py-20 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-brand/60 uppercase block mb-3">Inclus dans chaque pack</span>
+                        <h3 class="text-2xl md:text-3xl font-serif text-brand mb-4">Votre tirage d'art Fine Art</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Chaque séance Haroboz aboutit à une œuvre tangible : un tirage d'art signé et numéroté, imprimé sur papier Hahnemühle avec des encres pigmentaires de qualité muséale. Ce n'est pas un simple fichier numérique — c'est un objet d'art que vous conserverez toute votre vie.</p>
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="printer" class="w-4 h-4 text-brand"></i>
+                                <span>Papier Fine Art Hahnemühle</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="pen-tool" class="w-4 h-4 text-brand"></i>
+                                <span>Signé &amp; numéroté</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-brand"></i>
+                                <span>Édition limitée</span>
+                            </div>
+                        </div>
+                        <a href="/boutique/tirages-art-edition-limitee/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                            <span>Découvrir nos tirages d'art</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250330_154516-1-scaled.png" alt="Tirage d'art Fine Art encadré" class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg" loading="lazy">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251014_223830.png" alt="Galerie de tirages d'art" class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg mt-6" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 lg:py-16 bg-gray-50" itemscope="" itemtype="https://schema.org/FAQPage">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-8 text-center">Le pack Portrait Studio en détail</h2>
+                <div class="space-y-3">
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Combien de temps dure la séance en studio ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Comptez environ 1h30 à 2h pour une séance complète, temps d'accueil et de débriefing inclus. Nous ne travaillons pas à l'heure : la séance dure le temps nécessaire pour obtenir les images qui vous ressemblent. L'essentiel est que vous soyez à l'aise, sans pression de temps.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Dois-je apporter quelque chose pour la séance ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Rien du tout. Le studio est entièrement équipé. Si vous souhaitez apporter des accessoires personnels (bijou, vêtement, objet symbolique), c'est bienvenu mais jamais obligatoire. Nous vous enverrons un guide de préparation détaillé quelques jours avant la séance pour que vous arriviez serein.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Le studio est-il accessible facilement ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Oui. Le studio est situé dans un endroit accessible, à proximité des transports et des parkings. L'adresse exacte vous est communiquée par message privé après confirmation de votre rendez-vous, pour des raisons de confidentialité. Nous accueillons des clients venant de Marseille, Toulon, Nice, Paris et de toute la France.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="bg-brand py-16 lg:py-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-96 h-96 bg-brand-light rounded-full opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-96 h-96 bg-[#3a00a8] rounded-full opacity-50 blur-3xl"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Réservez votre séance studio</h2>
+                <p class="text-brand-50 text-base md:text-lg mb-8 max-w-2xl mx-auto">Premier échange confidentiel, sans engagement.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openPopup()" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-colors shadow-xl flex items-center justify-center cursor-pointer">
+                        <i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Être rappelé sous 24h
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    
+
+    <!-- POPUP -->
+    
+
+    <!-- FLOATING CTA -->
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light transition-colors flex items-center justify-center cursor-pointer pulse-ring text-brand">
+            <i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i>
+            <span class="hidden md:inline font-medium">Prendre RDV</span>
+        </button>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.lucide)lucide.createIcons();
+  const mobileBtn=document.getElementById('mobile-menu-button');
+  const mobileMenu=document.getElementById('mobile-menu');
+  const closeBtn=document.getElementById('mobile-close-button');
+  if(mobileBtn&&mobileMenu){mobileBtn.onclick=()=>mobileMenu.classList.toggle('menu-open');}
+  if(closeBtn&&mobileMenu){closeBtn.onclick=()=>mobileMenu.classList.remove('menu-open');}
+  document.querySelectorAll('[data-popup="open"]').forEach(b=>b.onclick=e=>{e.preventDefault();const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-hidden','popup-visible');});
+  document.querySelectorAll('[data-popup="close"]').forEach(b=>b.onclick=()=>{const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-visible','popup-hidden');});
+});
+</script>
+</body>
+</html>

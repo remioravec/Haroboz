@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shooting Extérieur dans le Sud | Haroboz</title>
+<meta name="description" content="Shooting Extérieur dans le Sud">
+<link rel="icon" href="https://haroboz.com/wp-content/uploads/2025/10/cropped-Group-1959.webp">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#0f1115',accent:'#c8a86c',ink:'#222228',muted:'#6e6e76',paper:'#faf8f4'},fontFamily:{serif:['Playfair Display','serif'],sans:['Inter','system-ui','sans-serif']}}}};</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body{font-family:Inter,system-ui,sans-serif;color:#222228}
+.mega-menu-content{visibility:hidden;opacity:0;transform:translateY(10px);transition:all .3s ease-in-out}
+.mega-menu-item:hover .mega-menu-content{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+#mobile-menu{transition:transform .3s ease-in-out}
+.menu-open{transform:translateX(0)!important}
+#booking-popup{transition:opacity .3s ease,visibility .3s ease}
+#booking-popup.popup-hidden{opacity:0;visibility:hidden}
+#booking-popup.popup-visible{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+    
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span>
+                <button id="close-menu-btn" class="text-gray-500 hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded-lg"><i data-lucide="x" class="w-7 h-7"></i></button>
+            </div>
+            <nav class="space-y-2">
+                <div class="border-b border-gray-100 py-3">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i></button>
+                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
+                        <a href="/packs-shooting/portrait-studio/" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a>
+                        <a href="/packs-shooting/shooting-exterieur/" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a>
+                        <a href="/packs-shooting/photo-domicile/" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a>
+                        <a href="/packs-shooting/shooting-duo-couple/" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a>
+                    </div>
+                </div>
+                <div class="border-b border-gray-100 py-3">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i></button>
+                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
+                        <a href="/votre-experience/retrouver-confiance-corps/" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a>
+                        <a href="/votre-experience/book-modele-professionnel/" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a>
+                        <a href="/votre-experience/cadeau-couple-original/" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a>
+                        <a href="/votre-experience/premier-shooting-nu/" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; Célébration</a>
+                    </div>
+                </div>
+                <div class="border-b border-gray-100 py-3">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Où me trouver ? <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i></button>
+                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
+                        <a href="/photographe/photographe-marseille/" class="block text-sm text-gray-600 hover:text-brand">Marseille</a>
+                        <a href="/photographe/photographe-toulon/" class="block text-sm text-gray-600 hover:text-brand">Toulon</a>
+                        <a href="/photographe/photographe-nice/" class="block text-sm text-gray-600 hover:text-brand">Nice</a>
+                        <a href="/photographe/photographe-paris/" class="block text-sm text-gray-600 hover:text-brand">Paris</a>
+                    </div>
+                </div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">L'Oeuvre <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/portfolio/" class="block text-sm text-gray-600 hover:text-brand">Toutes les oeuvres</a><a href="/portfolio/galerie-portraits-hommes/" class="block text-sm text-gray-600 hover:text-brand">Portraits</a><a href="/portfolio/#nus" class="block text-sm text-gray-600 hover:text-brand">Nus &amp; Attributs</a><a href="/portfolio/galerie-couples/" class="block text-sm text-gray-600 hover:text-brand">Couples &amp; Duos</a><a href="/portfolio/#creation" class="block text-sm text-gray-600 hover:text-brand">Création d'art</a><a href="/portfolio/#reportages" class="block text-sm text-gray-600 hover:text-brand">Reportages</a></div></div>
+                <div class="border-b border-gray-100 py-3"><a href="/a-propos/" class="block w-full text-left font-medium text-brand">L'Univers</a></div>
+            </nav>
+            <div class="mt-8">
+                <button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl text-center font-medium hover:bg-brand-light transition-colors shadow-md flex justify-center items-center cursor-pointer">
+                    <i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden transition-opacity"></div>
+
+    <main class="w-full">
+        <!-- PAGE HERO -->
+        <section class="bg-brand pt-28 lg:pt-32 pb-12 lg:pb-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/3 translate-x-1/4 w-96 h-96 bg-brand-light rounded-full opacity-30 blur-3xl"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <nav class="text-sm text-white/60 mb-6" aria-label="Fil d'Ariane">
+                    <a href="/" class="hover:text-white transition-colors">Accueil</a> <span class="mx-2">›</span> <a href="/packs-shooting/" class="hover:text-white transition-colors">Nos Packs</a> <span class="mx-2">›</span> <span class="text-white/90">Shooting Extérieur</span>
+                </nav>
+                <p class="text-white/70 text-sm uppercase tracking-widest mb-3">Le sud de la France comme toile de fond</p>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Shooting Extérieur dans le Sud</h1>
+                <p class="text-white/70 text-base md:text-lg max-w-2xl">Shooting photo art masculin en extérieur dans le sud de la France. Lumière naturelle, décors d'exception et tirage d'art inclus.</p>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT -->
+        
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">La lumière naturelle, votre meilleure alliée</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Parmi nos <a href="/packs-shooting/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">packs shooting Haroboz</a>, le Shooting Extérieur est celui qui offre l'expérience la plus immersive. Imaginez : la lumière dorée du <strong>sud de la France</strong> qui caresse votre peau, le bruit des vagues en arrière-plan, l'odeur des pins maritimes mêlée à celle du sel. Ici, le décor n'est pas un fond de studio — c'est la Méditerranée elle-même, dans toute sa splendeur.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Luc Desbois connaît chaque recoin du sud de la France. Des criques isolées du littoral marseillais aux sentiers discrets du massif de l'Esterel, en passant par les jardins botaniques et les oliveraies centenaires de l'arrière-pays, il a repéré des dizaines de <strong>lieux secrets</strong> où la lumière, le cadre et l'intimité se rencontrent à la perfection. Chaque séance extérieure est unique, parce que la nature ne se répète jamais.</p>
+
+                
+                    </div>
+                    <div>
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/IMG_4769.png" alt="Haroboz — Shooting extérieur dans le sud" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-8 bg-brand-50 border-y border-brand/10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-brand font-serif text-lg md:text-xl text-center sm:text-left">Envie de vivre cette expérience ?</p>
+                <button onclick="openPopup()" class="bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand-light transition-colors shadow-md flex items-center cursor-pointer whitespace-nowrap">
+                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Prendre RDV gratuit
+                </button>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Des lieux choisis pour leur beauté et leur discrétion</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">La question de la confidentialité est légitime lorsqu'on envisage un shooting en plein air. C'est pourquoi nous sélectionnons exclusivement des sites qui garantissent votre <strong>intimité totale</strong>. Plages privées hors saison, domaines fermés au public, sentiers peu fréquentés aux heures choisies — chaque lieu est repéré en amont et validé le jour même avant de commencer la séance.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Parmi nos spots privilégiés :</p>
+
+                <ul class="space-y-3 my-6">
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> Les roches rouges de l'Esterel — contrastes saisissants entre la pierre ocre et la mer turquoise</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> Les criques sauvages entre Marseille et Théoule-sur-Mer — intimité naturelle garantie</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> Les jardins méditerranéens et oliveraies de l'arrière-pays grassois</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> Les forêts de pins parasols du littoral azuréen</li>
+                </ul>
+
+                
+            </div>
+        </section>
+        <!-- RÉALISATIONS — Mini galerie -->
+        <section class="py-12 md:py-16 bg-gray-50 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold tracking-widest text-gray-400 uppercase block mb-2">Réalisations</span>
+                    <h3 class="text-2xl md:text-3xl font-serif text-brand">Un aperçu de nos créations</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_0267-1-scaled.png" alt="Réalisation Haroboz — Shooting mer" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20250412_182926.png" alt="Réalisation Haroboz — Nature méditerranéenne" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/02/Photoroom_20260217_122033.png" alt="Réalisation Haroboz — Shooting extérieur" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2025/11/IMG_4690.png" alt="Réalisation Haroboz — Détail tatouage en extérieur" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                </div>
+                <div class="text-center mt-8">
+                    <a href="/portfolio/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                        <span>Voir toutes les réalisations</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">L'heure dorée : quand la magie opère</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">En photographie extérieure, le moment de la journée est aussi important que le lieu. Nous planifions systématiquement nos séances pendant l'<strong>heure dorée</strong> — cette fenêtre magique juste après le lever du soleil ou juste avant son coucher, quand la lumière devient chaude, rasante et incroyablement flatteuse. Le sud de la France bénéficie de plus de 300 jours d'ensoleillement par an, ce qui nous offre des conditions de lumière exceptionnelles presque toute l'année.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Le résultat est une esthétique que le studio ne peut pas reproduire : une lumière enveloppante et naturelle qui sculpte votre corps sans artifice, des reflets dorés sur la peau, des ombres longues et poétiques. Chaque image raconte une histoire ancrée dans un lieu, un instant, une atmosphère unique.</p>
+
+                
+                    </div>
+                    <div>
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20250412_182926.png" alt="Haroboz — Lumière naturelle extérieur" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Ce que comprend le pack Extérieur</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Comme tous nos packs, le Shooting Extérieur est une <strong>expérience complète</strong> qui va bien au-delà de la simple prise de vue :</p>
+
+                <ul class="space-y-3 my-6">
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> Un échange préalable pour choisir ensemble le lieu et l'ambiance</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> Le repérage du site et la vérification des conditions de confidentialité</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> La séance photo en lumière naturelle avec direction artistique complète</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> La retouche artistique de vos meilleures images</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> L'accès à votre galerie en ligne sécurisée</li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i> Un tirage d'art Fine Art signé et numéroté</li>
+                </ul>
+
+                
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Studio ou extérieur : comment choisir ?</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Le choix dépend de votre sensibilité et de l'image que vous souhaitez créer. Si vous êtes attiré par un rendu cinématographique avec un éclairage sculptural, notre <a href="/packs-shooting/portrait-studio/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">pack Portrait Studio</a> sera idéal. Si vous préférez une dimension organique, connectée à la nature et aux paysages du sud, le pack Extérieur est fait pour vous.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Envie de partager cette aventure ? Notre <a href="/packs-shooting/shooting-duo-couple/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">pack Duo &amp; Couple</a> est déclinable en extérieur. Et si vous préférez rester dans votre cocon personnel, le <a href="/packs-shooting/photo-domicile/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">pack À Domicile</a> offre une alternative intimiste sans déplacement.</p>
+
+            
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        
+        <!-- TIRAGES D'ART — Mise en avant -->
+        <section class="py-14 md:py-20 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-brand/60 uppercase block mb-3">Inclus dans chaque pack</span>
+                        <h3 class="text-2xl md:text-3xl font-serif text-brand mb-4">Votre tirage d'art Fine Art</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Chaque séance Haroboz aboutit à une œuvre tangible : un tirage d'art signé et numéroté, imprimé sur papier Hahnemühle avec des encres pigmentaires de qualité muséale. Ce n'est pas un simple fichier numérique — c'est un objet d'art que vous conserverez toute votre vie.</p>
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="printer" class="w-4 h-4 text-brand"></i>
+                                <span>Papier Fine Art Hahnemühle</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="pen-tool" class="w-4 h-4 text-brand"></i>
+                                <span>Signé &amp; numéroté</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-brand"></i>
+                                <span>Édition limitée</span>
+                            </div>
+                        </div>
+                        <a href="/boutique/tirages-art-edition-limitee/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                            <span>Découvrir nos tirages d'art</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/02/Photoroom_20260217_122033.png" alt="Tirage d'art Fine Art encadré" class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg" loading="lazy">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/IMG_4769.png" alt="Galerie de tirages d'art" class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg mt-6" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 lg:py-16 bg-gray-50" itemscope="" itemtype="https://schema.org/FAQPage">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-8 text-center">Shooting extérieur : vos questions</h2>
+                <div class="space-y-3">
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Comment est garantie la discrétion en extérieur ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Chaque lieu est repéré en amont par Luc. Nous ne shoootons que sur des sites qui offrent une intimité naturelle : criques isolées, propriétés privées, sentiers peu fréquentés. Le jour de la séance, nous vérifions les conditions sur place avant de commencer. Votre confort et votre tranquillité sont notre priorité absolue.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Que se passe-t-il en cas de mauvais temps ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Le sud de la France offre un ensoleillement exceptionnel, mais la météo peut parfois en décider autrement. Si les conditions ne sont pas optimales, nous reportons la séance sans frais à la prochaine date disponible. Nous ne faisons aucun compromis sur la qualité de lumière — mieux vaut attendre un jour de plus et obtenir des images exceptionnelles.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Puis-je choisir le lieu du shooting ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Absolument. Lors de notre échange préparatoire, nous discutons ensemble du type de décor qui vous inspire — mer, forêt, rochers, jardin. Luc vous propose ensuite plusieurs options parmi ses spots repérés. Si vous avez un lieu précis en tête, nous évaluons sa faisabilité en termes de lumière, d'accès et d'intimité.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Le shooting extérieur est-il possible toute l'année ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Oui. Le climat du sud de la France permet de shooter en extérieur presque toute l'année. Les saisons offrent des ambiances très différentes : lumière chaude et végétation luxuriante en été, tons dorés et atmosphère mélancolique en automne, air pur et lumière cristalline en hiver. Chaque période a son charme, et nous adaptons le choix des lieux en conséquence.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="bg-brand py-16 lg:py-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-96 h-96 bg-brand-light rounded-full opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-96 h-96 bg-[#3a00a8] rounded-full opacity-50 blur-3xl"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Le sud de la France vous attend</h2>
+                <p class="text-brand-50 text-base md:text-lg mb-8 max-w-2xl mx-auto">Discutons ensemble du lieu et de la lumière parfaits pour votre séance.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openPopup()" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-colors shadow-xl flex items-center justify-center cursor-pointer">
+                        <i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Être rappelé sous 24h
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    
+
+    <!-- POPUP -->
+    
+
+    <!-- FLOATING CTA -->
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light transition-colors flex items-center justify-center cursor-pointer pulse-ring text-brand">
+            <i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i>
+            <span class="hidden md:inline font-medium">Prendre RDV</span>
+        </button>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.lucide)lucide.createIcons();
+  const mobileBtn=document.getElementById('mobile-menu-button');
+  const mobileMenu=document.getElementById('mobile-menu');
+  const closeBtn=document.getElementById('mobile-close-button');
+  if(mobileBtn&&mobileMenu){mobileBtn.onclick=()=>mobileMenu.classList.toggle('menu-open');}
+  if(closeBtn&&mobileMenu){closeBtn.onclick=()=>mobileMenu.classList.remove('menu-open');}
+  document.querySelectorAll('[data-popup="open"]').forEach(b=>b.onclick=e=>{e.preventDefault();const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-hidden','popup-visible');});
+  document.querySelectorAll('[data-popup="close"]').forEach(b=>b.onclick=()=>{const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-visible','popup-hidden');});
+});
+</script>
+</body>
+</html>

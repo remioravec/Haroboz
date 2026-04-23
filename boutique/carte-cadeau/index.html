@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carte Cadeau | Haroboz</title>
+<meta name="description" content="Carte Cadeau">
+<link rel="icon" href="https://haroboz.com/wp-content/uploads/2025/10/cropped-Group-1959.webp">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#0f1115',accent:'#c8a86c',ink:'#222228',muted:'#6e6e76',paper:'#faf8f4'},fontFamily:{serif:['Playfair Display','serif'],sans:['Inter','system-ui','sans-serif']}}}};</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body{font-family:Inter,system-ui,sans-serif;color:#222228}
+.mega-menu-content{visibility:hidden;opacity:0;transform:translateY(10px);transition:all .3s ease-in-out}
+.mega-menu-item:hover .mega-menu-content{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+#mobile-menu{transition:transform .3s ease-in-out}
+.menu-open{transform:translateX(0)!important}
+#booking-popup{transition:opacity .3s ease,visibility .3s ease}
+#booking-popup.popup-hidden{opacity:0;visibility:hidden}
+#booking-popup.popup-visible{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+    
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8"><span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span><button id="close-menu-btn" class="text-gray-500 hover:text-brand"><i data-lucide="x" class="w-7 h-7"></i></button></div>
+            <nav class="space-y-2">
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/packs-shooting/portrait-studio/" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a><a href="/packs-shooting/shooting-exterieur/" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a><a href="/packs-shooting/photo-domicile/" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a><a href="/packs-shooting/shooting-duo-couple/" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/votre-experience/retrouver-confiance-corps/" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a><a href="/votre-experience/book-modele-professionnel/" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a><a href="/votre-experience/cadeau-couple-original/" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a><a href="/votre-experience/premier-shooting-nu/" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; Célébration</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Où me trouver ? <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/photographe/photographe-marseille/" class="block text-sm text-gray-600 hover:text-brand">Marseille</a><a href="/photographe/photographe-toulon/" class="block text-sm text-gray-600 hover:text-brand">Toulon</a><a href="/photographe/photographe-nice/" class="block text-sm text-gray-600 hover:text-brand">Nice</a><a href="/photographe/photographe-paris/" class="block text-sm text-gray-600 hover:text-brand">Paris</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">L'Oeuvre <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/portfolio/" class="block text-sm text-gray-600 hover:text-brand">Toutes les oeuvres</a><a href="/portfolio/galerie-portraits-hommes/" class="block text-sm text-gray-600 hover:text-brand">Portraits</a><a href="/portfolio/#nus" class="block text-sm text-gray-600 hover:text-brand">Nus &amp; Attributs</a><a href="/portfolio/galerie-couples/" class="block text-sm text-gray-600 hover:text-brand">Couples &amp; Duos</a><a href="/portfolio/#creation" class="block text-sm text-gray-600 hover:text-brand">Création d'art</a><a href="/portfolio/#reportages" class="block text-sm text-gray-600 hover:text-brand">Reportages</a></div></div>
+                <div class="border-b border-gray-100 py-3"><a href="/a-propos/" class="block font-medium text-brand">L'Univers</a></div>
+            </nav>
+            <div class="mt-8"><button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl font-medium hover:bg-brand-light shadow-md flex justify-center items-center cursor-pointer"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit</button></div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden"></div>
+
+    <main class="w-full">
+
+        <!-- HERO -->
+        <section class="bg-brand pt-28 lg:pt-32 pb-16 lg:pb-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="mb-8" aria-label="Fil d'Ariane">
+                    <ol class="flex items-center space-x-2 text-sm text-white/60" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a itemprop="item" href="/" class="hover:text-white"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1"></li>
+                        <li><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
+                        <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a itemprop="item" href="/boutique/" class="hover:text-white"><span itemprop="name">Boutique</span></a><meta itemprop="position" content="2"></li>
+                        <li><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
+                        <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name" class="text-white/90">Carte Cadeau</span><meta itemprop="position" content="3"></li>
+                    </ol>
+                </nav>
+                <p class="text-white/70 text-sm font-medium tracking-widest uppercase mb-4">Un cadeau qui change un regard</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">Carte Cadeau</h1>
+                <p class="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">Offrez bien plus qu'un objet. La carte cadeau Haroboz est une invitation à vivre une expérience photographique intime, libératrice et inoubliable, où que vous soyez.</p>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="py-12 lg:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-12 mb-4">Offrir l'expérience Haroboz</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">La carte cadeau Haroboz est née d'un constat simple&nbsp;: beaucoup de nos clients nous confient qu'ils n'auraient jamais osé réserver un shooting par eux-mêmes. C'est souvent un proche — compagnon, ami, frère — qui a fait le premier pas en leur offrant cette expérience. Et dans la grande majorité des cas, cette initiative a transformé leur perception d'eux-mêmes.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Offrir une carte cadeau Haroboz, c'est offrir un moment de <strong>lâcher-prise</strong>, de <strong>confiance en soi</strong> et de <strong>reconnexion</strong> avec sa propre image. C'est dire à quelqu'un&nbsp;: «&nbsp;Tu mérites de te voir tel que tu es&nbsp;: beau, unique, digne d'être célébré.&nbsp;» Dans notre <a href="/boutique/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">boutique</a>, c'est le cadeau le plus personnel et le plus transformateur que nous proposons.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">La carte est utilisable sur l'ensemble de nos <a href="/packs-shooting/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">packs shooting</a>, du <a href="/packs-shooting/portrait-studio/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">portrait studio</a> au <a href="/packs-shooting/shooting-duo-couple/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">shooting duo</a>, en passant par les séances en <a href="/packs-shooting/shooting-exterieur/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">extérieur</a>. Chaque pack inclut la séance photo, la direction artistique et un <a href="/boutique/tirages-art-edition-limitee/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">tirage d'art</a> sur le support au choix du bénéficiaire.</p>
+            </div>
+        </section>
+
+        <!-- COMMENT ÇA MARCHE -->
+        <section class="py-12 lg:py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand text-center mb-12">Comment ça fonctionne</h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-14 h-14 bg-brand rounded-full flex items-center justify-center mx-auto mb-6"><span class="text-white text-xl font-bold">1</span></div>
+                        <h3 class="text-xl font-serif font-semibold text-brand mb-3">Vous choisissez</h3>
+                        <p class="text-gray-600 leading-relaxed">Contactez-nous pour définir le montant ou le pack que vous souhaitez offrir. Nous personnalisons la carte cadeau avec un message de votre part. Vous pouvez opter pour un montant libre ou un pack spécifique — portrait studio, extérieur, duo ou domicile.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-14 h-14 bg-brand rounded-full flex items-center justify-center mx-auto mb-6"><span class="text-white text-xl font-bold">2</span></div>
+                        <h3 class="text-xl font-serif font-semibold text-brand mb-3">Nous créons</h3>
+                        <p class="text-gray-600 leading-relaxed">Votre carte cadeau est préparée avec soin. Elle peut être envoyée par email au format numérique (idéal pour les cadeaux de dernière minute) ou imprimée sur un support premium et expédiée dans un écrin élégant, prêt à offrir.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-14 h-14 bg-brand rounded-full flex items-center justify-center mx-auto mb-6"><span class="text-white text-xl font-bold">3</span></div>
+                        <h3 class="text-xl font-serif font-semibold text-brand mb-3">Il ou elle vit l'expérience</h3>
+                        <p class="text-gray-600 leading-relaxed">Le bénéficiaire nous contacte quand il le souhaite pour planifier sa séance. Luc prend le temps d'un échange confidentiel pour comprendre ses envies et le mettre en confiance avant le jour J. L'<a href="/votre-experience/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">expérience complète</a> l'attend.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- POUR QUI -->
+        <section class="py-12 lg:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-12 mb-4">Pour qui est cette carte cadeau ?</h2>
+
+                <h3 class="text-xl font-serif text-brand mt-8 mb-3">Pour votre compagnon</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Un anniversaire de couple, la Saint-Valentin, ou simplement l'envie de lui offrir quelque chose d'unique&nbsp;: la carte cadeau Haroboz est le moyen le plus élégant de dire à votre partenaire combien vous le trouvez beau. Et pourquoi ne pas opter pour un <a href="/packs-shooting/shooting-duo-couple/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">shooting duo</a> pour vivre l'expérience ensemble&nbsp;?</p>
+
+                <h3 class="text-xl font-serif text-brand mt-8 mb-3">Pour un ami qui mérite de se voir autrement</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Nous avons tous dans notre entourage quelqu'un qui se dévalorise, qui ne voit pas sa propre beauté. Offrir un shooting Haroboz, c'est lui tendre un miroir bienveillant et lui permettre de <a href="/votre-experience/retrouver-confiance-corps/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4">retrouver confiance en son image</a>. Un cadeau qui dépasse de loin tout objet matériel.</p>
+
+                <h3 class="text-xl font-serif text-brand mt-8 mb-3">Pour un passionné de photographie d'art</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Les amateurs d'art et de photographie seront sensibles à la démarche artistique de Haroboz. Au-delà de la séance, c'est la rencontre avec un photographe dont le travail s'inscrit dans une tradition noble — celle du portrait masculin — qui fait de cette carte cadeau une expérience culturelle et esthétique à part entière.</p>
+
+                <h3 class="text-xl font-serif text-brand mt-8 mb-3">Pour vous-même</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Personne n'a dit que la carte cadeau devait être pour quelqu'un d'autre. Si vous repoussez depuis longtemps l'idée d'un shooting, considérez-la comme une manière de vous engager envers vous-même. Achetez-la, fixez une date et offrez-vous cette parenthèse que vous méritez.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-12 lg:py-20 bg-gray-50" itemscope="" itemtype="https://schema.org/FAQPage">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand text-center mb-12">Questions fréquentes</h2>
+
+                <div class="space-y-4">
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left cursor-pointer">
+                            <h3 class="text-base font-semibold text-brand pr-4" itemprop="name">Quelle est la durée de validité de la carte cadeau ?</h3>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-brand flex-shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="px-6 pb-6 text-gray-600 leading-relaxed" itemprop="text">La carte cadeau Haroboz est valable 12 mois à compter de sa date d'achat. Ce délai permet au bénéficiaire de choisir le moment idéal pour vivre son expérience, sans précipitation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left cursor-pointer">
+                            <h3 class="text-base font-semibold text-brand pr-4" itemprop="name">Puis-je choisir un pack spécifique ou un montant libre ?</h3>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-brand flex-shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="px-6 pb-6 text-gray-600 leading-relaxed" itemprop="text">Les deux options sont possibles. Vous pouvez offrir un pack précis (Portrait Studio, Extérieur, Duo, Domicile) ou un montant libre que le bénéficiaire utilisera selon ses préférences. N'hésitez pas à nous contacter pour des conseils personnalisés.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left cursor-pointer">
+                            <h3 class="text-base font-semibold text-brand pr-4" itemprop="name">Le bénéficiaire saura-t-il exactement en quoi consiste le cadeau ?</h3>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-brand flex-shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="px-6 pb-6 text-gray-600 leading-relaxed" itemprop="text">La carte cadeau mentionne le type d'expérience offerte de manière élégante et discrète. Le bénéficiaire est ensuite guidé par Luc lors d'un premier échange confidentiel qui lui permettra de poser toutes ses questions et de se sentir parfaitement à l'aise.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left cursor-pointer">
+                            <h3 class="text-base font-semibold text-brand pr-4" itemprop="name">La carte cadeau est-elle transférable ?</h3>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-brand flex-shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="px-6 pb-6 text-gray-600 leading-relaxed" itemprop="text">Oui, la carte cadeau est nominative mais peut être transférée à une autre personne avec l'accord de l'acheteur. Il suffit de nous prévenir par email ou téléphone pour mettre à jour les coordonnées du bénéficiaire.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- RÉALISATIONS — Mini galerie -->
+        <section class="py-12 md:py-16 bg-gray-50 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold tracking-widest text-gray-400 uppercase block mb-2">Réalisations</span>
+                    <h3 class="text-2xl md:text-3xl font-serif text-brand">Un aperçu de nos créations</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250506_212353-1-scaled.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260128_103932.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20251222_144602.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_2909-1-scaled.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                </div>
+                <div class="text-center mt-8">
+                    <a href="/portfolio/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                        <span>Voir toutes les réalisations</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+<!-- CTA -->
+        <section class="bg-brand py-16 lg:py-20">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Offrez une expérience inoubliable</h2>
+                <p class="text-white/70 text-lg mb-8">Carte cadeau shooting privé — Marseille, Toulon, Nice, Paris</p>
+                <button onclick="openPopup()" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 shadow-lg inline-flex items-center cursor-pointer"><i data-lucide="gift" class="w-5 h-5 mr-2"></i> Commander une carte cadeau</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    
+
+    <!-- POPUP -->
+    
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none"><button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light flex items-center justify-center cursor-pointer pulse-ring text-brand"><i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i><span class="hidden md:inline font-medium">Prendre RDV</span></button></div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.lucide)lucide.createIcons();
+  const mobileBtn=document.getElementById('mobile-menu-button');
+  const mobileMenu=document.getElementById('mobile-menu');
+  const closeBtn=document.getElementById('mobile-close-button');
+  if(mobileBtn&&mobileMenu){mobileBtn.onclick=()=>mobileMenu.classList.toggle('menu-open');}
+  if(closeBtn&&mobileMenu){closeBtn.onclick=()=>mobileMenu.classList.remove('menu-open');}
+  document.querySelectorAll('[data-popup="open"]').forEach(b=>b.onclick=e=>{e.preventDefault();const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-hidden','popup-visible');});
+  document.querySelectorAll('[data-popup="close"]').forEach(b=>b.onclick=()=>{const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-visible','popup-hidden');});
+});
+</script>
+</body>
+</html>

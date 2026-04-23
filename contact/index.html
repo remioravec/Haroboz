@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contactez Haroboz | Haroboz</title>
+<meta name="description" content="Contactez Haroboz">
+<link rel="icon" href="https://haroboz.com/wp-content/uploads/2025/10/cropped-Group-1959.webp">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#0f1115',accent:'#c8a86c',ink:'#222228',muted:'#6e6e76',paper:'#faf8f4'},fontFamily:{serif:['Playfair Display','serif'],sans:['Inter','system-ui','sans-serif']}}}};</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body{font-family:Inter,system-ui,sans-serif;color:#222228}
+.mega-menu-content{visibility:hidden;opacity:0;transform:translateY(10px);transition:all .3s ease-in-out}
+.mega-menu-item:hover .mega-menu-content{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+#mobile-menu{transition:transform .3s ease-in-out}
+.menu-open{transform:translateX(0)!important}
+#booking-popup{transition:opacity .3s ease,visibility .3s ease}
+#booking-popup.popup-hidden{opacity:0;visibility:hidden}
+#booking-popup.popup-visible{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+    
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8"><span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span><button id="close-menu-btn" class="text-gray-500 hover:text-brand"><i data-lucide="x" class="w-7 h-7"></i></button></div>
+            <nav class="space-y-2">
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/packs-shooting/portrait-studio/" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a><a href="/packs-shooting/shooting-exterieur/" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a><a href="/packs-shooting/photo-domicile/" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a><a href="/packs-shooting/shooting-duo-couple/" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/votre-experience/retrouver-confiance-corps/" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a><a href="/votre-experience/book-modele-professionnel/" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a><a href="/votre-experience/cadeau-couple-original/" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a><a href="/votre-experience/premier-shooting-nu/" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; Célébration</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Où me trouver ? <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/photographe/photographe-marseille/" class="block text-sm text-gray-600 hover:text-brand">Marseille</a><a href="/photographe/photographe-toulon/" class="block text-sm text-gray-600 hover:text-brand">Toulon</a><a href="/photographe/photographe-nice/" class="block text-sm text-gray-600 hover:text-brand">Nice</a><a href="/photographe/photographe-paris/" class="block text-sm text-gray-600 hover:text-brand">Paris</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">L'Oeuvre <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/portfolio/" class="block text-sm text-gray-600 hover:text-brand">Toutes les oeuvres</a><a href="/portfolio/galerie-portraits-hommes/" class="block text-sm text-gray-600 hover:text-brand">Portraits</a><a href="/portfolio/#nus" class="block text-sm text-gray-600 hover:text-brand">Nus &amp; Attributs</a><a href="/portfolio/galerie-couples/" class="block text-sm text-gray-600 hover:text-brand">Couples &amp; Duos</a><a href="/portfolio/#creation" class="block text-sm text-gray-600 hover:text-brand">Création d'art</a><a href="/portfolio/#reportages" class="block text-sm text-gray-600 hover:text-brand">Reportages</a></div></div>
+                <div class="border-b border-gray-100 py-3"><a href="/a-propos/" class="block font-medium text-brand">L'Univers</a></div>
+            </nav>
+            <div class="mt-8"><button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl font-medium hover:bg-brand-light shadow-md flex justify-center items-center cursor-pointer"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit</button></div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden"></div>
+
+    <main class="w-full">
+
+        <!-- HERO -->
+        <section class="bg-brand pt-28 lg:pt-32 pb-12 lg:pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="mb-6" aria-label="Fil d'Ariane">
+                    <ol class="flex items-center space-x-2 text-sm text-white/60" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a itemprop="item" href="/" class="hover:text-white"><span itemprop="name">Accueil</span></a><meta itemprop="position" content="1"></li>
+                        <li class="text-white/40">/</li>
+                        <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name" class="text-white/80">Contact</span><meta itemprop="position" content="2"></li>
+                    </ol>
+                </nav>
+                <p class="text-white/70 text-sm font-medium tracking-wider uppercase mb-3">Premier échange confidentiel</p>
+                <h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Contactez Haroboz</h1>
+                <p class="text-lg text-white/80 max-w-2xl">Que vous ayez une question, une envie ou simplement besoin d'être rassuré avant de franchir le pas, Luc est à votre écoute. Chaque échange est confidentiel, sans engagement et sans jugement.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM + INFO -->
+        <section class="py-12 lg:py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+
+                    <!-- FORMULAIRE -->
+                    <div class="lg:col-span-3">
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">Envoyez-nous un message</h2>
+                        <p class="text-gray-600 leading-relaxed mb-6">Remplissez le formulaire ci-dessous et Luc vous répondra personnellement sous 24 heures. Toutes les informations partagées restent strictement confidentielles.</p>
+
+                        <form class="space-y-5" action="#" method="post" onsubmit="handleContactSubmit(event)">
+                            <div>
+                                <label for="hrb-nom" class="block text-sm font-medium text-brand mb-1">Nom et prénom <span class="text-red-500">*</span></label>
+                                <input type="text" id="hrb-nom" name="nom" required="" placeholder="Votre nom" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand">
+                            </div>
+                            <div>
+                                <label for="hrb-email" class="block text-sm font-medium text-brand mb-1">Adresse email <span class="text-red-500">*</span></label>
+                                <input type="email" id="hrb-email" name="email" required="" placeholder="votre@email.com" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand">
+                            </div>
+                            <div>
+                                <label for="hrb-telephone" class="block text-sm font-medium text-brand mb-1">Téléphone</label>
+                                <input type="tel" id="hrb-telephone" name="telephone" placeholder="06 XX XX XX XX" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand">
+                            </div>
+                            <div>
+                                <label for="hrb-pack" class="block text-sm font-medium text-brand mb-1">Pack qui vous intéresse</label>
+                                <select id="hrb-pack" name="pack" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand bg-white focus:outline-none focus:ring-2 focus:ring-brand">
+                                    <option value="">Sélectionnez un pack (optionnel)</option>
+                                    <option value="portrait-studio">Portrait Studio Marseille</option>
+                                    <option value="exterieur">Shooting Extérieur</option>
+                                    <option value="duo-couple">Shooting Duo &amp; Couple</option>
+                                    <option value="domicile">Photo à Domicile</option>
+                                    <option value="book-modele">Book Modèle Professionnel</option>
+                                    <option value="carte-cadeau">Carte Cadeau</option>
+                                    <option value="tirages">Tirages d'Art uniquement</option>
+                                    <option value="autre">Autre / Je ne sais pas encore</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="hrb-message" class="block text-sm font-medium text-brand mb-1">Votre message <span class="text-red-500">*</span></label>
+                                <textarea id="hrb-message" name="message" rows="6" required="" placeholder="Dites-nous ce qui vous amène, vos envies, vos questions... Tout est confidentiel." class="w-full px-4 py-3 border border-gray-200 rounded-xl text-brand placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-brand text-white py-4 rounded-xl font-bold hover:bg-brand-light shadow-lg flex items-center justify-center cursor-pointer"><i data-lucide="send" class="w-5 h-5 mr-2"></i> Envoyer mon message</button>
+                            <p class="text-xs text-gray-400 text-center">En soumettant ce formulaire, vous acceptez que vos données soient traitées conformément à notre politique de confidentialité. Aucune information ne sera partagée avec des tiers. <a href="/mentions-legales/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Mentions légales</a>.</p>
+                        </form>
+                        <div id="contact-success" class="hidden text-center py-12">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="check-circle" class="w-8 h-8 text-green-600"></i></div>
+                            <h3 class="text-2xl font-serif text-brand mb-2">Message envoyé !</h3>
+                            <p class="text-gray-600">Luc vous répondra personnellement sous 24 heures.</p>
+                        </div>
+                    </div>
+
+                    <!-- COORDONNEES -->
+                    <div class="lg:col-span-2">
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-6">Nos coordonnées</h2>
+
+                        <div class="space-y-6">
+                            <div class="bg-brand-50 rounded-2xl p-6">
+                                <div class="flex items-center gap-3 mb-2"><i data-lucide="phone" class="w-5 h-5 text-brand"></i><h3 class="text-xl md:text-2xl font-serif text-brand">Téléphone</h3></div>
+                                <p class="text-gray-600 leading-relaxed mb-2">Pour un échange direct et confidentiel&nbsp;:</p>
+                                <p class="text-xl font-semibold"><a href="tel:+33688704041" class="text-brand hover:text-brand-light">06 88 70 40 41</a></p>
+                                <p class="text-sm text-gray-500 mt-1">Du lundi au samedi, 9h — 19h</p>
+                            </div>
+
+                            <div class="bg-brand-50 rounded-2xl p-6">
+                                <div class="flex items-center gap-3 mb-2"><i data-lucide="mail" class="w-5 h-5 text-brand"></i><h3 class="text-xl md:text-2xl font-serif text-brand">Email</h3></div>
+                                <p class="text-gray-600 leading-relaxed mb-2">Pour toute demande écrite&nbsp;:</p>
+                                <p class="text-xl font-semibold"><a href="mailto:lucdfka@icloud.com" class="text-brand hover:text-brand-light">lucdfka@icloud.com</a></p>
+                                <p class="text-sm text-gray-500 mt-1">Réponse sous 24 heures</p>
+                            </div>
+
+                            <div class="bg-brand-50 rounded-2xl p-6">
+                                <div class="flex items-center gap-3 mb-2"><i data-lucide="map-pin" class="w-5 h-5 text-brand"></i><h3 class="text-xl md:text-2xl font-serif text-brand">Localisation</h3></div>
+                                <p class="text-gray-600 leading-relaxed"><strong>Marseille, Toulon, Nice, Paris</strong></p>
+                                <p class="text-gray-600 leading-relaxed">Studio privé. Déplacements possibles dans l'ensemble du sud de la France et sur Paris.</p>
+                            </div>
+
+                            <div class="bg-brand-50 rounded-2xl p-6">
+                                <div class="flex items-center gap-3 mb-2"><i data-lucide="instagram" class="w-5 h-5 text-brand"></i><h3 class="text-xl md:text-2xl font-serif text-brand">Instagram</h3></div>
+                                <p class="text-gray-600 leading-relaxed mb-2">Suivez notre univers visuel&nbsp;:</p>
+                                <p class="text-xl font-semibold"><a href="https://www.instagram.com/hbozart/" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-light">@hbozart</a></p>
+                            </div>
+
+                            <div class="bg-brand-50 rounded-2xl p-6">
+                                <div class="flex items-center gap-3 mb-2"><i data-lucide="shield-check" class="w-5 h-5 text-brand"></i><h3 class="text-xl md:text-2xl font-serif text-brand">Confidentialité garantie</h3></div>
+                                <p class="text-gray-600 leading-relaxed">Chaque échange avec Haroboz est traité avec la plus grande discrétion. Que vous nous contactiez par téléphone, email ou formulaire, vos informations personnelles et le contenu de vos messages restent strictement confidentiels. Nous ne publions jamais les coordonnées de nos clients et ne partageons aucune donnée avec des tiers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION RASSURANCE -->
+        <section class="py-12 lg:py-20 bg-gray-50">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">Ce premier échange, comment ça se passe ?</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">Nous savons que prendre contact pour un shooting de nu masculin peut sembler intimidant. C'est parfaitement normal, et Luc comprend cette appréhension mieux que quiconque. Voici ce à quoi vous pouvez vous attendre&nbsp;:</p>
+
+                <h3 class="text-xl md:text-2xl font-serif text-brand mt-8 mb-3">Un échange humain et bienveillant</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Pas de script commercial, pas de pression. Luc répond personnellement à chaque message et à chaque appel. Il prend le temps de comprendre votre démarche, vos envies, vos éventuelles inquiétudes. Aucune question n'est ridicule, et aucun sujet n'est tabou. Cet échange est le fondement d'une séance réussie.</p>
+
+                <h3 class="text-xl md:text-2xl font-serif text-brand mt-8 mb-3">Sans engagement</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Ce premier contact ne vous engage à rien. Vous pouvez poser toutes vos questions, demander un devis personnalisé, prendre le temps de réfléchir. Certains clients nous contactent plusieurs semaines — voire plusieurs mois — avant de finaliser leur réservation. Nous respectons votre rythme.</p>
+
+                <h3 class="text-xl md:text-2xl font-serif text-brand mt-8 mb-3">Adapté à vos préférences</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Vous préférez écrire&nbsp;? Utilisez le formulaire ou envoyez un email. Vous avez besoin d'entendre une voix&nbsp;? Appelez directement. Vous êtes plus à l'aise sur les réseaux sociaux&nbsp;? Envoyez un message privé sur Instagram. L'important est que vous vous sentiez à l'aise dans le mode de communication que vous choisissez.</p>
+            </div>
+        </section>
+
+        <!-- LIENS UTILES -->
+        <section class="py-12 lg:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">Avant de nous contacter</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">Pour préparer votre échange avec Luc, vous pouvez consulter ces pages qui répondent aux questions les plus fréquentes&nbsp;:</p>
+                <ul class="space-y-3 my-6">
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i><span><a href="/packs-shooting/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Nos Packs Shooting</a> — Découvrez les différentes formules disponibles</span></li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i><span><a href="/votre-experience/premier-shooting-nu/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Votre Premier Shooting</a> — Tout ce qu'il faut savoir avant le jour J</span></li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i><span><a href="/votre-experience/retrouver-confiance-corps/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Retrouver Confiance en Son Image</a> — Pour ceux qui hésitent encore</span></li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i><span><a href="/portfolio/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Notre Portfolio</a> — Exemples de réalisations</span></li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i><span><a href="/portfolio/temoignages-clients/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Témoignages Clients</a> — L'expérience vue par ceux qui l'ont vécue</span></li>
+                    <li class="flex items-start gap-3 text-gray-600"><i data-lucide="check" class="w-5 h-5 text-brand flex-shrink-0 mt-0.5"></i><span><a href="/boutique/carte-cadeau/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Carte Cadeau</a> — Pour offrir l'expérience Haroboz</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-brand py-16 lg:py-20">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Le premier pas est toujours le plus courageux</h2>
+                <p class="text-white/70 text-lg mb-8">Shooting privé et confidentiel — 06 88 70 40 41</p>
+                <a href="tel:+33688704041" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 shadow-lg inline-flex items-center"><i data-lucide="phone" class="w-5 h-5 mr-2"></i> Appelez maintenant</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    
+
+    <!-- POPUP -->
+    
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none"><button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light flex items-center justify-center cursor-pointer pulse-ring text-brand"><i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i><span class="hidden md:inline font-medium">Prendre RDV</span></button></div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.lucide)lucide.createIcons();
+  const mobileBtn=document.getElementById('mobile-menu-button');
+  const mobileMenu=document.getElementById('mobile-menu');
+  const closeBtn=document.getElementById('mobile-close-button');
+  if(mobileBtn&&mobileMenu){mobileBtn.onclick=()=>mobileMenu.classList.toggle('menu-open');}
+  if(closeBtn&&mobileMenu){closeBtn.onclick=()=>mobileMenu.classList.remove('menu-open');}
+  document.querySelectorAll('[data-popup="open"]').forEach(b=>b.onclick=e=>{e.preventDefault();const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-hidden','popup-visible');});
+  document.querySelectorAll('[data-popup="close"]').forEach(b=>b.onclick=()=>{const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-visible','popup-hidden');});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Galerie Portraits Hommes | Haroboz</title>
+<meta name="description" content="Galerie Portraits Hommes">
+<link rel="icon" href="https://haroboz.com/wp-content/uploads/2025/10/cropped-Group-1959.webp">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#0f1115',accent:'#c8a86c',ink:'#222228',muted:'#6e6e76',paper:'#faf8f4'},fontFamily:{serif:['Playfair Display','serif'],sans:['Inter','system-ui','sans-serif']}}}};</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body{font-family:Inter,system-ui,sans-serif;color:#222228}
+.mega-menu-content{visibility:hidden;opacity:0;transform:translateY(10px);transition:all .3s ease-in-out}
+.mega-menu-item:hover .mega-menu-content{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+#mobile-menu{transition:transform .3s ease-in-out}
+.menu-open{transform:translateX(0)!important}
+#booking-popup{transition:opacity .3s ease,visibility .3s ease}
+#booking-popup.popup-hidden{opacity:0;visibility:hidden}
+#booking-popup.popup-visible{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+    
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8"><span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span><button id="close-menu-btn" class="text-gray-500 hover:text-brand"><i data-lucide="x" class="w-7 h-7"></i></button></div>
+            <nav class="space-y-2">
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/packs-shooting/portrait-studio/" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a><a href="/packs-shooting/shooting-exterieur/" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a><a href="/packs-shooting/photo-domicile/" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a><a href="/packs-shooting/shooting-duo-couple/" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/votre-experience/retrouver-confiance-corps/" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a><a href="/votre-experience/book-modele-professionnel/" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a><a href="/votre-experience/cadeau-couple-original/" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a><a href="/votre-experience/premier-shooting-nu/" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; Célébration</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Où me trouver ? <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/photographe/photographe-marseille/" class="block text-sm text-gray-600 hover:text-brand">Marseille</a><a href="/photographe/photographe-toulon/" class="block text-sm text-gray-600 hover:text-brand">Toulon</a><a href="/photographe/photographe-nice/" class="block text-sm text-gray-600 hover:text-brand">Nice</a><a href="/photographe/photographe-paris/" class="block text-sm text-gray-600 hover:text-brand">Paris</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">L'Oeuvre <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/portfolio/" class="block text-sm text-gray-600 hover:text-brand">Toutes les oeuvres</a><a href="/portfolio/galerie-portraits-hommes/" class="block text-sm text-gray-600 hover:text-brand">Portraits</a><a href="/portfolio/#nus" class="block text-sm text-gray-600 hover:text-brand">Nus &amp; Attributs</a><a href="/portfolio/galerie-couples/" class="block text-sm text-gray-600 hover:text-brand">Couples &amp; Duos</a><a href="/portfolio/#creation" class="block text-sm text-gray-600 hover:text-brand">Création d'art</a><a href="/portfolio/#reportages" class="block text-sm text-gray-600 hover:text-brand">Reportages</a></div></div>
+                <div class="border-b border-gray-100 py-3"><a href="/a-propos/" class="block font-medium text-brand">L'Univers</a></div>
+            </nav>
+            <div class="mt-8"><button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl font-medium hover:bg-brand-light shadow-md flex justify-center items-center cursor-pointer"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit</button></div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden"></div>
+
+    <main class="w-full">
+        <!-- PAGE HERO -->
+        <section class="bg-brand pt-28 lg:pt-32 pb-12 lg:pb-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/3 translate-x-1/4 w-96 h-96 bg-brand-light rounded-full opacity-30 blur-3xl"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <nav class="text-sm text-white/60 mb-6" aria-label="Fil d'Ariane">
+                    <a href="/" class="hover:text-white">Accueil</a> <span class="mx-2">/</span> <a href="/portfolio/" class="hover:text-white">Portfolio</a> <span class="mx-2">/</span> <span class="text-white/90">Galerie Portraits Hommes</span>
+                </nav>
+                <p class="text-white/70 text-sm uppercase tracking-widest mb-3">Photographie d'art nu masculin</p>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Galerie Portraits Hommes</h1>
+                <p class="text-white/70 text-base md:text-lg max-w-2xl">Chaque portrait est une rencontre. Découvrez notre sélection d'images où la lumière, le cadrage et la direction artistique révèlent la beauté singulière de chaque homme photographié.</p>
+            </div>
+        </section>
+
+        <!-- RÉALISATIONS — Galerie immédiate -->
+        <section class="py-10 lg:py-14 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-6 text-center">Réalisations — Portraits</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251014_223830.png" alt="Portrait masculin extérieur" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/02/Photoroom_20260215_194643.png" alt="Portrait masculin mur" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20260216_171037.png" alt="Portrait sourire mur bleu" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260121_170132.png" alt="Portrait intérieur lumière douce" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_3779-1-scaled.png" alt="Portrait sourire nature" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260125_192255.png" alt="Portrait gros plan regard" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251014_115339.png" alt="Portrait casquette extérieur" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250401_210440-1-scaled.png" alt="Portrait nuages extérieur" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_2909-1-scaled.png" alt="Portrait rivière extérieur" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2025/11/IMG_2919.png" alt="Portrait yeux fermés soleil" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_7101-1-scaled.png" alt="Portrait homme mature" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260129_212651.png" alt="Portrait N&amp;B sourire" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT: Introduction -->
+        <section class="py-12 lg:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">L'art du portrait masculin</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">Bienvenue dans la galerie portraits hommes de <a href="/portfolio/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Haroboz</a>. Cette collection rassemble une sélection de nos meilleures réalisations en <strong>photographie de nu masculin artistique</strong>, réalisées aussi bien dans notre studio privé de <strong>Marseille</strong> qu'en extérieur sur les sites les plus inspirants de la <strong>Sud de la France</strong>.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">Le portrait d'homme, tel que nous le concevons chez Haroboz, n'est pas une simple prise de vue. C'est une exploration de l'identité, un dialogue silencieux entre le photographe et son modèle, où chaque ombre raconte une histoire et chaque regard porte une vérité. Inspiré par les grands maîtres de la photographie comme Robert Mapplethorpe et Herb Ritts, <a href="/a-propos/luc-desbois-photographe/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">Luc Desbois</a> a développé un style distinctif qui allie la rigueur du clair-obscur classique à une sensibilité contemporaine.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">Nos portraits se déclinent en plusieurs ambiances. Le travail en studio permet un contrôle absolu de la lumière, créant des contrastes dramatiques qui sculptent les volumes du corps masculin. Les séances en extérieur tirent parti de la lumière naturelle méditerranéenne, offrant des rendus plus doux et organiques, où les paysages du sud deviennent un écrin naturel pour le modèle.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">Chaque photographie présentée dans cette galerie a été réalisée avec le consentement explicite du modèle. Chez Haroboz, la <strong>confidentialité</strong> et le <strong>respect</strong> de la personne photographiée sont des valeurs absolues. Nous ne publions jamais une image sans accord préalable, et chaque client conserve un contrôle total sur l'usage de ses clichés.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">Explorez également notre <a href="/portfolio/galerie-couples/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">galerie couples</a> pour découvrir notre travail sur la complicité à deux, ou lisez les <a href="/portfolio/temoignages-clients/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">témoignages de nos clients</a> pour comprendre ce que représente l'expérience Haroboz vue de l'intérieur.</p>
+            </div>
+        </section>
+
+        <!-- GALLERY GRID PLACEHOLDERS -->
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20250405_115755.png" alt="Portrait homme artistique clair-obscur studio Marseille" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/02/Photoroom_20260217_122033.png" alt="Portrait masculin lumière naturelle" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/03/IMG_4769.png" alt="Shooting portrait homme confiance en soi" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260125_192255.png" alt="Portrait artistique homme noir et blanc" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20250412_182926.png" alt="Portrait homme lumière dorée extérieur" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"><img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_0267-1-scaled.png" alt="Portrait masculin direction artistique studio" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTAGRAM -->
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Notre galerie sur Instagram</h2>
+                <p class="text-gray-600 leading-relaxed mb-8">Retrouvez nos derniers portraits et les coulisses de nos séances sur le compte <strong>@hbozart</strong>.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"><img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260213_102220.png" alt="Portrait studio Haroboz" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"><img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_0420-1-scaled.png" alt="Shooting artistique homme" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow hidden md:block"><img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_0423-1-scaled.png" alt="Portrait lumière naturelle" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow hidden md:block"><img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250330_104731-1-scaled.png" alt="Direction artistique portrait" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+                </div>
+                <a href="https://www.instagram.com/hbozart/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center border-2 border-brand text-brand px-6 py-3 rounded-full font-medium hover:bg-brand hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5 mr-2"></i> Suivre @hbozart sur Instagram</a>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT: Approche technique -->
+        <section class="py-12 lg:py-20 bg-gray-50">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">Notre approche technique</h2>
+
+                <h3 class="text-xl md:text-2xl font-serif text-brand mt-8 mb-3">Le clair-obscur en studio</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Dans notre espace privé, chaque séance est orchestrée avec un éclairage précis. Sources directionnelles, réflecteurs et fonds noirs créent une atmosphère intimiste où les contrastes entre lumière et ombre dessinent les contours du corps avec une intensité picturale. Cette technique, héritée des peintres de la Renaissance et du Caravage, confère à chaque portrait une dimension intemporelle.</p>
+
+                <h3 class="text-xl md:text-2xl font-serif text-brand mt-8 mb-3">La lumière naturelle en extérieur</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Le sud de la France offre une qualité de lumière exceptionnelle, particulièrement lors des golden hours du matin et du soir. Plages secrètes, rochers dorés du massif de l'Esterel, criques isolées&nbsp;: chaque lieu est sélectionné pour sa beauté naturelle et sa discrétion, garantissant une séance en toute intimité au coeur de la nature.</p>
+
+                <h3 class="text-xl md:text-2xl font-serif text-brand mt-8 mb-3">La direction artistique</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">Luc ne vous demande pas de poser. Il vous guide vers un état de naturel et de présence qui transparaît dans chaque image. Sa direction artistique est basée sur l'écoute et l'adaptation&nbsp;: il capte les micro-expressions, les gestes spontanés, les moments de lâcher-prise qui font la différence entre une bonne photo et une image véritablement saisissante.</p>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT: Tirages -->
+        <section class="py-12 lg:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">Du portrait au tirage d'art</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">Chaque portrait de cette galerie peut devenir une oeuvre d'art tangible grâce à nos <a href="/boutique/tirages-art-edition-limitee/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">tirages en édition limitée</a>. Papier fine art, plexiglas mat, métal brossé, toile ou voile de soie&nbsp;: le support est choisi en concertation avec le client pour sublimer chaque image et s'intégrer harmonieusement dans son intérieur.</p>
+                <p class="text-gray-600 leading-relaxed mb-4">Si vous souhaitez vivre cette expérience et créer vos propres portraits, découvrez nos <a href="/packs-shooting/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">packs shooting</a> ou <a href="/contact/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">contactez-nous</a> directement pour un échange confidentiel.</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-brand py-16 lg:py-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-96 h-96 bg-brand-light rounded-full opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-96 h-96 bg-[#3a00a8] rounded-full opacity-50 blur-3xl"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Créez votre propre portrait d'art</h2>
+                <p class="text-brand-50 text-base md:text-lg mb-8 max-w-2xl mx-auto">Shooting privé et confidentiel — Marseille, Toulon, Nice, Paris</p>
+                <button onclick="openPopup()" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 shadow-xl flex items-center justify-center cursor-pointer mx-auto"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Être rappelé sous 24h</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    
+
+    <!-- POPUP -->
+    
+
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light flex items-center justify-center cursor-pointer pulse-ring text-brand"><i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i><span class="hidden md:inline font-medium">Prendre RDV</span></button>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.lucide)lucide.createIcons();
+  const mobileBtn=document.getElementById('mobile-menu-button');
+  const mobileMenu=document.getElementById('mobile-menu');
+  const closeBtn=document.getElementById('mobile-close-button');
+  if(mobileBtn&&mobileMenu){mobileBtn.onclick=()=>mobileMenu.classList.toggle('menu-open');}
+  if(closeBtn&&mobileMenu){closeBtn.onclick=()=>mobileMenu.classList.remove('menu-open');}
+  document.querySelectorAll('[data-popup="open"]').forEach(b=>b.onclick=e=>{e.preventDefault();const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-hidden','popup-visible');});
+  document.querySelectorAll('[data-popup="close"]').forEach(b=>b.onclick=()=>{const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-visible','popup-hidden');});
+});
+</script>
+</body>
+</html>

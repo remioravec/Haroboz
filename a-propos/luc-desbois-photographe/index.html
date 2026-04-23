@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Une Vision | Haroboz</title>
+<meta name="description" content="Une Vision">
+<link rel="icon" href="https://haroboz.com/wp-content/uploads/2025/10/cropped-Group-1959.webp">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#0f1115',accent:'#c8a86c',ink:'#222228',muted:'#6e6e76',paper:'#faf8f4'},fontFamily:{serif:['Playfair Display','serif'],sans:['Inter','system-ui','sans-serif']}}}};</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body{font-family:Inter,system-ui,sans-serif;color:#222228}
+.mega-menu-content{visibility:hidden;opacity:0;transform:translateY(10px);transition:all .3s ease-in-out}
+.mega-menu-item:hover .mega-menu-content{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+#mobile-menu{transition:transform .3s ease-in-out}
+.menu-open{transform:translateX(0)!important}
+#booking-popup{transition:opacity .3s ease,visibility .3s ease}
+#booking-popup.popup-hidden{opacity:0;visibility:hidden}
+#booking-popup.popup-visible{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+<!-- HEADER --><!-- MOBILE MENU -->
+<div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+<div class="p-6">
+<div class="flex items-center justify-between mb-8"><span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span><button id="close-menu-btn" class="text-gray-500 hover:text-brand"><i class="w-7 h-7" data-lucide="x"></i></button></div>
+<nav class="space-y-2">
+<div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i class="w-4 h-4" data-lucide="chevron-down"></i></button>
+<div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a class="block text-sm text-gray-600 hover:text-brand" href="/packs-shooting/portrait-studio/">Portrait en Studio</a><a class="block text-sm text-gray-600 hover:text-brand" href="/packs-shooting/shooting-exterieur/">Shooting en Extérieur</a><a class="block text-sm text-gray-600 hover:text-brand" href="/packs-shooting/photo-domicile/">Photo à Domicile</a><a class="block text-sm text-gray-600 hover:text-brand" href="/packs-shooting/shooting-duo-couple/">Shooting Duo &amp; Couple</a></div>
+</div>
+<div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i class="w-4 h-4" data-lucide="chevron-down"></i></button>
+<div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a class="block text-sm text-gray-600 hover:text-brand" href="/votre-experience/retrouver-confiance-corps/">Confiance &amp; Acceptation</a><a class="block text-sm text-gray-600 hover:text-brand" href="/votre-experience/book-modele-professionnel/">Book Professionnel</a><a class="block text-sm text-gray-600 hover:text-brand" href="/votre-experience/cadeau-couple-original/">Immortaliser son Couple</a><a class="block text-sm text-gray-600 hover:text-brand" href="/votre-experience/premier-shooting-nu/">Cadeau &amp; Célébration</a></div>
+</div>
+<div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Où me trouver ? <i class="w-4 h-4" data-lucide="chevron-down"></i></button>
+<div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a class="block text-sm text-gray-600 hover:text-brand" href="/photographe/photographe-marseille/">Marseille</a><a class="block text-sm text-gray-600 hover:text-brand" href="/photographe/photographe-toulon/">Toulon</a><a class="block text-sm text-gray-600 hover:text-brand" href="/photographe/photographe-nice/">Nice</a><a class="block text-sm text-gray-600 hover:text-brand" href="/photographe/photographe-paris/">Paris</a></div>
+</div>
+<div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">L'Oeuvre <i class="w-4 h-4" data-lucide="chevron-down"></i></button>
+<div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a class="block text-sm text-gray-600 hover:text-brand" href="/portfolio/">Toutes les oeuvres</a><a class="block text-sm text-gray-600 hover:text-brand" href="/portfolio/galerie-portraits-hommes/">Portraits</a><a class="block text-sm text-gray-600 hover:text-brand" href="/portfolio/#nus">Nus &amp; Attributs</a><a class="block text-sm text-gray-600 hover:text-brand" href="/portfolio/galerie-couples/">Couples &amp; Duos</a><a class="block text-sm text-gray-600 hover:text-brand" href="/portfolio/#creation">Création d'art</a><a class="block text-sm text-gray-600 hover:text-brand" href="/portfolio/#reportages">Reportages</a></div>
+</div>
+<div class="border-b border-gray-100 py-3"><a class="block font-medium text-brand" href="/a-propos/">L'Univers</a></div>
+</nav>
+<div class="mt-8"><button class="w-full bg-brand text-white px-6 py-4 rounded-xl font-medium hover:bg-brand-light shadow-md flex justify-center items-center cursor-pointer"><i class="w-5 h-5 mr-2" data-lucide="calendar"></i> Prendre RDV gratuit</button></div>
+</div>
+</div>
+<div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden"></div>
+&nbsp;
+
+<!-- HERO -->
+
+<section class="bg-brand pt-28 lg:pt-32 pb-12 lg:pb-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><nav class="mb-6" aria-label="Fil d'Ariane">
+<ol class="flex items-center space-x-2 text-sm text-white/60">
+ 	<li><a class="hover:text-white" href="/">Accueil</a></li>
+ 	<li class="text-white/40">/</li>
+ 	<li><a class="hover:text-white" href="/a-propos/">À Propos</a></li>
+ 	<li class="text-white/40">/</li>
+ 	<li><span class="text-white/80">Vision &amp; Influences</span></li>
+</ol>
+</nav>
+<p class="text-white/70 text-sm font-medium tracking-wider uppercase mb-3">Parcours &amp; Influences</p>
+
+<h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Une Vision</h1>
+<p class="text-lg text-white/80 max-w-2xl">Esthétiques, surréalistes, parfois crues — les images d'Haroboz doivent être regardées comme une allégorie, tantôt poétique ou humoristiques, tantôt homoérotique, d'une profonde dépendance au masculin.</p>
+
+</div>
+</section><!-- PORTRAIT + MA VISION -->
+
+<section class="py-12 lg:py-20 bg-white">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start">
+<div class="w-full md:w-1/3 flex-shrink-0"><img class="rounded-2xl shadow-lg w-full object-cover" src="https://haroboz.com/wp-content/uploads/2026/04/luc-desbois-portrait.jpeg" alt="Haroboz — Luc Desbois, Photographe"></div>
+<div class="w-full md:w-2/3">
+<h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">Le regard d'Haroboz</h2>
+<p class="text-gray-600 leading-relaxed mb-4">Haroboz, l'artiste, est venu substituer son regard à celui de Luc Desbois. Esthétiques, surréalistes, parfois crues — les images d'Haroboz doivent être regardées comme une allégorie, tantôt poétique ou humoristiques, tantôt homoérotique, d'une profonde dépendance au masculin si longtemps encapsulée.</p>
+&nbsp;
+<p class="text-gray-600 leading-relaxed mb-4">Avec la beauté comme écrin (lieux, nature, monuments, œuvres d'art, lumières, formes), les images que je crée accueillent mes représentations du masculin, lequel persiste à constituer mon ancrage amoureux, émotionnel, sexuel.</p>
+<p class="text-gray-600 leading-relaxed mb-4">En fin de compte, ce qui est aujourd'hui une démarche artistique, ennoblit les traits de moi-même, toujours profondément honteux, coupables et meurtris, qui se risquent à s'exposer.</p>
+<p class="text-gray-600 leading-relaxed mb-4 italic">J'espère que ces quelques lignes éclaireront votre regard sur mes compositions et je vous souhaite une bonne visite de ma collection. Tout contact ou témoignage de votre part est un encouragement, merci d'avance.</p>
+
+</div>
+</div>
+</div>
+</section><!-- SENSIBILITÉS ARTISTIQUES -->
+
+<section class="py-12 lg:py-20 bg-gray-50">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-2xl md:text-3xl font-serif text-brand mt-0 mb-4">Sensibilités artistiques</h2>
+<p class="text-gray-600 leading-relaxed mb-8">Évidemment, le surréalisme, le pop art, l'expressionnisme, le nouveau réalisme, l'art gay homoérotique, l'art queer influencent les compositions d'Haroboz autant que la photo de mode ou la photo publicitaire à travers leurs plus éminents représentants.</p>
+
+<h3 class="text-xl md:text-2xl font-serif text-brand mt-8 mb-6">Quelques références</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Robert Mapplethorpe</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Tom of Finland (photographe et peintre)</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Andy Warhol</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Herb Ritts</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Bruce Weber</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Fred Goudon</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Paul Freeman</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Guy Bourdin</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Sarah Moon</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Ellen von Unwerth</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Andreas Gursky</p>
+
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+<p class="font-bold text-brand">Kostis Fokas</p>
+
+</div>
+</div>
+</div>
+</section><!-- QR CODE -->
+
+<section class="py-12 lg:py-16 bg-white">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Retrouvez-moi</h2>
+<p class="text-gray-600 mb-6">Scannez pour accéder directement à mon univers</p>
+
+<div class="inline-block bg-brand-50 rounded-2xl p-8 border border-gray-200"><!-- Emplacement QR Code — à remplacer par l'image du QR code -->
+<div class="w-48 h-48 bg-white rounded-xl border-2 border-dashed border-brand/30 flex items-center justify-center mx-auto">
+<div class="text-center"><i class="w-12 h-12 text-brand/40 mx-auto mb-2" data-lucide="qr-code"></i>
+<p class="text-xs text-brand/50">QR Code</p>
+
+</div>
+</div>
+<p class="text-sm text-gray-500 mt-4">@hbozart</p>
+
+</div>
+</div>
+</section><!-- SUPPORTS D'ART -->
+
+<section class="py-14 md:py-20 bg-gray-50 border-t border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+<div><span class="text-xs font-bold tracking-widest text-brand/60 uppercase block mb-3">Supports artistiques exclusifs&nbsp;</span>
+<h3 class="text-2xl md:text-3xl font-serif text-brand mb-4">La matière au service de l'image</h3>
+<p class="text-gray-600 leading-relaxed mb-4">La virtualité de l'image en appelle au concours de la matière : le papier d'excellence, le liège "éternel ", endémique du Var, le voile pour sa transparence et sa délicatesse, le verre et ses fêlures. Chaque support est choisi en tant que support artistique de l'image, voire comme un supplément d'âme.</p>
+
+<div class="flex flex-wrap gap-4 mb-6">
+<div class="flex items-center gap-2 text-sm text-gray-500"></div>
+</div>
+<a class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group" href="/boutique/tirages-art-edition-limitee/">
+Découvrir nos tirages d'art
+<i class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" data-lucide="arrow-right"></i>
+</a>
+
+</div>
+<div class="grid grid-cols-2 gap-3"><img class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg" src="https://haroboz.com/wp-content/uploads/2025/11/IMG_4690.png" alt="Tirage d'art sur papier d'excellence">
+<img class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg mt-6" src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250911_161040-1-scaled.png" alt="Tirage d'art sur support noble"></div>
+</div>
+</div>
+</section><!-- CTA -->
+
+<section class="bg-brand py-16 lg:py-20">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Rencontrez Haroboz</h2>
+<p class="text-white/70 text-lg mb-8">Premier échange confidentiel et sans engagement</p>
+<button class="bg-white text-brand px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 shadow-lg inline-flex items-center cursor-pointer"><i class="w-5 h-5 mr-2" data-lucide="calendar"></i> Prendre contact</button>
+
+</div>
+</section>&nbsp;
+
+<!-- FOOTER -->
+
+<!-- POPUP -->
+
+<div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none"><button class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light flex items-center justify-center cursor-pointer pulse-ring text-brand"><i class="w-6 h-6 md:w-5 md:h-5 md:mr-2" data-lucide="calendar"></i><span class="hidden md:inline font-medium">Prendre RDV</span></button></div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.lucide)lucide.createIcons();
+  const mobileBtn=document.getElementById('mobile-menu-button');
+  const mobileMenu=document.getElementById('mobile-menu');
+  const closeBtn=document.getElementById('mobile-close-button');
+  if(mobileBtn&&mobileMenu){mobileBtn.onclick=()=>mobileMenu.classList.toggle('menu-open');}
+  if(closeBtn&&mobileMenu){closeBtn.onclick=()=>mobileMenu.classList.remove('menu-open');}
+  document.querySelectorAll('[data-popup="open"]').forEach(b=>b.onclick=e=>{e.preventDefault();const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-hidden','popup-visible');});
+  document.querySelectorAll('[data-popup="close"]').forEach(b=>b.onclick=()=>{const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-visible','popup-hidden');});
+});
+</script>
+</body>
+</html>

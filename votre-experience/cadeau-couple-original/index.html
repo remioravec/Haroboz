@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Un Cadeau Couple Original | Haroboz</title>
+<meta name="description" content="Un Cadeau Couple Original">
+<link rel="icon" href="https://haroboz.com/wp-content/uploads/2025/10/cropped-Group-1959.webp">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#0f1115',accent:'#c8a86c',ink:'#222228',muted:'#6e6e76',paper:'#faf8f4'},fontFamily:{serif:['Playfair Display','serif'],sans:['Inter','system-ui','sans-serif']}}}};</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body{font-family:Inter,system-ui,sans-serif;color:#222228}
+.mega-menu-content{visibility:hidden;opacity:0;transform:translateY(10px);transition:all .3s ease-in-out}
+.mega-menu-item:hover .mega-menu-content{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+#mobile-menu{transition:transform .3s ease-in-out}
+.menu-open{transform:translateX(0)!important}
+#booking-popup{transition:opacity .3s ease,visibility .3s ease}
+#booking-popup.popup-hidden{opacity:0;visibility:hidden}
+#booking-popup.popup-visible{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+    
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span>
+                <button id="close-menu-btn" class="text-gray-500 hover:text-brand"><i data-lucide="x" class="w-7 h-7"></i></button>
+            </div>
+            <nav class="space-y-2">
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Nos Séances <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/packs-shooting/portrait-studio/" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a><a href="/packs-shooting/shooting-exterieur/" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a><a href="/packs-shooting/photo-domicile/" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a><a href="/packs-shooting/shooting-duo-couple/" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Votre Objectif <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/votre-experience/retrouver-confiance-corps/" class="block text-sm text-gray-600 hover:text-brand">Confiance &amp; Acceptation</a><a href="/votre-experience/book-modele-professionnel/" class="block text-sm text-gray-600 hover:text-brand">Book Professionnel</a><a href="/votre-experience/cadeau-couple-original/" class="block text-sm text-gray-600 hover:text-brand">Immortaliser son Couple</a><a href="/votre-experience/premier-shooting-nu/" class="block text-sm text-gray-600 hover:text-brand">Cadeau &amp; Célébration</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">Où me trouver ? <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/photographe/photographe-marseille/" class="block text-sm text-gray-600 hover:text-brand">Marseille</a><a href="/photographe/photographe-toulon/" class="block text-sm text-gray-600 hover:text-brand">Toulon</a><a href="/photographe/photographe-nice/" class="block text-sm text-gray-600 hover:text-brand">Nice</a><a href="/photographe/photographe-paris/" class="block text-sm text-gray-600 hover:text-brand">Paris</a></div></div>
+                <div class="border-b border-gray-100 py-3"><button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">L'Oeuvre <i data-lucide="chevron-down" class="w-4 h-4"></i></button><div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50"><a href="/portfolio/" class="block text-sm text-gray-600 hover:text-brand">Toutes les oeuvres</a><a href="/portfolio/galerie-portraits-hommes/" class="block text-sm text-gray-600 hover:text-brand">Portraits</a><a href="/portfolio/#nus" class="block text-sm text-gray-600 hover:text-brand">Nus &amp; Attributs</a><a href="/portfolio/galerie-couples/" class="block text-sm text-gray-600 hover:text-brand">Couples &amp; Duos</a><a href="/portfolio/#creation" class="block text-sm text-gray-600 hover:text-brand">Création d'art</a><a href="/portfolio/#reportages" class="block text-sm text-gray-600 hover:text-brand">Reportages</a></div></div>
+                <div class="border-b border-gray-100 py-3"><a href="/a-propos/" class="block font-medium text-brand">L'Univers</a></div>
+            </nav>
+            <div class="mt-8"><button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl font-medium hover:bg-brand-light transition-colors shadow-md flex justify-center items-center cursor-pointer"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Prendre RDV gratuit</button></div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden"></div>
+
+    <main class="w-full">
+        <!-- PAGE HERO -->
+        <section class="bg-brand pt-28 lg:pt-32 pb-12 lg:pb-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/3 translate-x-1/4 w-96 h-96 bg-brand-light rounded-full opacity-30 blur-3xl"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <nav class="text-sm text-white/60 mb-6" aria-label="Fil d'Ariane">
+                    <a href="/" class="hover:text-white">Accueil</a> <span class="mx-2">›</span> <a href="/votre-experience/" class="hover:text-white">Votre Expérience</a> <span class="mx-2">›</span> <span class="text-white/90">Cadeau Couple Original</span>
+                </nav>
+                <p class="text-white/70 text-base md:text-lg max-w-2xl mb-2">Une Expérience à Deux</p>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Un Cadeau Couple Original</h1>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT -->
+        
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Offrir un Moment Unique et Inoubliable</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Dans le cadre de <a href="/votre-experience/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">l'expérience photographique Haroboz</a>, le cadeau couple occupe une place à part. À Marseille, sur la Sud de la France, Luc Desbois propose aux couples une expérience intime et artistique qui sort radicalement des sentiers battus. Oubliez les cadeaux matériels qui finissent dans un tiroir : offrez un moment de complicité, de beauté et de lâcher-prise qui restera gravé dans votre mémoire.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Que ce soit pour un anniversaire, la Saint-Valentin, un mariage, un PACS ou simplement pour célébrer votre histoire, un shooting photo en couple chez Haroboz est un cadeau qui crée des souvenirs tangibles. Le tirage d'art inclus dans chaque pack transforme cette expérience en une œuvre que vous pourrez admirer ensemble, en toute intimité, pendant des années.</p>
+
+                
+                    </div>
+                    <div>
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20250414_131832.png" alt="Haroboz — Photographie d'art" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-8 bg-brand-50 border-y border-brand/10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-brand font-serif text-lg md:text-xl text-center sm:text-left">Envie de vivre cette expérience ?</p>
+                <button onclick="openPopup()" class="bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand-light transition-colors shadow-md flex items-center cursor-pointer whitespace-nowrap">
+                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Prendre RDV gratuit
+                </button>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250615_213259-1-scaled.png" alt="Haroboz — Photographie d'art" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Le Shooting Duo : Comment Ça Se Passe</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Le <a href="/packs-shooting/shooting-duo-couple/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">pack Shooting Duo / Couple</a> a été spécialement conçu pour capturer la complicité et la tendresse entre deux personnes. La séance se déroule dans le studio privé de Marseille, dans le sud de la France, un espace entièrement dédié à votre couple ce jour-là.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Avant la séance, Luc échange avec vous deux pour comprendre votre dynamique, vos envies et vos limites respectives. Chaque couple est différent : certains viennent avec un esprit ludique, d'autres recherchent une dimension plus sensuelle ou émotionnelle. Il n'y a pas de formule imposée, seulement votre histoire telle que vous souhaitez la raconter.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">La direction artistique s'adapte à votre personnalité de couple. Les jeux de regards, les mains entrelacées, les contrastes entre deux corps : Luc saisit ces instants avec sa maîtrise du clair-obscur pour créer des images d'une élégance rare. Le résultat est à la fois intime et artistique, personnel et universel.</p>
+
+                
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- RÉALISATIONS — Mini galerie -->
+        <section class="py-12 md:py-16 bg-gray-50 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold tracking-widest text-gray-400 uppercase block mb-2">Réalisations</span>
+                    <h3 class="text-2xl md:text-3xl font-serif text-brand">Un aperçu de nos créations</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250615_213259-1-scaled.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20250414_131832.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251011_225926.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                    <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20250405_115755.png" alt="Réalisation Haroboz" class="aspect-[3/4] rounded-2xl object-cover w-full shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block" loading="lazy">
+                </div>
+                <div class="text-center mt-8">
+                    <a href="/portfolio/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                        <span>Voir toutes les réalisations</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">La Carte Cadeau : La Solution Idéale</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Vous souhaitez offrir cette expérience mais vous préférez laisser le choix de la date et des détails ? La <a href="/boutique/carte-cadeau/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">carte cadeau Haroboz</a> est la solution parfaite. Élégante et personnalisable, elle permet au bénéficiaire de réserver sa séance au moment qui lui convient.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">La carte cadeau couvre l'ensemble de l'expérience : échange préparatoire, séance photo, post-production et tirage d'art. C'est un cadeau clé en main, sans surprise financière pour celui qui le reçoit. Un geste à la hauteur de ce que vous ressentez.</p>
+
+                
+                    </div>
+                    <div>
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_5047-1-scaled.png" alt="Haroboz — Photographie d'art" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_6303-1-scaled.png" alt="Haroboz — Photographie d'art" class="aspect-[4/3] rounded-2xl object-cover w-full shadow-lg" loading="lazy">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Confidentialité et Intimité Absolues</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">La question de la confidentialité est naturellement centrale pour un shooting en couple. Chez Haroboz, les garanties sont totales. Le studio est entièrement privé, sans aucun tiers. Les images sont livrées via une galerie sécurisée accessible uniquement par vous. Aucune photo n'est publiée, partagée ou utilisée sans le consentement écrit des deux partenaires.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Cette discrétion permet une véritable liberté pendant la séance. Vous pouvez être authentiques, spontanés, sans crainte. C'est souvent dans ces moments de relâchement total que naissent les plus belles images, celles qui capturent l'essence même de votre relation.</p>
+
+                
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 lg:py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-4">Pourquoi Ce Cadeau Est Différent</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Un parfum s'évapore, un vêtement s'use, un objet de décoration finit par se fondre dans le décor. Un shooting photo en couple, lui, crée une trace émotionnelle durable. C'est une expérience vécue ensemble, un moment de partage profond qui renforce les liens. Et le tirage d'art qui en découle est un objet unique, une œuvre créée à votre image.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Les couples qui vivent cette expérience reviennent souvent. L'expérience Haroboz devient un rituel, une façon de marquer les étapes de leur histoire à travers le regard de Luc. Le premier shooting est toujours une révélation ; les suivants sont une célébration.</p>
+
+                <p class="text-gray-600 leading-relaxed mb-4">Si l'un d'entre vous hésite encore à franchir le pas, consultez notre guide complet sur le <a href="/votre-experience/premier-shooting-nu/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">premier shooting nu</a> pour découvrir comment la séance se déroule concrètement. Et pour ceux qui souhaitent explorer la dimension de reconnexion corporelle, découvrez comment la photographie peut aider à <a href="/votre-experience/retrouver-confiance-corps/" class="text-brand font-medium hover:text-brand-light underline underline-offset-4 transition-colors">retrouver confiance en son corps</a>, individuellement ou en couple.</p>
+
+            
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        
+        <!-- TIRAGES D'ART — Mise en avant -->
+        <section class="py-14 md:py-20 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-brand/60 uppercase block mb-3">Inclus dans chaque pack</span>
+                        <h3 class="text-2xl md:text-3xl font-serif text-brand mb-4">Votre tirage d'art Fine Art</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Chaque séance Haroboz aboutit à une œuvre tangible : un tirage d'art signé et numéroté, imprimé sur papier Hahnemühle avec des encres pigmentaires de qualité muséale. Ce n'est pas un simple fichier numérique — c'est un objet d'art que vous conserverez toute votre vie.</p>
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="printer" class="w-4 h-4 text-brand"></i>
+                                <span>Papier Fine Art Hahnemühle</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="pen-tool" class="w-4 h-4 text-brand"></i>
+                                <span>Signé &amp; numéroté</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-brand"></i>
+                                <span>Édition limitée</span>
+                            </div>
+                        </div>
+                        <a href="/boutique/tirages-art-edition-limitee/" class="inline-flex items-center text-brand font-medium hover:text-brand-light transition-colors group">
+                            <span>Découvrir nos tirages d'art</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_5963-1-scaled.png" alt="Tirage d'art Fine Art encadré" class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg" loading="lazy">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250604_205115-1-scaled.png" alt="Galerie de tirages d'art" class="rounded-2xl aspect-[3/4] object-cover w-full shadow-lg mt-6" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 lg:py-16 bg-gray-50" itemscope="" itemtype="https://schema.org/FAQPage">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-serif text-brand mb-8 text-center">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Le shooting couple doit-il obligatoirement être nu ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Pas du tout. Chaque couple décide du degré de dévoilement qui lui convient. Certains optent pour un shooting en tenue, d'autres pour du nu partiel ou artistique. L'important est que vous soyez tous les deux à l'aise. Luc adapte entièrement la séance à vos souhaits.</p>
+                        </div>
+                    </div>
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Peut-on offrir la séance sans que le bénéficiaire sache à l'avance ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Oui, la carte cadeau est conçue pour cela. Elle se présente dans un écrin élégant avec un message personnalisé. Le bénéficiaire contacte ensuite Haroboz pour choisir sa date et discuter de ses envies. L'effet de surprise est garanti.</p>
+                        </div>
+                    </div>
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Le tirage d'art est-il inclus dans le pack couple ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">Oui, chaque pack inclut un tirage d'art professionnel. Pour un shooting couple, c'est l'occasion de recevoir une œuvre unique qui représente votre complicité, imprimée sur un support haut de gamme et prête à être exposée chez vous.</p>
+                        </div>
+                    </div>
+                    <div class="faq-card bg-white rounded-xl shadow-sm border border-gray-100" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left cursor-pointer">
+                            <span class="font-medium text-brand pr-4" itemprop="name">Combien de temps la carte cadeau est-elle valable ?</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content px-5 pb-5" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p class="text-gray-600 leading-relaxed" itemprop="text">La carte cadeau Haroboz est valable 12 mois à compter de la date d'achat. Cela laisse largement le temps de choisir le moment idéal pour vivre l'expérience, que ce soit lors d'un séjour à Marseille, Toulon, Nice, Paris ou d'un week-end dédié.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-brand py-16 lg:py-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-96 h-96 bg-brand-light rounded-full opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-96 h-96 bg-[#3a00a8] rounded-full opacity-50 blur-3xl"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Offrez l'Inoubliable</h2>
+                <p class="text-brand-50 text-base md:text-lg mb-8 max-w-2xl mx-auto">Carte cadeau ou réservation directe — faites votre choix</p>
+                <button onclick="openPopup()" class="bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-colors shadow-xl flex items-center justify-center cursor-pointer mx-auto"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Être rappelé sous 24h</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    
+
+    <!-- POPUP -->
+    
+
+    <div id="floating-cta" class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        <button onclick="openPopup()" class="relative bg-brand text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full shadow-2xl hover:bg-brand-light flex items-center justify-center cursor-pointer pulse-ring text-brand"><i data-lucide="calendar" class="w-6 h-6 md:w-5 md:h-5 md:mr-2"></i><span class="hidden md:inline font-medium">Prendre RDV</span></button>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.lucide)lucide.createIcons();
+  const mobileBtn=document.getElementById('mobile-menu-button');
+  const mobileMenu=document.getElementById('mobile-menu');
+  const closeBtn=document.getElementById('mobile-close-button');
+  if(mobileBtn&&mobileMenu){mobileBtn.onclick=()=>mobileMenu.classList.toggle('menu-open');}
+  if(closeBtn&&mobileMenu){closeBtn.onclick=()=>mobileMenu.classList.remove('menu-open');}
+  document.querySelectorAll('[data-popup="open"]').forEach(b=>b.onclick=e=>{e.preventDefault();const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-hidden','popup-visible');});
+  document.querySelectorAll('[data-popup="close"]').forEach(b=>b.onclick=()=>{const p=document.getElementById('booking-popup');p&&p.classList.replace('popup-visible','popup-hidden');});
+});
+</script>
+</body>
+</html>
