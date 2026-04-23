@@ -1,0 +1,226 @@
+[
+  {
+    "slug": "a-propos",
+    "id": 3327,
+    "body_len": 12856,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "accueil",
+    "id": 3244,
+    "body_len": 96225,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "book-modele-professionnel",
+    "id": 3343,
+    "body_len": 26898,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "boutique",
+    "id": 3329,
+    "body_len": 16750,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "cadeau-couple-original",
+    "id": 3345,
+    "body_len": 27189,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "carte-cadeau",
+    "id": 3347,
+    "body_len": 22842,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "contact",
+    "id": 3331,
+    "body_len": 21542,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "galerie-couples",
+    "id": 3349,
+    "body_len": 20089,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "galerie-portraits-hommes",
+    "id": 3351,
+    "body_len": 23854,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "galerie-privee-client",
+    "id": 3353,
+    "body_len": 21374,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "luc-desbois-photographe",
+    "id": 3355,
+    "body_len": 13125,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "mentions-legales",
+    "id": 3333,
+    "body_len": 22570,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "packs-shooting",
+    "id": 3335,
+    "body_len": 29527,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "photo-domicile",
+    "id": 3357,
+    "body_len": 30106,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "photographe-marseille",
+    "id": 3359,
+    "body_len": 25420,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "photographe-nice",
+    "id": 3361,
+    "body_len": 25220,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "photographe-paris",
+    "id": 3363,
+    "body_len": 25205,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "photographe-toulon",
+    "id": 3365,
+    "body_len": 25169,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "photographe",
+    "id": 3337,
+    "body_len": 22535,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "portfolio",
+    "id": 3339,
+    "body_len": 23856,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "portrait-studio",
+    "id": 3367,
+    "body_len": 27127,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "premier-shooting-nu",
+    "id": 3369,
+    "body_len": 27386,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "retrouver-confiance-corps",
+    "id": 3371,
+    "body_len": 25945,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "shooting-duo-couple",
+    "id": 3373,
+    "body_len": 28331,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "shooting-exterieur",
+    "id": 3375,
+    "body_len": 28784,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "temoignages-clients",
+    "id": 3377,
+    "body_len": 21603,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "tirages-art-edition-limitee",
+    "id": 3379,
+    "body_len": 21462,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  },
+  {
+    "slug": "votre-experience",
+    "id": 3341,
+    "body_len": 31067,
+    "has_header": true,
+    "has_footer": true,
+    "has_popup": true
+  }
+]

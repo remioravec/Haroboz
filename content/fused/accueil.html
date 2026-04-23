@@ -1,0 +1,984 @@
+<!-- slug:accueil | id:3244 | modified:2026-04-15 14:57:34 -->
+
+<!-- HEADER & NAVIGATION -->
+    
+
+    <!-- MOBILE MENU DRAWER -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl z-50 transform translate-x-full overflow-y-auto">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-2xl font-bold text-brand">HAROBOZ</span>
+                <button id="close-menu-btn" class="text-gray-500 hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded-lg">
+                    <i data-lucide="x" class="w-7 h-7"></i>
+                </button>
+            </div>
+
+            <nav class="space-y-2">
+
+                <!-- Mobile Accordion 1 -->
+                <div class="border-b border-gray-100 py-3">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">
+                        Nos Séances
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
+                        <a href="https://haroboz.com/packs-shooting/portrait-studio/" class="block text-sm text-gray-600 hover:text-brand">Portrait en Studio</a>
+                        <a href="https://haroboz.com/packs-shooting/shooting-exterieur/" class="block text-sm text-gray-600 hover:text-brand">Shooting en Extérieur</a>
+                        <a href="https://haroboz.com/packs-shooting/photo-domicile/" class="block text-sm text-gray-600 hover:text-brand">Photo à Domicile</a>
+                        <a href="https://haroboz.com/packs-shooting/shooting-duo-couple/" class="block text-sm text-gray-600 hover:text-brand">Shooting Duo &amp; Couple</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Accordion 2 -->
+                <div class="border-b border-gray-100 py-3">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">
+                        Votre Objectif
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden mt-3 space-y-4 pl-4 border-l-2 border-brand-50">
+                        <a href="https://haroboz.com/votre-experience/retrouver-confiance-corps/" class="block">
+                            <span class="block text-sm font-medium text-brand">Confiance &amp; Acceptation</span>
+                            <span class="block text-xs text-gray-500">Body positive &amp; thérapie</span>
+                        </a>
+                        <a href="https://haroboz.com/votre-experience/book-modele-professionnel/" class="block">
+                            <span class="block text-sm font-medium text-brand">Book Professionnel</span>
+                            <span class="block text-xs text-gray-500">Modèles et créateurs</span>
+                        </a>
+                        <a href="https://haroboz.com/votre-experience/cadeau-couple-original/" class="block">
+                            <span class="block text-sm font-medium text-brand">Immortaliser son Couple</span>
+                        </a>
+                        <a href="https://haroboz.com/votre-experience/premier-shooting-nu/" class="block">
+                            <span class="block text-sm font-medium text-brand">Cadeau &amp; Célébration</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Accordion 3 -->
+                <div class="border-b border-gray-100 py-3">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">
+                        Où me trouver ?
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
+                        <a href="https://haroboz.com/photographe/photographe-marseille/" class="block text-sm text-gray-600 hover:text-brand">Marseille</a>
+                        <a href="https://haroboz.com/photographe/photographe-toulon/" class="block text-sm text-gray-600 hover:text-brand">Toulon</a>
+                        <a href="https://haroboz.com/photographe/photographe-nice/" class="block text-sm text-gray-600 hover:text-brand">Nice</a>
+                        <a href="https://haroboz.com/photographe/photographe-paris/" class="block text-sm text-gray-600 hover:text-brand">Paris</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Accordion: L'Oeuvre -->
+                <div class="border-b border-gray-100 py-3">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-brand mobile-accordion-btn">
+                        L'Oeuvre
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden mt-3 space-y-3 pl-4 border-l-2 border-brand-50">
+                        <a href="https://haroboz.com/portfolio/" class="block text-sm text-gray-600 hover:text-brand">Toutes les oeuvres</a>
+                        <a href="https://haroboz.com/portfolio/galerie-portraits-hommes/" class="block text-sm text-gray-600 hover:text-brand">Portraits</a>
+                        <a href="https://haroboz.com/portfolio/#nus" class="block text-sm text-gray-600 hover:text-brand">Nus &amp; Attributs</a>
+                        <a href="https://haroboz.com/portfolio/galerie-couples/" class="block text-sm text-gray-600 hover:text-brand">Couples &amp; Duos</a>
+                        <a href="https://haroboz.com/portfolio/#creation" class="block text-sm text-gray-600 hover:text-brand">Création d'art</a>
+                        <a href="https://haroboz.com/portfolio/#reportages" class="block text-sm text-gray-600 hover:text-brand">Reportages</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Link: L'Univers -->
+                <div class="border-b border-gray-100 py-3">
+                    <a href="https://haroboz.com/a-propos/" class="block w-full text-left font-medium text-brand">L'Univers</a>
+                </div>
+            </nav>
+
+            <!-- Instagram prominent link (mobile) -->
+            <div class="mt-6">
+                <a href="https://www.instagram.com/hbozart/" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white px-6 py-3.5 rounded-xl font-medium shadow-md flex justify-center items-center">
+                    <i data-lucide="instagram" class="w-5 h-5 mr-2"></i>
+                    Suivre @hbozart
+                </a>
+            </div>
+
+            <div class="mt-3">
+                <button onclick="openPopup(); toggleMobileMenu();" class="w-full bg-brand text-white px-6 py-4 rounded-xl text-center font-medium hover:bg-brand-light transition-colors shadow-md flex justify-center items-center cursor-pointer">
+                    <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
+                    Prendre RDV
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERLAY SOMBRE POUR LE MENU MOBILE -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-brand bg-opacity-50 z-40 hidden transition-opacity"></div>
+
+    <main class="w-full">
+        <!-- 1. HERO SECTION -->
+        <section class="bg-brand relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-32 lg:pt-40 pb-16 md:pb-24 lg:pb-32">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <!-- Texte -->
+                    <div>
+                        <span class="inline-block text-brand-50 text-xs md:text-sm font-bold uppercase tracking-[0.2em] mb-4 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">Photographe d'art — Marseille, Toulon, Nice, Paris</span>
+                        <h1 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-5">
+                            Le masculin <span class="italic font-light">sublimé</span>.
+                        </h1>
+                        <p class="text-base md:text-lg text-white/85 mb-6 max-w-xl leading-relaxed">
+                            Photographie d'art, créations, tirages sur supports nobles. Shooting personnalisé + oeuvre signée incluse.
+                        </p>
+                        <!-- Offre claire -->
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-5 mb-8 text-white/70 text-xs sm:text-sm">
+                            <span class="flex items-center gap-1.5"><i data-lucide="camera" class="w-4 h-4"></i> Shooting privé</span>
+                            <span class="w-1 h-1 rounded-full bg-white/40"></span>
+                            <span class="flex items-center gap-1.5"><i data-lucide="image" class="w-4 h-4"></i> Tirage Fine Art inclus</span>
+                            <span class="w-1 h-1 rounded-full bg-white/40"></span>
+                            <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4"></i> Confidentialite</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="openPopup()" class="bg-white text-brand px-7 py-3.5 rounded-full text-base font-bold hover:bg-gray-100 transition-colors shadow-xl flex items-center justify-center cursor-pointer">
+                                Réserver ma séance
+                                <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                            </button>
+                            <a href="#oeuvre" class="border-2 border-white/60 text-white px-7 py-3.5 rounded-full text-base font-medium hover:bg-white/10 transition-colors flex items-center justify-center">
+                                Découvrir l'oeuvre
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Image card sur le côté -->
+                    <div class="relative hidden lg:block">
+                        <div class="rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] max-h-[600px]">
+                            <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251014_091425.png" alt="Portrait artistique masculin — Haroboz Photographe Marseille" class="w-full h-full object-cover object-top">
+                        </div>
+                        <!-- Petite card décorative flottante -->
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brand/10 rounded-full flex items-center justify-center">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-brand"></i>
+                            </div>
+                            <div>
+                                <p class="text-brand font-bold text-sm">100% confidentiel</p>
+                                <p class="text-gray-500 text-xs">Espace privé &amp; sécurisé</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DÉCOUVRIR L'OEUVRE — Toggle catégories + Instagram -->
+        <section class="py-12 md:py-16 bg-white border-b border-gray-100" id="oeuvre">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <span class="text-xs md:text-sm font-bold tracking-widest text-brand uppercase mb-2 block">Découvrir mon travail</span>
+                    <h2 class="text-3xl md:text-4xl font-serif text-brand mb-4">L'Oeuvre sous toutes ses facettes</h2>
+                    <p class="text-gray-500 max-w-xl mx-auto text-sm md:text-base">Explorez les différentes dimensions de mon univers artistique consacré au masculin.</p>
+                </div>
+
+                <!-- Toggle Catégories -->
+                <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10" id="category-toggle">
+                    <button onclick="filterCategory('all')" class="cat-btn cat-active px-5 py-2.5 rounded-full text-sm font-medium transition-all" data-cat="all">Tout voir</button>
+                    <button onclick="filterCategory('portraits')" class="cat-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all" data-cat="portraits">Portraits</button>
+                    <button onclick="filterCategory('nus')" class="cat-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all" data-cat="nus">Nus &amp; Attributs</button>
+                    <button onclick="filterCategory('couples')" class="cat-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all" data-cat="couples">Couples &amp; Duos</button>
+                    <button onclick="filterCategory('creation')" class="cat-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all" data-cat="creation">Création d'art</button>
+                    <button onclick="filterCategory('reportages')" class="cat-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all" data-cat="reportages">Reportages</button>
+                </div>
+
+                <!-- Grille d'images par catégorie -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4" id="category-grid">
+
+                    <!-- PORTRAITS -->
+                    <a href="https://haroboz.com/portfolio/galerie-portraits-hommes/" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="portraits">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251014_223830.png" alt="Portrait masculin extérieur" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Portraits</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/galerie-portraits-hommes/" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="portraits">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/02/Photoroom_20260215_194643.png" alt="Portrait masculin mur" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Portraits</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/galerie-portraits-hommes/" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="portraits">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20260216_171037.png" alt="Portrait sourire mur bleu" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Portraits</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/galerie-portraits-hommes/" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="portraits">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260121_170132.png" alt="Portrait intérieur lumière douce" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Portraits</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/galerie-portraits-hommes/" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="portraits">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_3779-1-scaled.png" alt="Portrait sourire nature" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Portraits</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/galerie-portraits-hommes/" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="portraits">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260125_192255.png" alt="Portrait gros plan regard" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Portraits</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/galerie-portraits-hommes/" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="portraits">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251014_115339.png" alt="Portrait casquette extérieur" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Portraits</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/galerie-portraits-hommes/" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="portraits">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250401_210440-1-scaled.png" alt="Portrait nuages extérieur" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Portraits</span></div>
+                    </a>
+
+                    <!-- NUS & ATTRIBUTS -->
+                    <a href="https://haroboz.com/portfolio/#nus" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="nus">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250330_154516-1-scaled.png" alt="Portrait clair-obscur studio" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Nus &amp; Attributs</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#nus" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="nus">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260306_172002.png" alt="Nu artistique N&amp;B studio" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Nus &amp; Attributs</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#nus" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="nus">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20260313_193934.png" alt="Nu portrait N&amp;B" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Nus &amp; Attributs</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#nus" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="nus">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/02/Photoroom_20260217_184504.png" alt="Nu torse devant mosaïques" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Nus &amp; Attributs</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#nus" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="nus">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250615_223935-1-scaled.png" alt="Nu masculin lieu historique" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Nus &amp; Attributs</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#nus" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="nus">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_0423-1-scaled.png" alt="Nu dos extérieur nature" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Nus &amp; Attributs</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#nus" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="nus">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/11/IMG_4690.png" alt="Nu torse tatouage extérieur" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Nus &amp; Attributs</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#nus" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="nus">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20260213_140934.png" alt="Portrait torse nu bouleaux" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Nus &amp; Attributs</span></div>
+                    </a>
+
+                    <!-- COUPLES & DUOS -->
+                    <a href="https://haroboz.com/portfolio/galerie-couples/" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="couples">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_0267-1-scaled.png" alt="Duo masculin extérieur mer" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Couples &amp; Duos</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/galerie-couples/" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="couples">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_3865-1-scaled.png" alt="Duo intimiste gros plan" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Couples &amp; Duos</span></div>
+                    </a>
+
+                    <!-- CRÉATION D'ART -->
+                    <a href="https://haroboz.com/portfolio/#creation" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="creation">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/1FA73D10-9F52-4260-9BA2-22029F3661A0.png" alt="Double exposition portrait mer" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Création d'art</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#creation" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="creation">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_0420-1-scaled.png" alt="Surimpression portrait océan" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Création d'art</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#creation" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="creation">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20250414_131832.png" alt="Collage visages masculins" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Création d'art</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#creation" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="creation">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250430_230742-1-scaled.png" alt="Regard à travers stores" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Création d'art</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#creation" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="creation">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20251222_144602.png" alt="Portrait projection lumière" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Création d'art</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#creation" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="creation">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20260106_205955.png" alt="Portrait sculpture antique" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Création d'art</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#creation" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="creation">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/02/Photoroom_20260219_085201.png" alt="Double exposition arbre lac" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Création d'art</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#creation" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="creation">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/Photoroom_20260213_102220.png" alt="Portrait verre brisé" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Création d'art</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#creation" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="creation">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251206_222612.png" alt="Portrait expressionniste N&amp;B" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Création d'art</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#creation" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="creation">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_0887-1-scaled.png" alt="Nu art coucher de soleil" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Création d'art</span></div>
+                    </a>
+
+                    <!-- REPORTAGES -->
+                    <a href="https://haroboz.com/portfolio/#reportages" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="reportages">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250615_213259-1-scaled.png" alt="Portrait rochers extérieur" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Reportages</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#reportages" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="reportages">
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20251215_133315.png" alt="Portrait profil arc-en-ciel" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Reportages</span></div>
+                    </a>
+                    <a href="https://haroboz.com/portfolio/#reportages" class="cat-item group relative aspect-square rounded-xl overflow-hidden" data-category="reportages">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250617_103842-1-scaled.png" alt="Autoportrait éventail" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><span class="text-white font-medium text-sm">Reportages</span></div>
+                    </a>
+
+                    <!-- Lien Instagram -->
+                    <a href="https://www.instagram.com/hbozart/" target="_blank" rel="noopener" class="cat-item group relative aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center text-center p-4" data-category="all">
+                        <div>
+                            <i data-lucide="instagram" class="w-10 h-10 text-white/90 mx-auto mb-3"></i>
+                            <p class="text-white font-bold text-sm">@hbozart</p>
+                            <p class="text-white/80 text-xs mt-1">Voir tout sur Instagram</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- LA QUÊTE — 2 axes -->
+        <section class="py-16 lg:py-24 bg-white" id="quete">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 lg:mb-16">
+                    <span class="text-xs md:text-sm font-bold tracking-widest text-brand uppercase mb-2 block">Que viennent chercher les hommes ?</span>
+                    <h2 class="text-3xl md:text-4xl font-serif text-brand mb-4">Deux quêtes, un même regard</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Axe 1 : Expérience personnelle -->
+                    <div class="bg-brand-50 rounded-2xl p-8 lg:p-10 border border-transparent hover:border-brand-light hover:shadow-lg transition-all">
+                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm"><i data-lucide="user" class="w-6 h-6 text-brand"></i></div>
+                        <h3 class="text-2xl font-serif text-brand mb-3">Une expérience personnelle</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">En quête, conquête, reconquête de son image — sujet de toute une vie&nbsp;: construction, affirmation, actualisation.</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <a href="https://haroboz.com/packs-shooting/" class="flex items-center gap-2 text-gray-600 text-sm hover:text-brand transition-colors"><i data-lucide="camera" class="w-4 h-4 text-brand flex-shrink-0"></i> Shootings</a>
+                            <a href="https://haroboz.com/votre-experience/book-modele-professionnel/" class="flex items-center gap-2 text-gray-600 text-sm hover:text-brand transition-colors"><i data-lucide="book-open" class="w-4 h-4 text-brand flex-shrink-0"></i> Books</a>
+                            <a href="https://haroboz.com/portfolio/#reportages" class="flex items-center gap-2 text-gray-600 text-sm hover:text-brand transition-colors"><i data-lucide="video" class="w-4 h-4 text-brand flex-shrink-0"></i> Reportages</a>
+                            <a href="https://haroboz.com/boutique/tirages-art-edition-limitee/" class="flex items-center gap-2 text-gray-600 text-sm hover:text-brand transition-colors"><i data-lucide="image" class="w-4 h-4 text-brand flex-shrink-0"></i> Tirages d'art</a>
+                        </div>
+                        <blockquote class="border-l-4 border-brand bg-white rounded-r-xl px-5 py-3 italic text-gray-700 text-sm">
+                            «&nbsp;Une vie pour assumer mon regard, un shooting pour le mettre au service de votre image.&nbsp;»
+                        </blockquote>
+                    </div>
+
+                    <!-- Axe 2 : Quête artistique -->
+                    <div class="bg-brand-50 rounded-2xl p-8 lg:p-10 border border-transparent hover:border-brand-light hover:shadow-lg transition-all">
+                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm"><i data-lucide="palette" class="w-6 h-6 text-brand"></i></div>
+                        <h3 class="text-2xl font-serif text-brand mb-3">Une quête artistique consacrée au masculin</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Recherche de supports exclusifs&nbsp;: le papier d'excellence, le liège si noble — éternel masculin — et endémique dans le Var, le voile pour sa transparence, le verre…</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <a href="https://haroboz.com/portfolio/#creation" class="flex items-center gap-2 text-gray-600 text-sm hover:text-brand transition-colors"><i data-lucide="sparkles" class="w-4 h-4 text-brand flex-shrink-0"></i> Création d'art</a>
+                            <a href="https://haroboz.com/boutique/" class="flex items-center gap-2 text-gray-600 text-sm hover:text-brand transition-colors"><i data-lucide="book" class="w-4 h-4 text-brand flex-shrink-0"></i> Édition</a>
+                            <span class="flex items-center gap-2 text-gray-600 text-sm"><i data-lucide="calendar" class="w-4 h-4 text-brand flex-shrink-0"></i> Expositions</span>
+                            <span class="flex items-center gap-2 text-gray-600 text-sm"><i data-lucide="gem" class="w-4 h-4 text-brand flex-shrink-0"></i> Supports nobles</span>
+                        </div>
+                        <blockquote class="border-l-4 border-brand bg-white rounded-r-xl px-5 py-3 italic text-gray-700 text-sm">
+                            «&nbsp;Une vie pour assumer mon regard et l'exposer au vôtre.&nbsp;»
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HAROBOZ — Présentation -->
+        <section class="py-16 lg:py-24 bg-white" id="apropos">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="order-2 lg:order-1 relative h-[400px] lg:h-[600px] rounded-2xl overflow-hidden bg-brand-50 flex items-center justify-center">
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/luc-desbois-portrait.jpeg" alt="Haroboz — Luc Desbois, Photographe" class="w-full h-full object-cover object-center" style="object-position: center 20%;" loading="lazy">
+                    </div>
+                    <div class="order-1 lg:order-2 text-center lg:text-left">
+                        <span class="text-xs md:text-sm font-bold tracking-widest text-brand uppercase mb-2 block">L'Artiste</span>
+                        <h2 class="text-3xl md:text-4xl font-serif text-brand mb-6">Haroboz, alias Luc Desbois</h2>
+                        <div class="space-y-4 text-gray-600 text-base md:text-lg">
+                            <p>
+                                Haroboz, mon nom d'artiste, exprime ce que j'ai toujours été&nbsp;: un homme autocensuré par honte, culpabilité, doute, et crainte du rejet finalement.
+                            </p>
+                            <p>
+                                Une vie et des expériences de toutes sortes semblent m'avoir libéré de beaucoup d'entraves. C'est donc au-delà du contrôle que mon imagination s'est mise à élaborer des images qui ont pris le relais des mots, sans pudeur.
+                            </p>
+                            <p class="font-medium text-brand italic">
+                                "Merci à vous qui vous intéressez à mon travail&nbsp;!" — Luc Desbois
+                            </p>
+                        </div>
+                        <a href="https://haroboz.com/a-propos/luc-desbois-photographe/" class="inline-flex items-center mt-8 text-brand font-semibold hover:text-brand-light transition-colors group">
+                            Ma vision &amp; mes influences
+                            <i data-lucide="chevron-right" class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2.5. TYPES DE SÉANCES (Le Quoi) -->
+        <section class="py-16 lg:py-24 bg-brand text-white" id="seances">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-12 lg:mb-16 text-center lg:text-left">
+                    <div class="max-w-2xl">
+                        <span class="text-xs md:text-sm font-bold tracking-widest text-brand-50 uppercase mb-2 block">Nos Séances — Pack Complet</span>
+                        <h2 class="text-3xl md:text-4xl font-serif mb-4">Le cadre de votre expérience</h2>
+                        <p class="text-gray-300 text-sm md:text-base">Chaque pack inclut la séance photo personnalisée <strong class="text-white">et votre tirage d'art Fine Art</strong>. Vous repartez avec une œuvre tangible, pas seulement des fichiers numériques.</p>
+                    </div>
+                    <div class="mt-4 lg:mt-0 flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                        <i data-lucide="camera" class="w-4 h-4 text-brand-50"></i>
+                        <span class="text-brand-50 text-xs font-bold uppercase tracking-wider">Shooting + Tirage d'Art inclus</span>
+                        <i data-lucide="image" class="w-4 h-4 text-brand-50"></i>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                    <!-- Séance 1 -->
+                    <a href="https://haroboz.com/packs-shooting/portrait-studio/" class="group relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-800 block">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500 z-10"></div>
+                        <img src="https://haroboz.com/wp-content/uploads/2026/02/Photoroom_20260217_122033.png" alt="Portrait homme torse nu en studio, eclairage clair-obscur artistique" class="absolute inset-0 w-full h-full object-cover object-top z-0" loading="lazy">
+                        <div class="absolute bottom-0 left-0 p-6 lg:p-8 z-20 w-full bg-gradient-to-t from-brand/90 to-transparent">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-50 bg-white/15 px-2 py-1 rounded-full mb-2 inline-block">Shooting + Tirage inclus</span>
+                            <h3 class="text-xl md:text-2xl font-serif text-white mb-2">Portrait Studio</h3>
+                            <p class="text-gray-200 text-sm opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform lg:translate-y-4 group-hover:translate-y-0">Jeux d'ombres et clair-obscur dans notre studio privé. Tirage Fine Art inclus.</p>
+                        </div>
+                    </a>
+                    <!-- Séance 2 -->
+                    <a href="https://haroboz.com/packs-shooting/shooting-exterieur/" class="group relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-800 block">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500 z-10"></div>
+                        <img src="https://haroboz.com/wp-content/uploads/2026/03/IMG_4769.png" alt="Homme torse nu en exterieur lumiere naturelle artistique" class="absolute inset-0 w-full h-full object-cover object-top z-0" loading="lazy">
+                        <div class="absolute bottom-0 left-0 p-6 lg:p-8 z-20 w-full bg-gradient-to-t from-brand/90 to-transparent">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-50 bg-white/15 px-2 py-1 rounded-full mb-2 inline-block">Shooting + Tirage inclus</span>
+                            <h3 class="text-xl md:text-2xl font-serif text-white mb-2">En Extérieur</h3>
+                            <p class="text-gray-200 text-sm opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform lg:translate-y-4 group-hover:translate-y-0">Nature sauvage de la Riviera et lumière méditerranéenne. Tirage Fine Art inclus.</p>
+                        </div>
+                    </a>
+                    <!-- Séance 3 -->
+                    <a href="https://haroboz.com/packs-shooting/photo-domicile/" class="group relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-800 block">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500 z-10"></div>
+                        <img src="https://haroboz.com/wp-content/uploads/2025/12/Photoroom_20250412_182926.png" alt="Homme nu artistique ambiance intimiste domicile" class="absolute inset-0 w-full h-full object-cover object-top z-0" loading="lazy">
+                        <div class="absolute bottom-0 left-0 p-6 lg:p-8 z-20 w-full bg-gradient-to-t from-brand/90 to-transparent">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-50 bg-white/15 px-2 py-1 rounded-full mb-2 inline-block">Shooting + Tirage inclus</span>
+                            <h3 class="text-xl md:text-2xl font-serif text-white mb-2">À Domicile</h3>
+                            <p class="text-gray-200 text-sm opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform lg:translate-y-4 group-hover:translate-y-0">Le confort de votre environnement, format lifestyle dans le sud de la France. Tirage inclus.</p>
+                        </div>
+                    </a>
+                    <!-- Séance 4 -->
+                    <a href="https://haroboz.com/packs-shooting/shooting-duo-couple/" class="group relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-800 block">
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500 z-10"></div>
+                        <img src="https://haroboz.com/wp-content/uploads/2026/04/IMG_0267-1-scaled.png" alt="Couple masculin intimiste shooting artistique" class="absolute inset-0 w-full h-full object-cover object-top z-0" loading="lazy">
+                        <div class="absolute bottom-0 left-0 p-6 lg:p-8 z-20 w-full bg-gradient-to-t from-brand/90 to-transparent">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-50 bg-white/15 px-2 py-1 rounded-full mb-2 inline-block">Shooting + Tirage inclus</span>
+                            <h3 class="text-xl md:text-2xl font-serif text-white mb-2">Duo &amp; Couple</h3>
+                            <p class="text-gray-200 text-sm opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform lg:translate-y-4 group-hover:translate-y-0">Célébrer l'amour et le désir à deux. Tirage Fine Art pour chacun inclus.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ÉTAPES (COMMENT ÇA MARCHE) -->
+        <section class="py-16 lg:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 lg:mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif text-brand mb-4">Votre Expérience en 4 Étapes</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Un processus fluide et transparent, pensé pour vous mettre en confiance avant même la première photo.</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-12 md:gap-8 relative">
+                    <!-- Ligne décorative derrière les étapes (Desktop) -->
+                    <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-brand-50 -z-10"></div>
+
+                    <!-- Étape 1 -->
+                    <div class="text-center bg-white relative">
+                        <div class="text-brand font-serif text-6xl opacity-20 font-bold mb-2 md:mb-4">01</div>
+                        <h3 class="text-xl font-bold text-brand mb-2">L'Échange</h3>
+                        <p class="text-gray-600 text-sm">On discute de vos attentes, de vos envies et de vos éventuelles appréhensions par téléphone.</p>
+                    </div>
+                    <!-- Étape 2 -->
+                    <div class="text-center bg-white relative">
+                        <div class="text-brand font-serif text-6xl opacity-20 font-bold mb-2 md:mb-4">02</div>
+                        <h3 class="text-xl font-bold text-brand mb-2">La Préparation</h3>
+                        <p class="text-gray-600 text-sm">Choix du lieu (Studio, Domicile, Extérieur), conseils tenues et signature du contrat de confidentialité.</p>
+                    </div>
+                    <!-- Étape 3 -->
+                    <div class="text-center bg-white relative">
+                        <div class="text-brand font-serif text-6xl opacity-20 font-bold mb-2 md:mb-4">03</div>
+                        <h3 class="text-xl font-bold text-brand mb-2">Le Shooting</h3>
+                        <p class="text-gray-600 text-sm">Une séance guidée dans la bienveillance. On prend le temps, avec musique et café, à votre rythme.</p>
+                    </div>
+                    <!-- Étape 4 -->
+                    <div class="text-center bg-white relative">
+                        <div class="text-brand font-serif text-6xl opacity-20 font-bold mb-2 md:mb-4">04</div>
+                        <h3 class="text-xl font-bold text-brand mb-2">Vos Œuvres</h3>
+                        <p class="text-gray-600 text-sm">Découverte de votre galerie privée et possibilité de commander des tirages d'art haute qualité.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'OFFRE — Bundle unique + Upsells -->
+        <section class="py-16 lg:py-24 bg-brand-50" id="offre">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-xs md:text-sm font-bold tracking-widest text-brand uppercase mb-2 block">L'Expérience Complète</span>
+                    <h2 class="text-3xl md:text-4xl font-serif text-brand mb-4">Shooting + Tirage d'Art</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Une seule offre, tout inclus. Vous repartez avec une oeuvre tangible, signée et numérotée.</p>
+                </div>
+
+                <!-- Bundle principal -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden max-w-2xl mx-auto">
+                    <div class="bg-brand p-6 md:p-8 text-center">
+                        <h3 class="text-2xl md:text-3xl font-serif text-white mb-2">Le Pack Haroboz</h3>
+                        <p class="text-white/70">Séance photo + Tirage d'art Fine Art</p>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="text-center mb-6">
+                            <span class="text-4xl md:text-5xl font-bold text-brand">350€</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start gap-3 text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i> <span>Entretien préparatoire personnalisé</span></li>
+                            <li class="flex items-start gap-3 text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i> <span>Séance photo de 2h (studio, extérieur ou domicile)</span></li>
+                            <li class="flex items-start gap-3 text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i> <span>15 photos retouchées en haute résolution</span></li>
+                            <li class="flex items-start gap-3 text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"></i> <span>Galerie privée sécurisée</span></li>
+                            <li class="flex items-start gap-3 text-brand font-semibold"><i data-lucide="image" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0"></i> <span>1 Tirage d'Art Fine Art 30x40cm signé &amp; numéroté</span></li>
+                        </ul>
+                        <button onclick="openPopup()" class="w-full bg-brand text-white py-4 rounded-xl text-lg font-semibold hover:bg-brand-light transition-colors shadow-md flex items-center justify-center cursor-pointer">
+                            <i data-lucide="calendar" class="w-5 h-5 mr-2"></i> Réserver mon Pack
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Upsells -->
+                <div class="mt-10">
+                    <p class="text-center text-sm font-bold text-brand uppercase tracking-widest mb-6">Personnalisez votre expérience</p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="file-text" class="w-5 h-5 text-brand"></i>
+                                <h4 class="font-semibold text-brand">Support Papier Premium</h4>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-2">Hahnemühle, coton 100%, qualité muséale</p>
+                            <p class="text-brand font-bold">+80€</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="tree-pine" class="w-5 h-5 text-brand"></i>
+                                <h4 class="font-semibold text-brand">Support Liège du Var</h4>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-2">Noble, éternel masculin, endémique</p>
+                            <p class="text-brand font-bold">+120€</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="glass-water" class="w-5 h-5 text-brand"></i>
+                                <h4 class="font-semibold text-brand">Support Verre ou Voile</h4>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-2">Transparence, délicatesse, pureté</p>
+                            <p class="text-brand font-bold">+150€</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="images" class="w-5 h-5 text-brand"></i>
+                                <h4 class="font-semibold text-brand">Photos supplémentaires</h4>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-2">+10 photos retouchées HD additionnelles</p>
+                            <p class="text-brand font-bold">+100€</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="frame" class="w-5 h-5 text-brand"></i>
+                                <h4 class="font-semibold text-brand">Tirage grand format</h4>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-2">60x80cm ou 80x120cm, encadrement sur mesure</p>
+                            <p class="text-brand font-bold">Sur devis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FAQ (Foire Aux Questions) -->
+        <section class="py-16 lg:py-24 bg-white" id="faq" itemscope="" itemtype="https://schema.org/FAQPage">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10 lg:mb-14">
+                    <span class="text-xs font-bold tracking-widest text-brand-light uppercase mb-3 block">Questions Fréquentes</span>
+                    <h2 class="text-3xl md:text-4xl font-serif text-brand mb-4">Tout savoir avant votre shooting</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Il est normal d'avoir des interrogations avant un shooting photo nu artistique. Découvrez nos réponses détaillées pour aborder votre expérience en toute sérénité.</p>
+                </div>
+
+                <div class="grid gap-5 md:gap-6">
+
+                    <!-- FAQ Card 1 -->
+                    <div class="faq-card bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-7 text-left cursor-pointer">
+                            <div class="flex items-center gap-4 pr-4">
+                                <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-50 flex items-center justify-center">
+                                    <i data-lucide="heart" class="w-5 h-5 md:w-6 md:h-6 text-brand"></i>
+                                </span>
+                                <span class="font-semibold text-brand text-base md:text-lg" itemprop="name">Je suis très complexé et je n'ai jamais fait ça. Est-ce pour moi ?</span>
+                            </div>
+                            <span class="faq-chevron transition-transform duration-300 flex-shrink-0">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-brand"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <div class="px-5 md:px-7 pb-6 md:pb-8 pt-0" itemprop="text">
+                                <div class="prose max-w-none">
+                                    <h3 class="text-lg font-serif text-brand mt-0 mb-3">Retrouver confiance en son corps grâce à la photographie</h3>
+                                    <p class="text-gray-600 mb-4">Absolument, et c'est même <strong>la raison d'être d'Haroboz</strong>. Plus de <strong>90% de nos clients</strong> n'ont jamais posé nu auparavant. Beaucoup arrivent avec des complexes sur leur physique — et repartent transformés.</p>
+
+                                    <div class="bg-brand-50 rounded-xl p-4 md:p-5 mb-5">
+                                        <h4 class="font-semibold text-brand text-sm mb-3">Comment se déroule un premier shooting nu ?</h4>
+                                        <ol class="list-decimal list-inside text-gray-600 text-sm space-y-2">
+                                            <li><strong>Échange téléphonique</strong> — On discute de vos envies, vos craintes, vos limites</li>
+                                            <li><strong>Consultation à l'atelier</strong> — Visite de l'espace privé, choix des ambiances</li>
+                                            <li><strong>Échauffement progressif</strong> — On commence habillé, puis on avance à votre rythme</li>
+                                            <li><strong>Shooting en toute bienveillance</strong> — Direction de pose guidée, musique, détente totale</li>
+                                            <li><strong>Sélection + Tirage d'Art</strong> — Vous choisissez vos images et recevez votre œuvre</li>
+                                        </ol>
+                                    </div>
+
+                                    <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20250330_104731-1-scaled.png" alt="Portrait artistique masculin en lumiere naturelle — Shooting confiance en soi Marseille" class="w-full rounded-xl mb-5 object-cover h-48 md:h-56" style="object-position: center 15%;">
+
+                                    <h4 class="font-semibold text-brand text-sm mb-3">Ce que nos clients disent après leur première séance</h4>
+                                    <ul class="text-gray-600 text-sm space-y-2 mb-5">
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> « Je ne me suis jamais senti aussi bien dans ma peau »</li>
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> « L'atmosphère m'a mis en confiance dès les premières minutes »</li>
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> « Le tirage d'art encadré dans mon salon me rappelle cette transformation »</li>
+                                    </ul>
+
+                                    <div class="flex flex-wrap gap-3 mb-5">
+                                        <a href="https://haroboz.com/votre-experience/premier-shooting-nu/" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
+                                            <i data-lucide="arrow-right" class="w-4 h-4 mr-1"></i> Guide : Votre premier shooting nu
+                                        </a>
+                                        <a href="https://haroboz.com/votre-experience/retrouver-confiance-corps/" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
+                                            <i data-lucide="arrow-right" class="w-4 h-4 mr-1"></i> Retrouver confiance en son corps
+                                        </a>
+                                    </div>
+
+                                    <button onclick="openPopup()" class="inline-flex items-center gap-2 bg-brand text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-brand-light transition-colors cursor-pointer">
+                                        <i data-lucide="calendar" class="w-4 h-4"></i> Réserver une consultation gratuite
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Card 2 -->
+                    <div class="faq-card bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-7 text-left cursor-pointer">
+                            <div class="flex items-center gap-4 pr-4">
+                                <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-50 flex items-center justify-center">
+                                    <i data-lucide="shield" class="w-5 h-5 md:w-6 md:h-6 text-brand"></i>
+                                </span>
+                                <span class="font-semibold text-brand text-base md:text-lg" itemprop="name">Comment gérez-vous la question de la pudeur ?</span>
+                            </div>
+                            <span class="faq-chevron transition-transform duration-300 flex-shrink-0">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-brand"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <div class="px-5 md:px-7 pb-6 md:pb-8 pt-0" itemprop="text">
+                                <div class="prose max-w-none">
+                                    <h3 class="text-lg font-serif text-brand mt-0 mb-3">Pudeur et confort : notre engagement pour un shooting respectueux</h3>
+                                    <p class="text-gray-600 mb-4">La pudeur est <strong>sacrée</strong> chez Haroboz. Nous avons développé une approche unique pour garantir que chaque client se sente en <strong>parfaite sécurité psychologique</strong> et physique tout au long de la séance.</p>
+
+                                    <!-- Comparison Table -->
+                                    <div class="overflow-x-auto mb-5">
+                                        <table class="w-full text-sm border-collapse">
+                                            <thead>
+                                                <tr class="bg-brand-50">
+                                                    <th class="text-left p-3 text-brand font-semibold rounded-tl-lg">Niveau de confort</th>
+                                                    <th class="text-left p-3 text-brand font-semibold">Ce qu'on fait</th>
+                                                    <th class="text-left p-3 text-brand font-semibold rounded-tr-lg">Adapté pour</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-gray-600">
+                                                <tr class="border-b border-gray-100">
+                                                    <td class="p-3 font-medium">Torse nu</td>
+                                                    <td class="p-3">Portraits bust et mise en lumière du haut du corps</td>
+                                                    <td class="p-3">Débutants, première expérience</td>
+                                                </tr>
+                                                <tr class="border-b border-gray-100">
+                                                    <td class="p-3 font-medium">Drapé artistique</td>
+                                                    <td class="p-3">Tissu, ombres, jeux de lumière qui suggèrent sans montrer</td>
+                                                    <td class="p-3">Ceux qui veulent de l'art subtil</td>
+                                                </tr>
+                                                <tr class="border-b border-gray-100">
+                                                    <td class="p-3 font-medium">Nu intégral</td>
+                                                    <td class="p-3">Poses artistiques travaillées, lumière sculptée</td>
+                                                    <td class="p-3">Ceux qui veulent aller au bout de l'expérience</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-3 font-medium">Mixte</td>
+                                                    <td class="p-3">Progression naturelle — on s'adapte en temps réel</td>
+                                                    <td class="p-3">La plupart de nos clients</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <h4 class="font-semibold text-brand text-sm mb-3">Nos garanties de respect</h4>
+                                    <ul class="text-gray-600 text-sm space-y-2 mb-5">
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> <strong>Espace 100% privé</strong> — Atelier fermé, aucun tiers présent</li>
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> <strong>Mot d'arrêt</strong> — Vous pouvez interrompre à tout moment, sans justification</li>
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> <strong>Direction de pose</strong> — Luc vous guide avec bienveillance, pas de jugement</li>
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> <strong>Peignoir fourni</strong> — Disponible entre les prises pour votre confort</li>
+                                    </ul>
+
+                                    <div class="flex flex-wrap gap-3 mb-5">
+                                        <a href="https://haroboz.com/votre-experience/premier-shooting-nu/" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
+                                            <i data-lucide="arrow-right" class="w-4 h-4 mr-1"></i> Déroulement complet d'une séance
+                                        </a>
+                                        <a href="https://haroboz.com/photographe/" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
+                                            <i data-lucide="arrow-right" class="w-4 h-4 mr-1"></i> Notre atelier privé
+                                        </a>
+                                    </div>
+
+                                    <button onclick="openPopup()" class="inline-flex items-center gap-2 bg-brand text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-brand-light transition-colors cursor-pointer">
+                                        <i data-lucide="message-circle" class="w-4 h-4"></i> Discutons de vos limites en toute confidentialité
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Card 3 -->
+                    <div class="faq-card bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-7 text-left cursor-pointer">
+                            <div class="flex items-center gap-4 pr-4">
+                                <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-50 flex items-center justify-center">
+                                    <i data-lucide="lock" class="w-5 h-5 md:w-6 md:h-6 text-brand"></i>
+                                </span>
+                                <span class="font-semibold text-brand text-base md:text-lg" itemprop="name">Mes photos risquent-elles de se retrouver sur internet ?</span>
+                            </div>
+                            <span class="faq-chevron transition-transform duration-300 flex-shrink-0">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-brand"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <div class="px-5 md:px-7 pb-6 md:pb-8 pt-0" itemprop="text">
+                                <div class="prose max-w-none">
+                                    <h3 class="text-lg font-serif text-brand mt-0 mb-3">Confidentialité absolue : comment vos photos restent privées</h3>
+                                    <p class="text-gray-600 mb-4"><strong>Non, jamais sans votre accord écrit formel.</strong> La confidentialité n'est pas une option chez Haroboz — c'est un <strong>engagement contractuel</strong> qui structure toute notre démarche.</p>
+
+                                    <div class="bg-brand-50 rounded-xl p-4 md:p-5 mb-5">
+                                        <h4 class="font-semibold text-brand text-sm mb-3">Notre protocole de sécurité en 5 points</h4>
+                                        <ul class="text-gray-600 text-sm space-y-2">
+                                            <li class="flex items-start gap-2"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand text-white text-xs flex items-center justify-center font-bold">1</span> <strong>Contrat de droit à l'image</strong> signé avant chaque séance</li>
+                                            <li class="flex items-start gap-2"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand text-white text-xs flex items-center justify-center font-bold">2</span> <strong>Stockage sur disques chiffrés</strong> — pas de cloud tiers</li>
+                                            <li class="flex items-start gap-2"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand text-white text-xs flex items-center justify-center font-bold">3</span> <strong>Galerie privée</strong> protégée par mot de passe unique</li>
+                                            <li class="flex items-start gap-2"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand text-white text-xs flex items-center justify-center font-bold">4</span> <strong>Aucune publication</strong> sans consentement écrit explicite</li>
+                                            <li class="flex items-start gap-2"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand text-white text-xs flex items-center justify-center font-bold">5</span> <strong>Suppression sur demande</strong> — vos fichiers, vos règles</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Comparison Table -->
+                                    <div class="overflow-x-auto mb-5">
+                                        <table class="w-full text-sm border-collapse">
+                                            <thead>
+                                                <tr class="bg-brand-50">
+                                                    <th class="text-left p-3 text-brand font-semibold rounded-tl-lg"></th>
+                                                    <th class="text-center p-3 text-brand font-semibold">Haroboz</th>
+                                                    <th class="text-center p-3 text-brand font-semibold rounded-tr-lg">Photographe classique</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-gray-600">
+                                                <tr class="border-b border-gray-100">
+                                                    <td class="p-3">Contrat droit à l'image</td>
+                                                    <td class="p-3 text-center text-green-600 font-bold">✓ Systématique</td>
+                                                    <td class="p-3 text-center text-red-400">Parfois absent</td>
+                                                </tr>
+                                                <tr class="border-b border-gray-100">
+                                                    <td class="p-3">Stockage sécurisé</td>
+                                                    <td class="p-3 text-center text-green-600 font-bold">✓ Disques chiffrés</td>
+                                                    <td class="p-3 text-center text-red-400">Cloud non sécurisé</td>
+                                                </tr>
+                                                <tr class="border-b border-gray-100">
+                                                    <td class="p-3">Galerie privée</td>
+                                                    <td class="p-3 text-center text-green-600 font-bold">✓ Mot de passe unique</td>
+                                                    <td class="p-3 text-center text-red-400">Lien partageable</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-3">Droit de suppression</td>
+                                                    <td class="p-3 text-center text-green-600 font-bold">✓ Sur demande</td>
+                                                    <td class="p-3 text-center text-red-400">Rarement proposé</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-3 mb-5">
+                                        <a href="https://haroboz.com/mentions-legales/" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
+                                            <i data-lucide="arrow-right" class="w-4 h-4 mr-1"></i> Notre charte de confidentialité
+                                        </a>
+                                        <a href="https://haroboz.com/boutique/galerie-privee-client/" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
+                                            <i data-lucide="arrow-right" class="w-4 h-4 mr-1"></i> Comment fonctionne la galerie privée
+                                        </a>
+                                    </div>
+
+                                    <button onclick="openPopup()" class="inline-flex items-center gap-2 bg-brand text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-brand-light transition-colors cursor-pointer">
+                                        <i data-lucide="shield-check" class="w-4 h-4"></i> Réserver en toute confidentialité
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Card 4 -->
+                    <div class="faq-card bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-7 text-left cursor-pointer">
+                            <div class="flex items-center gap-4 pr-4">
+                                <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-50 flex items-center justify-center">
+                                    <i data-lucide="clock" class="w-5 h-5 md:w-6 md:h-6 text-brand"></i>
+                                </span>
+                                <span class="font-semibold text-brand text-base md:text-lg" itemprop="name">Combien de temps faut-il pour recevoir les photos et le tirage d'art ?</span>
+                            </div>
+                            <span class="faq-chevron transition-transform duration-300 flex-shrink-0">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-brand"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <div class="px-5 md:px-7 pb-6 md:pb-8 pt-0" itemprop="text">
+                                <div class="prose max-w-none">
+                                    <h3 class="text-lg font-serif text-brand mt-0 mb-3">De la séance au tirage d'art : le calendrier complet</h3>
+                                    <p class="text-gray-600 mb-4">Chaque pack Haroboz inclut le <strong>shooting + le tirage d'art Fine Art</strong>. Voici le calendrier précis de livraison, de la prise de vue jusqu'à la réception de votre œuvre encadrée.</p>
+
+                                    <img src="https://haroboz.com/wp-content/uploads/2026/04/Photoroom_20260301_222124-1-scaled.png" alt="Tirage Fine Art sur papier Hahnemuhle — Impression photographique premium Marseille" class="w-full rounded-xl mb-5 object-cover h-56 md:h-64" style="object-position: center 30%;">
+
+                                    <!-- Timeline -->
+                                    <div class="overflow-x-auto mb-5">
+                                        <table class="w-full text-sm border-collapse">
+                                            <thead>
+                                                <tr class="bg-brand-50">
+                                                    <th class="text-left p-3 text-brand font-semibold rounded-tl-lg">Étape</th>
+                                                    <th class="text-left p-3 text-brand font-semibold">Délai</th>
+                                                    <th class="text-left p-3 text-brand font-semibold rounded-tr-lg">Ce que vous recevez</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-gray-600">
+                                                <tr class="border-b border-gray-100">
+                                                    <td class="p-3 font-medium">Galerie de sélection</td>
+                                                    <td class="p-3">48 à 72h après la séance</td>
+                                                    <td class="p-3">Galerie privée en ligne avec toutes les photos</td>
+                                                </tr>
+                                                <tr class="border-b border-gray-100">
+                                                    <td class="p-3 font-medium">Retouche experte</td>
+                                                    <td class="p-3">2 semaines max</td>
+                                                    <td class="p-3">Lumière, colorimétrie, nettoyage (retouche subtile)</td>
+                                                </tr>
+                                                <tr class="border-b border-gray-100">
+                                                    <td class="p-3 font-medium">Fichiers HD</td>
+                                                    <td class="p-3">Avec la retouche</td>
+                                                    <td class="p-3">Photos finales haute résolution</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-3 font-medium">Tirage d'Art Fine Art</td>
+                                                    <td class="p-3">5 jours ouvrés</td>
+                                                    <td class="p-3">Impression Hahnemühle + emballage sécurisé</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <h4 class="font-semibold text-brand text-sm mb-3">Pourquoi un tirage d'art et pas juste des fichiers numériques ?</h4>
+                                    <ul class="text-gray-600 text-sm space-y-2 mb-5">
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> <strong>Pérennité</strong> — Un tirage Fine Art dure plus de 100 ans sans altération</li>
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> <strong>Émotion tangible</strong> — Une photo sur un mur a un impact qu'un écran ne remplacera jamais</li>
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> <strong>Valeur artistique</strong> — Papier Hahnemühle, le standard des galeries d'art</li>
+                                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i> <strong>Souvenir unique</strong> — Votre transformation capturée dans une œuvre à contempler</li>
+                                    </ul>
+
+                                    <div class="flex flex-wrap gap-3 mb-5">
+                                        <a href="https://haroboz.com/boutique/tirages-art-edition-limitee/" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
+                                            <i data-lucide="arrow-right" class="w-4 h-4 mr-1"></i> Tout savoir sur le tirage Fine Art
+                                        </a>
+                                        <a href="https://haroboz.com/boutique/tirages-art-edition-limitee/" class="inline-flex items-center text-sm text-brand font-medium hover:text-brand-light transition-colors">
+                                            <i data-lucide="arrow-right" class="w-4 h-4 mr-1"></i> Formats et finitions disponibles
+                                        </a>
+                                    </div>
+
+                                    <button onclick="openPopup()" class="inline-flex items-center gap-2 bg-brand text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-brand-light transition-colors cursor-pointer">
+                                        <i data-lucide="package" class="w-4 h-4"></i> Recevoir mon shooting + tirage d'art
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6.5. LIEUX / LOCALITÉS (Le Où) -->
+        <section class="py-12 md:py-16 bg-gray-50 border-t border-gray-200" id="lieux">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-xs md:text-sm font-bold tracking-widest text-gray-400 uppercase mb-6 md:mb-8 block">Mes lieux d'exercice</span>
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-12">
+                    <a href="https://haroboz.com/photographe/photographe-marseille/" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
+                        <i data-lucide="map-pin" class="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-gray-400 group-hover:text-brand-light transition-colors"></i>
+                        Marseille
+                    </a>
+                    <a href="https://haroboz.com/photographe/photographe-nice/" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
+                        <i data-lucide="map-pin" class="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-gray-400 group-hover:text-brand-light transition-colors"></i>
+                        Nice
+                    </a>
+                    <a href="https://haroboz.com/photographe/photographe-toulon/" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
+                        <i data-lucide="map-pin" class="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-gray-400 group-hover:text-brand-light transition-colors"></i>
+                        Toulon
+                    </a>
+                    <a href="https://haroboz.com/photographe/photographe-paris/" class="flex items-center text-brand font-serif text-lg md:text-xl lg:text-2xl hover:text-brand-light transition-colors group">
+                        <i data-lucide="map-pin" class="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-gray-400 group-hover:text-brand-light transition-colors"></i>
+                        Paris
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CALL TO ACTION (CTA FINAL) -->
+        <section class="bg-brand py-16 lg:py-20 relative overflow-hidden">
+            <!-- Cercles décoratifs de fond -->
+            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-72 h-72 md:w-96 md:h-96 bg-brand-light rounded-full opacity-50 mix-blend-multiply blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-72 h-72 md:w-96 md:h-96 bg-[#3a00a8] rounded-full opacity-50 mix-blend-multiply blur-3xl"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-4 md:mb-6">Votre shooting + votre tirage d'art vous attendent</h2>
+                <p class="text-brand-50 text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto px-2">
+                    Prenez 30 secondes pour nous laisser vos coordonnées. On vous rappelle sous 24h pour un échange confidentiel, sans engagement. Vous repartirez avec un souvenir tangible de cette expérience.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openPopup()" class="bg-white text-brand px-6 py-4 md:px-8 rounded-full text-base md:text-lg font-bold hover:bg-gray-100 transition-colors shadow-xl flex items-center justify-center cursor-pointer">
+                        <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
+                        Être rappelé sous 24h
+                    </button>
+                    <a href="tel:+33688704041" class="border-2 border-white text-white px-6 py-4 md:px-8 rounded-full text-base md:text-lg font-bold hover:bg-white/10 transition-colors flex items-center justify-center">
+                        <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                        Appeler maintenant
+                    </a>
+                </div>
+                <p class="text-xs md:text-sm text-brand-50 mt-6 opacity-80 flex justify-center items-center">
+                    <i data-lucide="shield-check" class="w-4 h-4 mr-2"></i> Bienveillance, Discrétion &amp; Sécurité garanties
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    
+
+    <!-- POPUP DE RESERVATION — Formulaire photographe complet -->
+    
+
+                <hr class="border-gray-100 mb-6">
+
+                <!-- Etape : Pratique -->
+                <div class="mb-6">
+                    <h4 class="text-brand font-serif text-lg font-bold mb-4 flex items-center gap-2">
+                        <span class="w-7 h-7 bg-brand text-white rounded-full text-xs flex items-center justify-center font-bold">4</span>
+                        Côté pratique
+                    </h4></div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="popup-ville" class="block text-sm font-medium text-brand mb-1">Votre ville</label>
+                            
+                        </div>
+                        <div>
+                            <label for="popup-quand" class="block text-sm font-medium text-brand mb-1">Quand souhaitez-vous shooter ?</label>
+                            
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="popup-message" class="block text-sm font-medium text-brand mb-1">Message libre — envies, questions, appréhensions...</label>
+                        
+                    </div>
+                
