@@ -25,9 +25,9 @@ const API_KEY = fs.readFileSync(KEY_FILE, 'utf8').trim();
 async function api(action, params = {}) {
   const url = `${SITE}/?haroboz_api=1`;
   const body = JSON.stringify({ action, params });
-  // Retry 3x with backoff for transient errors (5xx, network)
+  // Retry 5x with generous backoff for LiteSpeed/WAF flakes on 5xx
   let lastErr;
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  for (let attempt = 1; attempt <= 5; attempt++) {
     try {
       const res = await fetch(url, {
         method: 'POST',
@@ -35,18 +35,21 @@ async function api(action, params = {}) {
           'X-Haroboz-Key': API_KEY,
           'Content-Type': 'application/json',
           'Cache-Control': 'no-cache',
+          'Connection': 'close',
         },
         body,
       });
       const text = await res.text();
       let json;
-      try { json = JSON.parse(text); } catch { json = { raw: text }; }
+      try { json = JSON.parse(text); } catch { json = { raw: text.slice(0, 800) }; }
       if (!res.ok) {
         // 4xx = client error, don't retry
         if (res.status >= 400 && res.status < 500) {
-          throw new Error(`Haroboz API ${action} → ${res.status}: ${JSON.stringify(json).slice(0, 300)}`);
+          throw new Error(`Haroboz API ${action} → ${res.status}: ${JSON.stringify(json).slice(0, 400)}`);
         }
-        throw new Error(`transient ${res.status}`);
+        // 5xx → retry
+        const sample = JSON.stringify(json).slice(0, 200);
+        throw new Error(`transient ${res.status}: ${sample}`);
       }
       if (json.ok === false) {
         throw new Error(`Haroboz API ${action} error: ${json.error || 'unknown'} (${json.file}:${json.line})`);
@@ -54,7 +57,10 @@ async function api(action, params = {}) {
       return json.data;
     } catch (e) {
       lastErr = e;
-      if (attempt < 3) await new Promise(r => setTimeout(r, attempt * 2000));
+      if (attempt < 5) {
+        const delayMs = attempt * 3000; // 3s, 6s, 9s, 12s
+        await new Promise(r => setTimeout(r, delayMs));
+      }
     }
   }
   throw lastErr;
