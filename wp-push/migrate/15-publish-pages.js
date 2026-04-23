@@ -13,12 +13,15 @@ async function main() {
 
   for (const r of ok) {
     try {
-      await api.updatePage(r.id, { status: 'publish' });
+      // Pass template explicitly to overwrite the previous 'elementor_canvas' value which
+      // isn't whitelisted by Hello Elementor 3.4.7 → 'default' is always valid.
+      // Elementor renders the content; Theme Builder supplies header/footer.
+      await api.updatePage(r.id, { status: 'publish', template: 'default' });
       console.log(`  ✅ ${r.slug.padEnd(35)} → id ${r.id} published`);
     } catch (e) {
-      console.log(`  ❌ ${r.slug} → ${e.message.slice(0, 150)}`);
+      console.log(`  ❌ ${r.slug} → ${e.message.slice(0, 200)}`);
     }
-    await new Promise(r => setTimeout(r, 1000));
+    await new Promise(res => setTimeout(res, 1000));
   }
   console.log(`\n✅ Publication terminée.`);
 }
